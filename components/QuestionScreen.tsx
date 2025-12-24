@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ProcessedQuestion } from '../types';
+import { ProcessedQuestion, Player } from '../types'; // Kom ihåg att importera Player
 import { useTVNavigation } from '../hooks/useTVNavigation';
 import { InteractiveMap } from './InteractiveMap';
 
 interface QuestionScreenProps {
   question: ProcessedQuestion;
+  currentPlayer: Player; // Ny prop
   onAnswer: (scoreMultiplier: number) => void; 
   onBack?: () => void;
   playCorrect: () => void;
@@ -13,6 +14,7 @@ interface QuestionScreenProps {
 
 export const QuestionScreen: React.FC<QuestionScreenProps> = ({ 
   question, 
+  currentPlayer,
   onAnswer, 
   onBack,
   playCorrect,
@@ -23,20 +25,16 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
   const [showResult, setShowResult] = useState(false);
   const [shakeIdx, setShakeIdx] = useState<number | null>(null);
   
-  // Reveal Mode States (Used for Audio & Honor System)
   const [isRevealed, setIsRevealed] = useState(false);
   
-  // Timers
   const TIMER_DURATION = question.timerDuration || (question.mediaType === 'text' ? 20 : 15);
   const [timeLeft, setTimeLeft] = useState(TIMER_DURATION);
   
-  // Secondary Timer (Audio Guessing Phase)
   const GUESS_LIMIT = 15;
   const [guessingTime, setGuessingTime] = useState(GUESS_LIMIT);
   
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  // Checks
   const isMovieSoundtrack = question.categoryId === 'music_movies';
   const isMultipleChoice = question.type === 'multiple' || question.type === 'text';
   const isHonorSystem = question.type === 'honor-system' || question.type === 'music';
@@ -44,12 +42,9 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
   const isImageSequence = question.mediaType === 'image_sequence';
   const isTextSequence = question.mediaType === 'text_sequence' || question.clubList !== undefined;
 
-  // Rule: Only Music (excluding soundtracks) gets the 50% option
   const canUseHalfPoints = question.type === 'music' && !isMovieSoundtrack;
 
-  // --- AUDIO CLEANUP (Bug Fix) ---
-  // Forcefully stop any playing audio when the question ID changes or component unmounts.
-  // This prevents music from "bleeding" into text questions.
+  // --- AUDIO CLEANUP ---
   useEffect(() => {
 	  setMapFeedback(null);
     return () => {
@@ -63,23 +58,20 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
 
   // --- AUDIO MODE LOGIC ---
   useEffect(() => {
-    // Only attempt to play if it's explicitly an AUDIO question
     if (question.mediaType === 'audio' && question.audioUrl) {
-      // Clean up previous instance just in case
       if (audioRef.current) {
           audioRef.current.pause();
           audioRef.current = null;
       }
 
       const audio = new Audio(question.audioUrl);
-      audio.volume = 1.0; // Enforce Max Volume
+      audio.volume = 1.0; 
       audioRef.current = audio;
 
       audio.onended = () => {
         setTimeLeft(0);
       };
 
-      // Ensure explicit play
       const playPromise = audio.play();
       if (playPromise !== undefined) {
           playPromise.catch(e => console.warn("Audio preview blocked by browser policy:", e));
@@ -109,7 +101,6 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
   // Secondary Timer for Audio
   useEffect(() => {
     if (question.mediaType === 'audio' && timeLeft <= 0 && !isRevealed) {
-      // STOP MUSIC HERE: Ensure music stops exactly when the first timer ends
       if (audioRef.current) {
         audioRef.current.pause();
       }
@@ -145,7 +136,7 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
     }
   }, [question.mediaType, isRevealed, isHonorSystem, isImageSequence, isTextSequence]);
 
-  // --- MULTIPLE CHOICE TIMER (Text & Movie Posters) ---
+  // --- MULTIPLE CHOICE TIMER ---
   useEffect(() => {
     if (isMultipleChoice && !showResult) {
       const interval = setInterval(() => {
@@ -183,32 +174,25 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
     setShowResult(true);
     playWrong();
     setTimeout(() => {
-      onAnswer(0); // Fail
+      onAnswer(0); 
     }, 3000);
   };
 
   const handleMapClick = (countryName: string) => {
     if (showResult) return;
-
-    console.log("Klickade på:", countryName);
     
-    // Kolla om det var rätt direkt (för feedbackens skull)
     const isCorrect = countryName === question.correct_answer;
 
-    // 1. SPARA FEEDBACK (Så vi kan visa skylten)
     setMapFeedback({
       correct: isCorrect,
       clicked: countryName
     });
 
-    // 2. HANTERA POÄNG & LJUD (Din gamla logik)
     const idx = question.all_answers.indexOf(countryName);
     
     if (idx !== -1) {
-      // Det var ett av alternativen (Rätt eller "officiellt" fel)
       handleTextSelection(idx);
     } else {
-      // Det var ett helt fel land (t.ex. Madagaskar)
       playWrong();
       setShowResult(true);
       setTimeout(() => {
@@ -237,7 +221,6 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
     }, 2500);
   };
 
-  // Navigation Logic
   useTVNavigation({
     onRed: () => {
       if (isMultipleChoice) handleTextSelection(0);
@@ -268,45 +251,62 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
     { name: 'Blue', bg: 'bg-lg-blue', shadow: 'shadow-none', border: 'border-lg-blue' },
   ];
 
-  
-
   return (
     <div className="fixed inset-0 z-50 flex flex-col bg-slate-950">
       
-      {/* Background with reduced complexity */}
+      {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-slate-900 pointer-events-none"></div>
 
-      {/* Correct Answer Flash (Multiple Choice) */}
+      {/* Correct Answer Flash */}
       {showResult && selectedIdx === correctIndex && (
          <div className="absolute inset-0 bg-green-500/20 z-0 animate-pulse pointer-events-none"></div>
       )}
 
-      {/* Header */}
-      <div className="p-8 flex justify-between items-end border-b border-white/10 bg-black/40 z-10">
-        <div className="flex flex-col">
-          <span className="text-magic-cyan font-bold tracking-[0.2em] uppercase mb-1 text-xl">{question.category}</span>
-          <span className="text-purple-200 text-sm uppercase tracking-wide font-semibold">{question.difficulty}</span>
+      {/* --- HEADER: STÖRRE OCH BÄTTRE LAYOUT --- */}
+      <div className="p-8 flex justify-between items-start bg-black/40 z-20 border-b border-white/10 h-32">
+        
+        {/* Vänster: Kategori & Poäng */}
+        <div className="flex flex-col justify-center">
+          <span className="text-magic-cyan font-black tracking-widest uppercase mb-1 text-3xl drop-shadow-md">
+            {question.category}
+          </span>
+          <div className="flex items-center gap-4">
+             <span className="text-purple-300 text-xl uppercase tracking-wide font-bold">{question.difficulty}</span>
+             <span className="text-gray-500 text-xl">|</span>
+             <span className="text-5xl font-mono font-black text-yellow-400">
+               ${question.pointValue}
+             </span>
+          </div>
         </div>
-        <div className="text-7xl font-mono font-black text-white">
-          ${question.pointValue}
-        </div>
+
+        {/* Höger: CURRENT PLAYER (Nu mycket större) */}
+        {currentPlayer && (
+          <div className="flex items-center bg-blue-900/80 border-2 border-yellow-400 rounded-2xl px-6 py-3 shadow-lg transform scale-110 origin-top-right">
+             <div className="text-5xl mr-4 filter drop-shadow-lg">{currentPlayer.avatar}</div>
+             <div className="flex flex-col">
+                <span className="text-xs text-yellow-300 uppercase font-bold tracking-widest">Current Turn</span>
+                <span className="text-3xl font-black text-white uppercase tracking-wide">{currentPlayer.name}</span>
+             </div>
+          </div>
+        )}
       </div>
 
-      {/* ---------------- AUDIO MODE ---------------- */}
+      {/* ---------------- AUDIO MODE (STÖRRE TEXT) ---------------- */}
       {question.mediaType === 'audio' && (
         <div className="flex-1 flex flex-col items-center justify-center z-10 p-12">
            
            <div className={`
-              w-64 h-64 rounded-full border-8 border-slate-800 bg-black relative flex items-center justify-center mb-8
+              w-72 h-72 rounded-full border-8 border-slate-800 bg-black relative flex items-center justify-center mb-10
               ${!isRevealed && timeLeft > 0 ? 'animate-spin' : ''}
            `} style={{ animationDuration: '4s' }}>
-              <div className="w-24 h-24 rounded-full bg-gradient-to-br from-magic-pink to-purple-600 border-4 border-white/20 flex items-center justify-center">
-                 <span className="text-2xl">🎵</span>
+              <div className="w-32 h-32 rounded-full bg-gradient-to-br from-magic-pink to-purple-600 border-4 border-white/20 flex items-center justify-center">
+                 <span className="text-5xl">🎵</span>
               </div>
            </div>
 
+           {/* Progress Bars */}
            {!isRevealed && timeLeft > 0 && (
-             <div className="w-96 h-4 bg-gray-700 rounded-full mb-8 overflow-hidden border border-white/20">
+             <div className="w-[600px] h-6 bg-gray-700 rounded-full mb-10 overflow-hidden border-2 border-white/20">
                 <div 
                    className="h-full bg-gradient-to-r from-green-400 to-yellow-400 transition-all duration-1000 ease-linear"
                    style={{ width: `${(timeLeft / TIMER_DURATION) * 100}%` }}
@@ -315,7 +315,7 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
            )}
 
            {!isRevealed && timeLeft <= 0 && (
-             <div className="w-96 h-4 bg-gray-700 rounded-full mb-8 overflow-hidden border border-white/20">
+             <div className="w-[600px] h-6 bg-gray-700 rounded-full mb-10 overflow-hidden border-2 border-white/20">
                 <div 
                    className="h-full bg-gradient-to-r from-red-500 to-orange-500 transition-all duration-1000 ease-linear"
                    style={{ width: `${(guessingTime / GUESS_LIMIT) * 100}%` }}
@@ -325,51 +325,52 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
 
            {!isRevealed ? (
              <div className="text-center">
-               <h2 className="text-4xl font-black text-white mb-4 tracking-widest">
+               <h2 className="text-6xl font-black text-white mb-6 tracking-widest drop-shadow-xl">
                  {timeLeft > 0 ? "LISTENING..." : `GUESS NOW: ${guessingTime}s`}
                </h2>
-               <p className="text-xl text-cyan-300">
+               <p className="text-3xl text-cyan-300 font-bold">
                   {isMovieSoundtrack ? 'Guess the Movie/Show!' : 'Guess the Song & Artist'}
                </p>
-               <div className="mt-8 bg-slate-800 px-8 py-3 rounded-full inline-block border border-white/20">
-                 Press <span className="font-bold text-white">OK</span> to Reveal
+               <div className="mt-12 bg-slate-800 px-10 py-4 rounded-full inline-block border-2 border-white/20">
+                 <span className="text-xl text-gray-300">Press <span className="font-bold text-white mx-1">OK</span> to Reveal</span>
                </div>
              </div>
            ) : (
-             <div className="text-center">
-               <div className="bg-slate-900 border-2 border-slate-700 p-8 rounded-2xl mb-8 min-w-[500px]">
+             <div className="text-center w-full max-w-5xl">
+               <div className="bg-slate-900 border-4 border-slate-700 p-10 rounded-3xl mb-10 shadow-2xl">
                   {isMovieSoundtrack && (
-                    <span className="block text-xs uppercase tracking-widest text-gray-400 mb-1">Movie / Show</span>
+                    <span className="block text-xl uppercase tracking-widest text-gray-400 mb-2">Movie / Show</span>
                   )}
-                  <h2 className="text-4xl font-black text-magic-cyan mb-2">
+                  {/* ENORMT RESULTAT */}
+                  <h2 className="text-7xl font-black text-magic-cyan mb-4 leading-tight">
                     {question.answerReveal?.title}
                   </h2>
-                  <h3 className="text-2xl font-semibold text-white/80">
+                  <h3 className="text-5xl font-bold text-white/90">
                     {question.answerReveal?.artist}
                     {question.answerReveal?.year && (
-                      <span className="ml-3 text-white/50 font-normal">({question.answerReveal.year})</span>
+                      <span className="ml-4 text-white/50 font-normal">({question.answerReveal.year})</span>
                     )}
                   </h3>
                </div>
                
-               <p className="text-sm uppercase tracking-[0.3em] text-gray-400 mb-6">Rate Your Answer</p>
+               <p className="text-xl uppercase tracking-[0.3em] text-gray-400 mb-8 font-bold">Rate Your Answer</p>
                
-               <div className="flex justify-center gap-6">
+               <div className="flex justify-center gap-12">
                  <div className="flex flex-col items-center">
-                    <div className="w-16 h-16 rounded-full bg-lg-red flex items-center justify-center text-2xl mb-2">❌</div>
-                    <span className="font-bold text-red-400">0%</span>
+                    <div className="w-24 h-24 rounded-full bg-lg-red flex items-center justify-center text-4xl mb-3 shadow-lg border-4 border-white/10">❌</div>
+                    <span className="font-black text-2xl text-red-400">0%</span>
                  </div>
                  
                  {canUseHalfPoints && (
                    <div className="flex flex-col items-center">
-                      <div className="w-16 h-16 rounded-full bg-lg-yellow flex items-center justify-center text-2xl mb-2">⚖️</div>
-                      <span className="font-bold text-yellow-400">50%</span>
+                      <div className="w-24 h-24 rounded-full bg-lg-yellow flex items-center justify-center text-4xl mb-3 shadow-lg border-4 border-white/10">⚖️</div>
+                      <span className="font-black text-2xl text-yellow-400">50%</span>
                    </div>
                  )}
 
                  <div className="flex flex-col items-center">
-                    <div className="w-16 h-16 rounded-full bg-lg-green flex items-center justify-center text-2xl mb-2">✅</div>
-                    <span className="font-bold text-green-400">100%</span>
+                    <div className="w-24 h-24 rounded-full bg-lg-green flex items-center justify-center text-4xl mb-3 shadow-lg border-4 border-white/10">✅</div>
+                    <span className="font-black text-2xl text-green-400">100%</span>
                  </div>
                </div>
              </div>
@@ -377,115 +378,88 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
         </div>
       )}
 
-      {/* ---------------- VISUAL LAYOUTS (Image / Sequence / Text Sequence) ---------------- */}
+      {/* ---------------- VISUAL / TEXT SEQUENCE ---------------- */}
       {(question.mediaType === 'image' || isImageSequence || isTextSequence) && (
-        <div className="flex-1 flex flex-col items-center justify-center z-10 p-4">
+        <div className="flex-1 flex flex-col items-center justify-center z-10 p-4 relative">
            
-           {/* TEXT SEQUENCE (Football Career Path) */}
+           {/* TEXT SEQUENCE (Career Path) */}
            {isTextSequence && question.clubList && (
-             <div className="w-full max-w-7xl mb-8 p-6 flex flex-wrap items-center justify-center gap-4 bg-slate-900 rounded-3xl border border-slate-700 mx-auto">
+             <div className="w-full max-w-[90vw] mb-12 p-8 flex flex-wrap items-center justify-center gap-6 bg-slate-900/90 rounded-[2rem] border-2 border-slate-600 shadow-2xl mx-auto">
                {question.clubList.map((club, idx) => (
                  <React.Fragment key={idx}>
-                   <div className="px-6 py-3 rounded-full bg-slate-800 border border-slate-600 font-bold text-xl md:text-2xl text-cyan-100 text-center">
+                   <div className="px-8 py-4 rounded-full bg-slate-800 border-2 border-slate-500 font-bold text-3xl text-cyan-100 text-center shadow-md">
                      {club}
                    </div>
                    {idx < question.clubList!.length - 1 && (
-                     <div className="text-3xl text-yellow-400 opacity-80 font-bold">→</div>
+                     <div className="text-4xl text-yellow-400 opacity-80 font-bold">→</div>
                    )}
                  </React.Fragment>
                ))}
              </div>
            )}
 
-			<div className="text-white text-xl bg-purple-600 p-2 m-2">
-            KATEGORI ID ÄR: "{question.category}"
-          </div>
-
-           {/* VISUAL AREA: Karta eller Bild */}
-            {/* KOLL: Är det en kartfråga? (Nu med rätt ID!) */}
-          {/* KOLL: Är det en kartfråga? */}
+           {/* WORLD MAP */}
           {question.category === 'World Map' ? (
-            
-            /* FULLSKÄRMS-LÄGE FÖR KARTA */
-            /* "absolute inset-0" gör att den täcker hela sin förälder */
-            /* z-50 gör att den hamnar ovanpå knappar och annat */
             <div className="absolute inset-0 z-50 bg-[#0B1120] flex flex-col">
-               
-               {/* Liten header så man ser frågan */}
-               <div className="bg-black/80 p-4 text-center z-50">
-                  <h2 className="text-3xl text-white font-bold">
-                    Hitta: <span className="text-yellow-400">{question.correct_answer}</span>
+               <div className="bg-black/90 p-6 text-center z-50 border-b-4 border-slate-800 flex justify-between items-center px-12">
+                  <h2 className="text-4xl text-white font-bold">
+                    Find: <span className="text-yellow-400 text-5xl ml-2">{question.correct_answer}</span>
                   </h2>
-               </div>
-
-               {/* Själva kartan fyller resten */}
-               <div className="flex-1 w-full h-full">
-                  <InteractiveMap onCountryClick={handleMapClick} />
-				  {mapFeedback && (
-                    <div className="absolute inset-0 flex items-center justify-center z-[100] bg-black/60 backdrop-blur-sm animate-in fade-in duration-300">
-                      
-                      <div className={`
-                        transform scale-110 p-12 rounded-3xl border-8 shadow-2xl text-center max-w-3xl
-                        ${mapFeedback.correct 
-                          ? 'bg-green-600 border-green-400 text-white' 
-                          : 'bg-red-600 border-red-400 text-white'}
-                      `}>
-                        {/* Ikon / Rubrik */}
-                        <div className="text-8xl mb-4 filter drop-shadow-lg">
-                          {mapFeedback.correct ? '✅' : '❌'}
-                        </div>
-                        
-                        <h1 className="text-6xl font-black uppercase tracking-tighter mb-4 drop-shadow-md">
-                          {mapFeedback.correct ? 'RÄTT!' : 'FEL!'}
-                        </h1>
-
-                        {/* Info text */}
-                        <div className="text-2xl font-bold opacity-90 space-y-2">
-                          <p>Du klickade på:</p>
-                          <p className="text-4xl text-yellow-300 uppercase underline decoration-4 underline-offset-4">
-                            {mapFeedback.clicked}
-                          </p>
-                          
-                          {!mapFeedback.correct && (
-                            <div className="mt-6 pt-6 border-t-2 border-white/20">
-                              <p className="text-xl">Rätt svar var:</p>
-                              <p className="text-3xl font-extrabold">{question.correct_answer}</p>
-                            </div>
-                          )}
-                        </div>
-                      </div>
-
+                  {currentPlayer && (
+                    <div className="flex items-center space-x-4 opacity-80 scale-75 origin-right">
+                       <span className="text-3xl">{currentPlayer.avatar}</span>
+                       <span className="text-2xl font-bold">{currentPlayer.name}</span>
                     </div>
                   )}
                </div>
 
-               {/* En "Avbryt/Tillbaka"-knapp om man ångrar sig (Valfritt) */}
-               {/* <button className="absolute top-4 left-4 bg-red-600 text-white p-2 rounded">Avbryt</button> */}
+               <div className="flex-1 w-full h-full">
+                  <InteractiveMap onCountryClick={handleMapClick} />
+				  {mapFeedback && (
+                    <div className="absolute inset-0 flex items-center justify-center z-[100] bg-black/60 backdrop-blur-md animate-in fade-in duration-300">
+                      <div className={`
+                        transform scale-125 p-16 rounded-[3rem] border-8 shadow-2xl text-center max-w-4xl
+                        ${mapFeedback.correct 
+                          ? 'bg-green-700 border-green-400 text-white' 
+                          : 'bg-red-700 border-red-400 text-white'}
+                      `}>
+                        <div className="text-9xl mb-6 filter drop-shadow-lg">
+                          {mapFeedback.correct ? '✅' : '❌'}
+                        </div>
+                        <h1 className="text-7xl font-black uppercase tracking-tighter mb-6 drop-shadow-md">
+                          {mapFeedback.correct ? 'CORRECT!' : 'WRONG!'}
+                        </h1>
+                        <div className="text-3xl font-bold opacity-90 space-y-4">
+                          <p>You clicked:</p>
+                          <p className="text-5xl text-yellow-300 uppercase underline decoration-4 underline-offset-8">
+                            {mapFeedback.clicked}
+                          </p>
+                          {!mapFeedback.correct && (
+                            <div className="mt-8 pt-8 border-t-4 border-white/20">
+                              <p className="text-2xl">Correct answer:</p>
+                              <p className="text-4xl font-extrabold">{question.correct_answer}</p>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  )}
+               </div>
             </div>
 
           ) : (
-            
-            /* ANNARS: Visa vanlig bild */
             question.imageUrl && (
               <img
                 src={question.imageUrl}
                 alt="Visual"
-                className="max-h-[50vh] max-w-full object-contain rounded-xl shadow-2xl border-4 border-white/10 mx-auto"
+                className="max-h-[60vh] max-w-full object-contain rounded-2xl shadow-2xl border-4 border-white/10 mx-auto"
               />
             )
-
           )}
-
-           {/* Context Text */}
-           {question.infoText && !isRevealed && !showResult && (
-             <div className="mb-6 text-2xl font-bold text-yellow-400 bg-black/80 px-6 py-2 rounded-full border border-yellow-400/30">
-               {question.infoText}
-             </div>
-           )}
 
            {/* Timer Bar */}
            {!isRevealed && !showResult && (
-             <div className="w-96 h-3 bg-gray-700 rounded-full mb-6 overflow-hidden border border-white/20">
+             <div className="w-[600px] h-6 bg-gray-700 rounded-full mb-8 overflow-hidden border-2 border-white/20 mt-8">
                 <div 
                    className="h-full bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-1000 ease-linear"
                    style={{ width: `${(timeLeft / TIMER_DURATION) * 100}%` }}
@@ -493,85 +467,81 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
              </div>
            )}
 
-           {/* ---- HONOR SYSTEM REVEAL (Geo Flags/Capitals/Career) ---- */}
+           {/* HONOR SYSTEM REVEAL (Geo Flags/Capitals) */}
            {isHonorSystem && !isRevealed && (
-             <div className="text-center">
-               <h2 className="text-4xl font-black text-white mb-4 tracking-widest">
+             <div className="text-center mt-4">
+               <h2 className="text-5xl font-black text-white mb-6 tracking-widest drop-shadow-lg">
                  {question.question}
                </h2>
-               <div className="mt-4 bg-slate-800 px-8 py-3 rounded-full inline-block border border-white/20">
-                 Press <span className="font-bold text-white">OK</span> to Reveal
+               <div className="bg-slate-800 px-10 py-4 rounded-full inline-block border-2 border-white/20">
+                 <span className="text-xl text-gray-300">Press <span className="font-bold text-white mx-1">OK</span> to Reveal</span>
                </div>
              </div>
            )}
 
            {isHonorSystem && isRevealed && (
-             <div className="text-center">
-               <div className="bg-slate-900 border-2 border-emerald-500 p-6 rounded-2xl mb-6 min-w-[500px]">
+             <div className="text-center w-full max-w-4xl">
+               <div className="bg-slate-900 border-4 border-emerald-500 p-8 rounded-3xl mb-8 shadow-2xl">
                   {question.infoText && (
-                    <div className="text-xl text-gray-300 mb-2">{question.infoText}</div>
+                    <div className="text-3xl text-gray-300 mb-3 font-bold">{question.infoText}</div>
                   )}
-                  <h2 className="text-5xl font-black text-emerald-400 mb-2">
+                  <h2 className="text-6xl font-black text-emerald-400 mb-3 leading-tight">
                     {question.answerReveal?.title}
                   </h2>
-                  <h3 className="text-xl font-semibold text-white/60 uppercase tracking-widest">
+                  <h3 className="text-3xl font-bold text-white/70 uppercase tracking-widest">
                     {question.answerReveal?.artist}
                   </h3>
                </div>
                
-               <div className="flex justify-center gap-6">
+               <div className="flex justify-center gap-12">
                  <div className="flex flex-col items-center">
-                    <div className="w-16 h-16 rounded-full bg-lg-red flex items-center justify-center text-2xl mb-2">❌</div>
+                    <div className="w-24 h-24 rounded-full bg-lg-red flex items-center justify-center text-4xl mb-2 shadow-lg">❌</div>
                  </div>
-                 
                  {canUseHalfPoints && (
                    <div className="flex flex-col items-center">
-                      <div className="w-16 h-16 rounded-full bg-lg-yellow flex items-center justify-center text-2xl mb-2">⚖️</div>
+                      <div className="w-24 h-24 rounded-full bg-lg-yellow flex items-center justify-center text-4xl mb-2 shadow-lg">⚖️</div>
                    </div>
                  )}
-
                  <div className="flex flex-col items-center">
-                    <div className="w-16 h-16 rounded-full bg-lg-green flex items-center justify-center text-2xl mb-2">✅</div>
+                    <div className="w-24 h-24 rounded-full bg-lg-green flex items-center justify-center text-4xl mb-2 shadow-lg">✅</div>
                  </div>
                </div>
              </div>
            )}
 
-           {/* ---- MULTIPLE CHOICE (Movie Posters / Text) ---- */}
+           {/* MULTIPLE CHOICE (Movie Posters) */}
            {isMultipleChoice && (
-              <>
-                 <h2 className="text-3xl font-black text-white mb-6 drop-shadow-md">{question.question}</h2>
-                 <div className="grid grid-cols-2 gap-6 w-full max-w-5xl px-8">
+              <div className="w-full max-w-6xl">
+                 <h2 className="text-4xl font-black text-white mb-8 drop-shadow-md text-center">{question.question}</h2>
+                 <div className="grid grid-cols-2 gap-8 px-4">
                     {question.all_answers.map((ans, idx) => {
                       const config = colors[idx];
-                      let containerClass = "bg-slate-900/90 border-l-8 text-white/90";
+                      let containerClass = "bg-slate-900/90 border-l-[12px] text-white";
                       let borderColor = config.border;
                       
                       if (showResult) {
                          if (idx === correctIndex) {
-                           containerClass = "bg-green-700 text-white border-l-8 border-white";
+                           containerClass = "bg-green-700 text-white border-l-[12px] border-white";
                            borderColor = "border-white";
                          } else if (idx === selectedIdx) {
-                           containerClass = "bg-red-700 text-white border-l-8 border-white opacity-90";
+                           containerClass = "bg-red-700 text-white border-l-[12px] border-white opacity-90";
                          } else {
-                           containerClass = "bg-black/40 opacity-30 border-gray-700 text-gray-500";
+                           containerClass = "bg-black/60 opacity-30 border-gray-700 text-gray-500";
                          }
                       } else if (selectedIdx === idx) {
                          containerClass = "bg-white/20 border-white text-white";
-                      } else {
-                          containerClass += " hover:bg-white/10";
                       }
 
                       return (
-                        <div key={idx} className={`relative h-20 rounded-r-2xl flex items-center px-6 transition-colors duration-200 ${containerClass} ${borderColor}`}>
-                           <div className={`absolute -left-5 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full border-2 border-white/20 shadow-xl flex items-center justify-center ${config.bg}`}>
+                        <div key={idx} className={`relative h-28 rounded-r-3xl flex items-center px-10 transition-colors duration-200 ${containerClass} ${borderColor}`}>
+                           <div className={`absolute -left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border-4 border-white/30 shadow-xl flex items-center justify-center ${config.bg}`}>
                            </div>
-                           <span className="text-2xl font-bold ml-4">{ans}</span>
+                           <span className="text-4xl font-black ml-6 tracking-wide">{ans}</span>
                         </div>
                       );
                     })}
                  </div>
-              </>
+              </div>
            )}
         </div>
       )}
@@ -581,7 +551,7 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
       {question.mediaType === 'text' && (
         <>
           {!showResult && (
-             <div className="w-full h-2 bg-gray-800 fixed top-0 left-0 z-50">
+             <div className="w-full h-3 bg-gray-800 fixed top-32 left-0 z-10">
                <div 
                  className="h-full bg-gradient-to-r from-red-500 to-yellow-400 transition-all duration-1000 ease-linear"
                  style={{ width: `${(timeLeft / TIMER_DURATION) * 100}%` }}
@@ -589,54 +559,53 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
              </div>
           )}
 
-          <div className="flex-1 flex items-center justify-center p-12 text-center z-10">
-            <div className="bg-slate-900 p-12 rounded-[2rem] max-w-6xl border-2 border-slate-700 shadow-2xl">
+          <div className="flex-1 flex items-center justify-center p-8 text-center z-10">
+            <div className="bg-slate-900 p-16 rounded-[3rem] max-w-7xl border-4 border-slate-700 shadow-2xl">
               {showResult && timeLeft <= 0 && selectedIdx === null && (
-                 <div className="text-red-500 font-black text-4xl mb-4">TIME'S UP!</div>
+                 <div className="text-red-500 font-black text-5xl mb-6">TIME'S UP!</div>
               )}
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-white drop-shadow-md">
+              {/* ENORM FRÅGETEXT */}
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight text-white drop-shadow-xl">
                 {question.question}
               </h2>
             </div>
           </div>
 
-          <div className="p-8 pb-12 z-10">
-            <div className="grid grid-cols-2 gap-8 max-w-7xl mx-auto">
+          <div className="p-8 pb-16 z-10">
+            <div className="grid grid-cols-2 gap-10 max-w-[90vw] mx-auto">
               {question.all_answers.map((ans, idx) => {
                 const config = colors[idx];
-                let containerClass = "bg-slate-900 border-l-8 text-white/90";
+                let containerClass = "bg-slate-900 border-l-[16px] text-white";
                 let borderColor = config.border;
                 
                 if (showResult) {
                    if (idx === correctIndex) {
-                     containerClass = "bg-green-700 text-white border-l-8 border-white";
+                     containerClass = "bg-green-700 text-white border-l-[16px] border-white";
                      borderColor = "border-white";
                    } else if (idx === selectedIdx) {
-                     containerClass = "bg-red-700 text-white border-l-8 border-white opacity-90";
+                     containerClass = "bg-red-700 text-white border-l-[16px] border-white opacity-90";
                    } else {
-                     containerClass = "bg-black/40 opacity-30 border-gray-700 text-gray-500";
+                     containerClass = "bg-black/50 opacity-30 border-gray-700 text-gray-500";
                    }
                 } else if (selectedIdx === idx) {
                    containerClass = "bg-white/20 border-white text-white";
-                } else {
-                    containerClass += " hover:bg-white/10";
                 }
 
                 return (
-                  <div key={idx} className={`relative h-32 md:h-40 rounded-r-3xl flex items-center px-10 transition-colors duration-200 ${containerClass} ${borderColor}`}>
-                    <div className={`absolute -left-7 top-1/2 -translate-y-1/2 w-14 h-14 rounded-full border-4 border-white/20 shadow-xl flex items-center justify-center ${config.bg}`}></div>
-                    <span className="text-2xl md:text-3xl font-bold ml-6 drop-shadow-md leading-snug">{ans}</span>
+                  <div key={idx} className={`relative h-40 rounded-r-[2rem] flex items-center px-12 transition-colors duration-200 ${containerClass} ${borderColor}`}>
+                    <div className={`absolute -left-8 top-1/2 -translate-y-1/2 w-16 h-16 rounded-full border-4 border-white/30 shadow-xl flex items-center justify-center ${config.bg}`}></div>
+                    <span className="text-3xl md:text-4xl font-bold ml-8 drop-shadow-md leading-snug">{ans}</span>
                   </div>
                 );
               })}
             </div>
             
             {!showResult && (
-              <div className="flex justify-center mt-12 space-x-12 text-white/60 text-sm uppercase tracking-[0.2em] font-bold">
-                  <div className="flex items-center"><span className="w-3 h-3 rounded-full bg-lg-red mr-3"></span> Select</div>
-                  <div className="flex items-center"><span className="w-3 h-3 rounded-full bg-lg-green mr-3"></span> Select</div>
-                  <div className="flex items-center"><span className="w-3 h-3 rounded-full bg-lg-yellow mr-3"></span> Select</div>
-                  <div className="flex items-center"><span className="w-3 h-3 rounded-full bg-lg-blue mr-3"></span> Select</div>
+              <div className="flex justify-center mt-12 space-x-16 text-white/60 text-lg uppercase tracking-[0.2em] font-bold">
+                  <div className="flex items-center"><span className="w-5 h-5 rounded-full bg-lg-red mr-4"></span> Select</div>
+                  <div className="flex items-center"><span className="w-5 h-5 rounded-full bg-lg-green mr-4"></span> Select</div>
+                  <div className="flex items-center"><span className="w-5 h-5 rounded-full bg-lg-yellow mr-4"></span> Select</div>
+                  <div className="flex items-center"><span className="w-5 h-5 rounded-full bg-lg-blue mr-4"></span> Select</div>
               </div>
             )}
           </div>

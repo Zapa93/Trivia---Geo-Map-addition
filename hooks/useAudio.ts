@@ -60,10 +60,11 @@ export const useAudio = () => {
 
   // Updated to receive AppState to enforce rules
   const manageMusicState = useCallback((state: AppState) => {
-    if (state === AppState.SETUP || state === AppState.CATEGORY_SELECT) {
+    // HÄR ÄR ÄNDRINGEN: Nu spelar vi även under LOADING
+    if (state === AppState.SETUP || state === AppState.CATEGORY_SELECT || state === AppState.LOADING) {
       setShouldPlayMusic(true);
     } else {
-      setShouldPlayMusic(false); // Silence for Board/Question/Loading/GameOver
+      setShouldPlayMusic(false); // Tystnad för Board/Question/GameOver
       if (musicRef.current) {
           musicRef.current.currentTime = 0; // Reset to start
       }

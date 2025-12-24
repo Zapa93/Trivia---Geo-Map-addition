@@ -51,6 +51,25 @@ export const resetPlayedTracks = () => {
   localStorage.removeItem(PLAYED_ITEMS_KEY);
 };
 
+export const clearSpecificHistory = (type: 'music' | 'geo' | 'visual' | 'otdb' | 'all') => {
+  if (type === 'all') {
+    resetPlayedTracks();
+    return;
+  }
+
+  const current = getPlayedItems();
+  const newItems = current.filter(id => {
+    // Check ID prefixes to identify category type
+    if (type === 'music') return !id.startsWith('song_');
+    if (type === 'geo') return !id.startsWith('geo-') && !id.startsWith('map-');
+    if (type === 'visual') return !id.startsWith('mov-') && !id.startsWith('fc-');
+    if (type === 'otdb') return !id.startsWith('otdb-');
+    return true;
+  });
+
+  localStorage.setItem(PLAYED_ITEMS_KEY, JSON.stringify(newItems));
+};
+
 // Local Fisher-Yates Shuffle
 const shuffle = <T>(array: T[]): T[] => {
   const newArray = [...array];

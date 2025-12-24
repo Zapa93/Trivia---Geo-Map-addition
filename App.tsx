@@ -144,7 +144,9 @@ const App: React.FC = () => {
       )}
       {appState === AppState.QUESTION && activeQuestion && (
         <QuestionScreen 
+          key={activeQuestion.id}  /* <--- LÄGG TILL DENNA RAD! */
           question={activeQuestion}
+		  currentPlayer={players[currentTurn]}
           onAnswer={handleAnswer}
           playCorrect={playCorrect}
           playWrong={playWrong}

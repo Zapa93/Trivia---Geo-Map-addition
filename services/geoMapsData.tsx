@@ -1,3 +1,4 @@
+
 export interface MapCountry {
   name: string;
   population: number; 
@@ -14,14 +15,15 @@ export const GEO_MAPS_DATA: MapCountry[] = [
   { name: "Germany", population: 84000000 },
   { name: "Spain", population: 48000000 },
   { name: "Italy", population: 59000000 },
-  { name: "England", population: 56000000 }, // Notera: UK är ca 67M totalt
-  { name: "Ukraine", population: 38000000 }, // Minskad pga krig/flykt
+  { name: "England", population: 56000000 }, // UK split often in trivia
+  { name: "United Kingdom", population: 67000000 }, // Fallback if map uses UK
+  { name: "Ukraine", population: 38000000 },
   { name: "Poland", population: 37000000 },
   { name: "Netherlands", population: 17700000 },
   { name: "Belgium", population: 11600000 },
   { name: "Greece", population: 10400000 },
   { name: "Portugal", population: 10300000 },
-  { name: "Czech Republic", population: 10500000 }, // Eller "Czechia"
+  { name: "Czech Republic", population: 10500000 },
   { name: "Hungary", population: 9700000 },
   { name: "Austria", population: 9000000 },
   { name: "Switzerland", population: 8700000 },
@@ -33,8 +35,16 @@ export const GEO_MAPS_DATA: MapCountry[] = [
   { name: "Croatia", population: 3900000 },
   { name: "Belarus", population: 9200000 },
   { name: "Lithuania", population: 2800000 },
+  { name: "Latvia", population: 1880000 },
+  { name: "Estonia", population: 1330000 },
+  { name: "Slovenia", population: 2100000 },
+  { name: "Bosnia and Herzegovina", population: 3200000 },
+  { name: "North Macedonia", population: 2000000 },
+  { name: "Albania", population: 2800000 },
+  { name: "Moldova", population: 2600000 },
 
   // --- Nord- & Centralamerika ---
+  { name: "United States of America", population: 333000000 }, // Map often uses full name
   { name: "USA", population: 333000000 },
   { name: "Canada", population: 39000000 },
   { name: "Mexico", population: 128000000 },
@@ -48,6 +58,8 @@ export const GEO_MAPS_DATA: MapCountry[] = [
   { name: "Costa Rica", population: 5200000 },
   { name: "Panama", population: 4400000 },
   { name: "Jamaica", population: 2800000 },
+  { name: "Belize", population: 400000 },
+  { name: "Bahamas", population: 400000 },
 
   // --- Sydamerika ---
   { name: "Brazil", population: 215000000 },
@@ -60,10 +72,12 @@ export const GEO_MAPS_DATA: MapCountry[] = [
   { name: "Bolivia", population: 12000000 },
   { name: "Paraguay", population: 7400000 },
   { name: "Uruguay", population: 3500000 },
+  { name: "Guyana", population: 800000 },
+  { name: "Suriname", population: 600000 },
 
   // --- Asien (inkl. Mellanöstern) ---
   { name: "China", population: 1410000000 },
-  { name: "India", population: 1420000000 }, // Har nu gått om Kina i vissa mätningar
+  { name: "India", population: 1420000000 },
   { name: "Indonesia", population: 275000000 },
   { name: "Pakistan", population: 235000000 },
   { name: "Bangladesh", population: 170000000 },
@@ -93,6 +107,16 @@ export const GEO_MAPS_DATA: MapCountry[] = [
   { name: "Israel", population: 9500000 },
   { name: "Lebanon", population: 5500000 },
   { name: "Singapore", population: 5600000 },
+  { name: "Mongolia", population: 3300000 },
+  { name: "Laos", population: 7500000 },
+  { name: "Kyrgyzstan", population: 6600000 },
+  { name: "Tajikistan", population: 9900000 },
+  { name: "Turkmenistan", population: 6000000 },
+  { name: "Oman", population: 4500000 },
+  { name: "Kuwait", population: 4200000 },
+  { name: "Qatar", population: 2700000 },
+  { name: "Georgia", population: 3700000 },
+  { name: "Armenia", population: 2800000 },
 
   // --- Afrika ---
   { name: "Nigeria", population: 218000000 },
@@ -110,7 +134,7 @@ export const GEO_MAPS_DATA: MapCountry[] = [
   { name: "Ghana", population: 33000000 },
   { name: "Mozambique", population: 33000000 },
   { name: "Madagascar", population: 29000000 },
-  { name: "Ivory Coast", population: 28000000 }, // Cote d'Ivoire
+  { name: "Ivory Coast", population: 28000000 },
   { name: "Cameroon", population: 28000000 },
   { name: "Niger", population: 26000000 },
   { name: "Mali", population: 22000000 },
@@ -124,10 +148,18 @@ export const GEO_MAPS_DATA: MapCountry[] = [
   { name: "Guinea", population: 14000000 },
   { name: "Rwanda", population: 13000000 },
   { name: "Tunisia", population: 12000000 },
+  { name: "South Sudan", population: 11000000 },
+  { name: "Libya", population: 6700000 },
+  { name: "Namibia", population: 2500000 },
+  { name: "Botswana", population: 2600000 },
+  { name: "Gabon", population: 2300000 },
+  { name: "Mauritania", population: 4600000 },
+  { name: "Eritrea", population: 3600000 },
 
   // --- Oceanien ---
   { name: "Australia", population: 26000000 },
   { name: "Papua New Guinea", population: 10000000 },
   { name: "New Zealand", population: 5100000 },
   { name: "Fiji", population: 900000 },
+  { name: "Solomon Islands", population: 700000 },
 ];
