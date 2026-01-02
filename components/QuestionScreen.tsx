@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ProcessedQuestion, Player } from '../types'; // Kom ihåg att importera Player
+import { ProcessedQuestion, Player } from '../types';
 import { useTVNavigation } from '../hooks/useTVNavigation';
 import { InteractiveMap } from './InteractiveMap';
 
 interface QuestionScreenProps {
   question: ProcessedQuestion;
-  currentPlayer: Player; // Ny prop
+  currentPlayer: Player;
   onAnswer: (scoreMultiplier: number) => void; 
   onBack?: () => void;
   playCorrect: () => void;
@@ -24,16 +24,25 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
   const [selectedIdx, setSelectedIdx] = useState<number | null>(null);
   const [showResult, setShowResult] = useState(false);
   const [shakeIdx, setShakeIdx] = useState<number | null>(null);
-  
   const [isRevealed, setIsRevealed] = useState(false);
   
+  const onAnswerRef = useRef(onAnswer);
+  const hasAnsweredRef = useRef(false);
+
+  useEffect(() => {
+    onAnswerRef.current = onAnswer;
+  }, [onAnswer]);
+
+  const isWorldMap = question.category === 'World Map';
   const TIMER_DURATION = question.timerDuration || (question.mediaType === 'text' ? 20 : 15);
-  const [timeLeft, setTimeLeft] = useState(TIMER_DURATION);
+  const [timeLeft, setTimeLeft] = useState(isWorldMap ? 9999 : TIMER_DURATION);
   
   const GUESS_LIMIT = 15;
   const [guessingTime, setGuessingTime] = useState(GUESS_LIMIT);
   
+  // Audio Refs
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const audioCtxRef = useRef<AudioContext | null>(null);
 
   const isMovieSoundtrack = question.categoryId === 'music_movies';
   const isMultipleChoice = question.type === 'multiple' || question.type === 'text';
@@ -46,27 +55,69 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
 
   // --- AUDIO CLEANUP ---
   useEffect(() => {
-	  setMapFeedback(null);
+    setMapFeedback(null);
+    hasAnsweredRef.current = false;
     return () => {
       if (audioRef.current) {
         audioRef.current.pause();
         audioRef.current.currentTime = 0;
         audioRef.current = null;
       }
+      if (audioCtxRef.current) {
+        audioCtxRef.current.close().catch(e => console.warn("AudioCtx close error", e));
+        audioCtxRef.current = null;
+      }
     };
   }, [question.id]);
 
-  // --- AUDIO MODE LOGIC ---
+  // --- SÄKERT SVARS-ANROP ---
+  const submitAnswer = (multiplier: number) => {
+    if (hasAnsweredRef.current) return; 
+    hasAnsweredRef.current = true;
+    onAnswerRef.current(multiplier);
+  };
+
+  // --- AUDIO MODE LOGIC (MED NORMALISERING) ---
   useEffect(() => {
     if (question.mediaType === 'audio' && question.audioUrl) {
       if (audioRef.current) {
           audioRef.current.pause();
           audioRef.current = null;
       }
+      if (audioCtxRef.current) {
+          audioCtxRef.current.close();
+          audioCtxRef.current = null;
+      }
 
-      const audio = new Audio(question.audioUrl);
-      audio.volume = 1.0; 
+      const audio = new Audio();
+      audio.crossOrigin = "anonymous"; 
+      audio.src = question.audioUrl;
       audioRef.current = audio;
+
+      try {
+        const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
+        const audioCtx = new AudioContextClass();
+        audioCtxRef.current = audioCtx;
+
+        const source = audioCtx.createMediaElementSource(audio);
+        const gainNode = audioCtx.createGain();
+        const compressor = audioCtx.createDynamicsCompressor();
+
+        gainNode.gain.value = 1.5; 
+
+        compressor.threshold.value = -24; 
+        compressor.knee.value = 30;       
+        compressor.ratio.value = 12;      
+        compressor.attack.value = 0.003;  
+        compressor.release.value = 0.25;  
+
+        source.connect(gainNode);
+        gainNode.connect(compressor);
+        compressor.connect(audioCtx.destination);
+
+      } catch (e) {
+        console.warn("AudioContext error", e);
+      }
 
       audio.onended = () => {
         setTimeLeft(0);
@@ -74,7 +125,7 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
 
       const playPromise = audio.play();
       if (playPromise !== undefined) {
-          playPromise.catch(e => console.warn("Audio preview blocked by browser policy:", e));
+          playPromise.catch(e => console.warn("Audio preview blocked:", e));
       }
       
       const interval = setInterval(() => {
@@ -101,9 +152,7 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
   // Secondary Timer for Audio
   useEffect(() => {
     if (question.mediaType === 'audio' && timeLeft <= 0 && !isRevealed) {
-      if (audioRef.current) {
-        audioRef.current.pause();
-      }
+      if (audioRef.current) audioRef.current.pause();
 
       const interval = setInterval(() => {
         setGuessingTime(prev => {
@@ -121,6 +170,8 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
 
   // --- IMAGE / TEXT SEQUENCE / HONOR SYSTEM TIMER ---
   useEffect(() => {
+    if (isWorldMap) return;
+
     if ((question.mediaType === 'image' || isImageSequence || isTextSequence) && isHonorSystem && !isRevealed) {
        const interval = setInterval(() => {
         setTimeLeft((prev) => {
@@ -134,11 +185,11 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
       }, 1000);
       return () => clearInterval(interval);
     }
-  }, [question.mediaType, isRevealed, isHonorSystem, isImageSequence, isTextSequence]);
+  }, [question.mediaType, isRevealed, isHonorSystem, isImageSequence, isTextSequence, isWorldMap]);
 
   // --- MULTIPLE CHOICE TIMER ---
   useEffect(() => {
-    if (isMultipleChoice && !showResult) {
+    if (isMultipleChoice && !showResult && !isWorldMap) {
       const interval = setInterval(() => {
         setTimeLeft(prev => {
           if (prev <= 1) {
@@ -151,30 +202,33 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
       }, 1000);
       return () => clearInterval(interval);
     }
-  }, [isMultipleChoice, showResult]);
+  }, [isMultipleChoice, showResult, isWorldMap]);
 
 
   const handleReveal = () => {
     setIsRevealed(true);
-    if (audioRef.current) {
-        audioRef.current.pause();
-    }
+    if (audioRef.current) audioRef.current.pause();
   };
 
   const handleRevealScore = (multiplier: number) => {
      if (multiplier === 0) playWrong();
      else playCorrect();
 
-     onAnswer(multiplier);
+     setTimeout(() => {
+        submitAnswer(multiplier);
+     }, 1000);
   };
 
   const correctIndex = question.all_answers.indexOf(question.correct_answer);
 
   const handleTextTimeout = () => {
+    if (hasAnsweredRef.current) return; 
+    
     setShowResult(true);
     playWrong();
+    
     setTimeout(() => {
-      onAnswer(0); 
+      submitAnswer(0); 
     }, 3000);
   };
 
@@ -182,23 +236,18 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
     if (showResult) return;
     
     const isCorrect = countryName === question.correct_answer;
+    if (isCorrect) playCorrect();
+    else playWrong();
 
     setMapFeedback({
       correct: isCorrect,
       clicked: countryName
     });
-
-    const idx = question.all_answers.indexOf(countryName);
+    setShowResult(true);
     
-    if (idx !== -1) {
-      handleTextSelection(idx);
-    } else {
-      playWrong();
-      setShowResult(true);
-      setTimeout(() => {
-        onAnswer(0);
-      }, 2500);
-    }
+    setTimeout(() => {
+      submitAnswer(isCorrect ? 1 : 0);
+    }, 2500);
   };
 
   const handleTextSelection = (idx: number) => {
@@ -217,32 +266,30 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
     }
     
     setTimeout(() => {
-      onAnswer(isCorrect ? 1 : 0);
+      submitAnswer(isCorrect ? 1 : 0);
     }, 2500);
   };
 
   useTVNavigation({
     onRed: () => {
-      if (isMultipleChoice) handleTextSelection(0);
+      if (isMultipleChoice && !isWorldMap) handleTextSelection(0);
       else if (isRevealed) handleRevealScore(0); 
     },
     onGreen: () => {
-      if (isMultipleChoice) handleTextSelection(1);
+      if (isMultipleChoice && !isWorldMap) handleTextSelection(1);
       else if (isRevealed) handleRevealScore(1); 
     },
     onYellow: () => {
-      if (isMultipleChoice) handleTextSelection(2);
+      if (isMultipleChoice && !isWorldMap) handleTextSelection(2);
       else if (isRevealed && canUseHalfPoints) handleRevealScore(0.5); 
     },
     onBlue: () => {
-      if (isMultipleChoice) handleTextSelection(3);
+      if (isMultipleChoice && !isWorldMap) handleTextSelection(3);
     },
     onEnter: () => {
       if (isHonorSystem && !isRevealed) handleReveal();
     }
-  }, [showResult, isRevealed, question, isMultipleChoice, isHonorSystem, canUseHalfPoints]);
-
-  // --- RENDER ---
+  }, [showResult, isRevealed, question, isMultipleChoice, isHonorSystem, canUseHalfPoints, isWorldMap]);
 
   const colors = [
     { name: 'Red', bg: 'bg-lg-red', shadow: 'shadow-none', border: 'border-lg-red' },
@@ -254,44 +301,41 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
   return (
     <div className="fixed inset-0 z-50 flex flex-col bg-slate-950">
       
-      {/* Background */}
+      {/* Background - Inga tunga animationer här */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-slate-900 pointer-events-none"></div>
 
-      {/* Correct Answer Flash */}
-      {showResult && selectedIdx === correctIndex && (
-         <div className="absolute inset-0 bg-green-500/20 z-0 animate-pulse pointer-events-none"></div>
-      )}
+      {/* BORTTAGET: Den gröna flash-animationen. 
+          Prestanda är nu prioriterat. Svarsknapparna ger tillräcklig feedback. 
+      */}
 
-      {/* --- HEADER: STÖRRE OCH BÄTTRE LAYOUT --- */}
-      <div className="p-8 flex justify-between items-start bg-black/40 z-20 border-b border-white/10 h-32">
+      {/* HEADER */}
+      <div className="p-6 flex justify-between items-start bg-black/40 z-20 border-b border-white/10 h-28 shrink-0">
         
-        {/* Vänster: Kategori & Poäng */}
         <div className="flex flex-col justify-center">
-          <span className="text-magic-cyan font-black tracking-widest uppercase mb-1 text-3xl drop-shadow-md">
+          <span className="text-magic-cyan font-black tracking-widest uppercase mb-1 text-2xl drop-shadow-md">
             {question.category}
           </span>
-          <div className="flex items-center gap-4">
-             <span className="text-purple-300 text-xl uppercase tracking-wide font-bold">{question.difficulty}</span>
-             <span className="text-gray-500 text-xl">|</span>
-             <span className="text-5xl font-mono font-black text-yellow-400">
+          <div className="flex items-center gap-3">
+             <span className="text-purple-300 text-lg uppercase tracking-wide font-bold">{question.difficulty}</span>
+             <span className="text-gray-500 text-lg">|</span>
+             <span className="text-4xl font-mono font-black text-yellow-400">
                ${question.pointValue}
              </span>
           </div>
         </div>
 
-        {/* Höger: CURRENT PLAYER (Nu mycket större) */}
         {currentPlayer && (
-          <div className="flex items-center bg-blue-900/80 border-2 border-yellow-400 rounded-2xl px-6 py-3 shadow-lg transform scale-110 origin-top-right">
-             <div className="text-5xl mr-4 filter drop-shadow-lg">{currentPlayer.avatar}</div>
+          <div className="flex items-center bg-blue-900/80 border-2 border-yellow-400 rounded-xl px-5 py-2 shadow-lg origin-top-right">
+             <div className="text-4xl mr-3">{currentPlayer.avatar}</div>
              <div className="flex flex-col">
-                <span className="text-xs text-yellow-300 uppercase font-bold tracking-widest">Current Turn</span>
-                <span className="text-3xl font-black text-white uppercase tracking-wide">{currentPlayer.name}</span>
+                <span className="text-[10px] text-yellow-300 uppercase font-bold tracking-widest">Current Turn</span>
+                <span className="text-2xl font-black text-white uppercase tracking-wide">{currentPlayer.name}</span>
              </div>
           </div>
         )}
       </div>
 
-      {/* ---------------- AUDIO MODE (STÖRRE TEXT) ---------------- */}
+      {/* ---------------- AUDIO MODE ---------------- */}
       {question.mediaType === 'audio' && (
         <div className="flex-1 flex flex-col items-center justify-center z-10 p-12">
            
@@ -304,7 +348,6 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
               </div>
            </div>
 
-           {/* Progress Bars */}
            {!isRevealed && timeLeft > 0 && (
              <div className="w-[600px] h-6 bg-gray-700 rounded-full mb-10 overflow-hidden border-2 border-white/20">
                 <div 
@@ -341,7 +384,6 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
                   {isMovieSoundtrack && (
                     <span className="block text-xl uppercase tracking-widest text-gray-400 mb-2">Movie / Show</span>
                   )}
-                  {/* ENORMT RESULTAT */}
                   <h2 className="text-7xl font-black text-magic-cyan mb-4 leading-tight">
                     {question.answerReveal?.title}
                   </h2>
@@ -380,7 +422,7 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
 
       {/* ---------------- VISUAL / TEXT SEQUENCE ---------------- */}
       {(question.mediaType === 'image' || isImageSequence || isTextSequence) && (
-        <div className="flex-1 flex flex-col items-center justify-center z-10 p-4 relative">
+        <div className="flex-1 flex flex-col items-center justify-center z-10 p-4 relative min-h-0">
            
            {/* TEXT SEQUENCE (Career Path) */}
            {isTextSequence && question.clubList && (
@@ -452,13 +494,13 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
               <img
                 src={question.imageUrl}
                 alt="Visual"
-                className="max-h-[60vh] max-w-full object-contain rounded-2xl shadow-2xl border-4 border-white/10 mx-auto"
+                className="max-h-[45vh] max-w-full object-contain rounded-2xl shadow-2xl border-4 border-white/10 mx-auto"
               />
             )
           )}
 
            {/* Timer Bar */}
-           {!isRevealed && !showResult && (
+           {!isRevealed && !showResult && !isWorldMap && (
              <div className="w-[600px] h-6 bg-gray-700 rounded-full mb-8 overflow-hidden border-2 border-white/20 mt-8">
                 <div 
                    className="h-full bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-1000 ease-linear"
@@ -467,10 +509,15 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
              </div>
            )}
 
-           {/* HONOR SYSTEM REVEAL (Geo Flags/Capitals) */}
+           {/* HONOR SYSTEM REVEAL */}
            {isHonorSystem && !isRevealed && (
              <div className="text-center mt-4">
-               <h2 className="text-5xl font-black text-white mb-6 tracking-widest drop-shadow-lg">
+               {question.infoText && (
+                  <h3 className="text-3xl font-bold text-yellow-400 mb-2 uppercase tracking-wider drop-shadow-md">
+                    {question.infoText}
+                  </h3>
+               )}
+               <h2 className="text-4xl font-black text-white mb-6 tracking-widest drop-shadow-lg">
                  {question.question}
                </h2>
                <div className="bg-slate-800 px-10 py-4 rounded-full inline-block border-2 border-white/20">
@@ -480,37 +527,37 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
            )}
 
            {isHonorSystem && isRevealed && (
-             <div className="text-center w-full max-w-4xl">
-               <div className="bg-slate-900 border-4 border-emerald-500 p-8 rounded-3xl mb-8 shadow-2xl">
+             <div className="text-center w-full max-w-3xl mx-auto">
+               <div className="bg-slate-900 border-4 border-emerald-500 p-6 rounded-3xl mb-6 shadow-xl">
                   {question.infoText && (
-                    <div className="text-3xl text-gray-300 mb-3 font-bold">{question.infoText}</div>
+                    <div className="text-2xl text-gray-300 mb-2 font-bold">{question.infoText}</div>
                   )}
-                  <h2 className="text-6xl font-black text-emerald-400 mb-3 leading-tight">
+                  <h2 className="text-5xl font-black text-emerald-400 mb-2 leading-tight">
                     {question.answerReveal?.title}
                   </h2>
-                  <h3 className="text-3xl font-bold text-white/70 uppercase tracking-widest">
+                  <h3 className="text-2xl font-bold text-white/70 uppercase tracking-widest">
                     {question.answerReveal?.artist}
                   </h3>
                </div>
                
-               <div className="flex justify-center gap-12">
+               <div className="flex justify-center gap-10">
                  <div className="flex flex-col items-center">
-                    <div className="w-24 h-24 rounded-full bg-lg-red flex items-center justify-center text-4xl mb-2 shadow-lg">❌</div>
+                    <div className="w-20 h-20 rounded-full bg-lg-red flex items-center justify-center text-3xl mb-2 shadow-lg">❌</div>
                  </div>
                  {canUseHalfPoints && (
                    <div className="flex flex-col items-center">
-                      <div className="w-24 h-24 rounded-full bg-lg-yellow flex items-center justify-center text-4xl mb-2 shadow-lg">⚖️</div>
+                      <div className="w-20 h-20 rounded-full bg-lg-yellow flex items-center justify-center text-3xl mb-2 shadow-lg">⚖️</div>
                    </div>
                  )}
                  <div className="flex flex-col items-center">
-                    <div className="w-24 h-24 rounded-full bg-lg-green flex items-center justify-center text-4xl mb-2 shadow-lg">✅</div>
+                    <div className="w-20 h-20 rounded-full bg-lg-green flex items-center justify-center text-3xl mb-2 shadow-lg">✅</div>
                  </div>
                </div>
              </div>
            )}
 
            {/* MULTIPLE CHOICE (Movie Posters) */}
-           {isMultipleChoice && (
+           {isMultipleChoice && !isWorldMap && (
               <div className="w-full max-w-6xl">
                  <h2 className="text-4xl font-black text-white mb-8 drop-shadow-md text-center">{question.question}</h2>
                  <div className="grid grid-cols-2 gap-8 px-4">
@@ -521,11 +568,14 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
                       
                       if (showResult) {
                          if (idx === correctIndex) {
+                           // Rätt svar får en solid grön färg
                            containerClass = "bg-green-700 text-white border-l-[12px] border-white";
                            borderColor = "border-white";
                          } else if (idx === selectedIdx) {
+                           // Fel svar får röd färg
                            containerClass = "bg-red-700 text-white border-l-[12px] border-white opacity-90";
                          } else {
+                           // Andra svar mörkas ner
                            containerClass = "bg-black/60 opacity-30 border-gray-700 text-gray-500";
                          }
                       } else if (selectedIdx === idx) {
@@ -564,7 +614,6 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
               {showResult && timeLeft <= 0 && selectedIdx === null && (
                  <div className="text-red-500 font-black text-5xl mb-6">TIME'S UP!</div>
               )}
-              {/* ENORM FRÅGETEXT */}
               <h2 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight text-white drop-shadow-xl">
                 {question.question}
               </h2>

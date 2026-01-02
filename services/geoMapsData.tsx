@@ -16,7 +16,6 @@ export const GEO_MAPS_DATA: MapCountry[] = [
   { name: "Spain", population: 48000000 },
   { name: "Italy", population: 59000000 },
   { name: "England", population: 56000000 }, // UK split often in trivia
-  { name: "United Kingdom", population: 67000000 }, // Fallback if map uses UK
   { name: "Ukraine", population: 38000000 },
   { name: "Poland", population: 37000000 },
   { name: "Netherlands", population: 17700000 },
@@ -44,7 +43,6 @@ export const GEO_MAPS_DATA: MapCountry[] = [
   { name: "Moldova", population: 2600000 },
 
   // --- Nord- & Centralamerika ---
-  { name: "United States of America", population: 333000000 }, // Map often uses full name
   { name: "USA", population: 333000000 },
   { name: "Canada", population: 39000000 },
   { name: "Mexico", population: 128000000 },

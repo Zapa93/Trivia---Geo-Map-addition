@@ -1484,1056 +1484,2559 @@ export const MOVIE_THEMES = [
 ];
 
 export const FOOTBALL_CAREERS = [
-  // --- LEVEL 1: THE SUPERSTARS (Very Easy) ---
+  // --- LEVEL 1: (Very Easy) ---
   {
-    player: "Kylian Mbappé",
-    difficulty: 1,
-    clubs: ["Monaco", "Paris Saint Germain", "Real Madrid"]
+    "player": "Kylian Mbappé",
+    "difficulty": 1,
+    "clubs": ["Monaco", "Paris Saint Germain", "Real Madrid"],
+    "years": "2015-Present"
   },
   {
-    player: "Erling Haaland",
-    difficulty: 1,
-    clubs: ["Molde", "Red Bull Salzburg", "Borussia Dortmund", "Manchester City"]
+    "player": "Erling Haaland",
+    "difficulty": 1,
+    "clubs": ["Molde", "Red Bull Salzburg", "Borussia Dortmund", "Manchester City"],
+    "years": "2016-Present"
   },
   {
-    player: "Karim Benzema",
-    difficulty: 1,
-    clubs: ["Lyon", "Real Madrid", "Al-Ittihad"]
+    "player": "Karim Benzema",
+    "difficulty": 1,
+    "clubs": ["Lyon", "Real Madrid", "Al-Ittihad"],
+    "years": "2004-Present"
   },
   {
-    player: "Kaka",
-    difficulty: 1,
-    clubs: ["Sao Paulo", "AC Milan", "Real Madrid", "AC Milan", "Orlando City"]
+    "player": "Kaka",
+    "difficulty": 1,
+    "clubs": ["Sao Paulo", "AC Milan", "Real Madrid", "AC Milan", "Orlando City"],
+    "years": "2001-2017"
   },
   {
-    player: "Gianluigi Buffon",
-    difficulty: 1,
-    clubs: ["Parma", "Juventus", "Paris Saint Germain", "Juventus", "Parma"]
+    "player": "Gianluigi Buffon",
+    "difficulty": 1,
+    "clubs": ["Parma", "Juventus", "Paris Saint Germain", "Juventus", "Parma"],
+    "years": "1995-2023"
   },
   {
-    player: "Luka Modrić",
-    difficulty: 1,
-    clubs: ["Dinamo Zagreb", "Tottenham Hotspur", "Real Madrid"]
+    "player": "Luka Modrić",
+    "difficulty": 1,
+    "clubs": ["Dinamo Zagreb", "Tottenham Hotspur", "Real Madrid"],
+    "years": "2003-Present"
   },
   {
-    player: "Manuel Neuer",
-    difficulty: 1,
-    clubs: ["Schalke 04", "Bayern Munich"]
+    "player": "Manuel Neuer",
+    "difficulty": 1,
+    "clubs": ["Schalke 04", "Bayern Munich"],
+    "years": "2004-Present"
   },
   {
-    player: "Frank Lampard",
-    difficulty: 1,
-    clubs: ["West Ham United", "Chelsea", "Manchester City", "New York City FC"]
+    "player": "Frank Lampard",
+    "difficulty": 1,
+    "clubs": ["West Ham United", "Chelsea", "Manchester City", "New York City FC"],
+    "years": "1995-2016"
   },
   {
-    player: "Steven Gerrard",
-    difficulty: 1,
-    clubs: ["Liverpool", "LA Galaxy"]
+    "player": "Steven Gerrard",
+    "difficulty": 1,
+    "clubs": ["Liverpool", "LA Galaxy"],
+    "years": "1998-2016"
   },
   {
-    player: "Sergio Agüero",
-    difficulty: 1,
-    clubs: ["Independiente", "Atletico Madrid", "Manchester City", "Barcelona"]
+    "player": "Sergio Agüero",
+    "difficulty": 1,
+    "clubs": ["Independiente", "Atletico Madrid", "Manchester City", "Barcelona"],
+    "years": "2003-2021"
   },
   {
-    player: "Zlatan Ibrahimović",
-    difficulty: 1,
-    clubs: ["Malmo FF", "Ajax", "Juventus", "Inter Milan", "Barcelona", "AC Milan", "Paris Saint Germain", "Manchester United", "LA Galaxy", "AC Milan"]
+    "player": "Zlatan Ibrahimović",
+    "difficulty": 1,
+    "clubs": ["Malmo FF", "Ajax", "Juventus", "Inter Milan", "Barcelona", "AC Milan", "Paris Saint Germain", "Manchester United", "LA Galaxy", "AC Milan"],
+    "years": "1999-2023"
   },
   {
-    player: "Cristiano Ronaldo",
-    difficulty: 1,
-    clubs: ["Sporting CP", "Manchester United", "Real Madrid", "Juventus", "Manchester United", "Al Nassr"]
+    "player": "Cristiano Ronaldo",
+    "difficulty": 1,
+    "clubs": ["Sporting CP", "Manchester United", "Real Madrid", "Juventus", "Manchester United", "Al Nassr"],
+    "years": "2002-Present"
   },
   {
-    player: "Lionel Messi",
-    difficulty: 1,
-    clubs: ["Barcelona", "Paris Saint Germain", "Inter Miami"]
+    "player": "Lionel Messi",
+    "difficulty": 1,
+    "clubs": ["Barcelona", "Paris Saint Germain", "Inter Miami"],
+    "years": "2004-Present"
   },
   {
-    player: "Neymar",
-    difficulty: 1,
-    clubs: ["Santos", "Barcelona", "Paris Saint Germain", "Al Hilal"]
+    "player": "Neymar",
+    "difficulty": 1,
+    "clubs": ["Santos", "Barcelona", "Paris Saint Germain", "Al Hilal"],
+    "years": "2009-Present"
   },
   {
-    player: "David Beckham",
-    difficulty: 1,
-    clubs: ["Manchester United", "Preston North End", "Real Madrid", "LA Galaxy", "AC Milan", "Paris Saint Germain"]
+    "player": "David Beckham",
+    "difficulty": 1,
+    "clubs": ["Manchester United", "Preston North End", "Real Madrid", "LA Galaxy", "AC Milan", "Paris Saint Germain"],
+    "years": "1992-2013"
   },
   {
-    player: "Thierry Henry",
-    difficulty: 1,
-    clubs: ["Monaco", "Juventus", "Arsenal", "Barcelona", "New York Red Bulls"]
+    "player": "Thierry Henry",
+    "difficulty": 1,
+    "clubs": ["Monaco", "Juventus", "Arsenal", "Barcelona", "New York Red Bulls"],
+    "years": "1994-2014"
   },
   {
-    player: "Wayne Rooney",
-    difficulty: 1,
-    clubs: ["Everton", "Manchester United", "Everton", "DC United", "Derby County"]
+    "player": "Wayne Rooney",
+    "difficulty": 1,
+    "clubs": ["Everton", "Manchester United", "Everton", "DC United", "Derby County"],
+    "years": "2002-2021"
   },
   {
-    player: "Ronaldinho",
-    difficulty: 1,
-    clubs: ["Gremio", "Paris Saint Germain", "Barcelona", "AC Milan", "Flamengo", "Atletico Mineiro", "Queretaro", "Fluminense"]
+    "player": "Ronaldinho",
+    "difficulty": 1,
+    "clubs": ["Gremio", "Paris Saint Germain", "Barcelona", "AC Milan", "Flamengo", "Atletico Mineiro", "Queretaro", "Fluminense"],
+    "years": "1998-2015"
   },
   {
-    player: "Ronaldo Nazário",
-    difficulty: 1,
-    clubs: ["Cruzeiro", "PSV Eindhoven", "Barcelona", "Inter Milan", "Real Madrid", "AC Milan", "Corinthians"]
-  },{
-    player: "Vinícius Júnior",
-    difficulty: 1,
-    clubs: ["Flamengo", "Real Madrid"]
+    "player": "Ronaldo Nazário",
+    "difficulty": 1,
+    "clubs": ["Cruzeiro", "PSV Eindhoven", "Barcelona", "Inter Milan", "Real Madrid", "AC Milan", "Corinthians"],
+    "years": "1993-2011"
   },
   {
-    player: "Jude Bellingham",
-    difficulty: 1,
-    clubs: ["Birmingham City", "Borussia Dortmund", "Real Madrid"]
+    "player": "Vinícius Júnior",
+    "difficulty": 1,
+    "clubs": ["Flamengo", "Real Madrid"],
+    "years": "2017-Present"
   },
   {
-    player: "Virgil van Dijk",
-    difficulty: 1,
-    clubs: ["Groningen", "Celtic", "Southampton", "Liverpool"]
+    "player": "Jude Bellingham",
+    "difficulty": 1,
+    "clubs": ["Birmingham City", "Borussia Dortmund", "Real Madrid"],
+    "years": "2019-Present"
   },
   {
-    player: "Sadio Mané",
-    difficulty: 1,
-    clubs: ["Metz", "Red Bull Salzburg", "Southampton", "Liverpool", "Bayern Munich", "Al Nassr"]
+    "player": "Virgil van Dijk",
+    "difficulty": 1,
+    "clubs": ["Groningen", "Celtic", "Southampton", "Liverpool"],
+    "years": "2011-Present"
   },
   {
-    player: "Alisson Becker",
-    difficulty: 1,
-    clubs: ["Internacional", "Roma", "Liverpool"]
+    "player": "Sadio Mané",
+    "difficulty": 1,
+    "clubs": ["Metz", "Red Bull Salzburg", "Southampton", "Liverpool", "Bayern Munich", "Al Nassr"],
+    "years": "2011-Present"
   },
   {
-    player: "Thibaut Courtois",
-    difficulty: 1,
-    clubs: ["Genk", "Chelsea", "Atletico Madrid", "Chelsea", "Real Madrid"]
+    "player": "Alisson Becker",
+    "difficulty": 1,
+    "clubs": ["Internacional", "Roma", "Liverpool"],
+    "years": "2013-Present"
   },
   {
-    player: "Raheem Sterling",
-    difficulty: 1,
-    clubs: ["Liverpool", "Manchester City", "Chelsea", "Arsenal"]
+    "player": "Thibaut Courtois",
+    "difficulty": 1,
+    "clubs": ["Genk", "Chelsea", "Atletico Madrid", "Chelsea", "Real Madrid"],
+    "years": "2009-Present"
   },
   {
-    player: "Paul Pogba",
-    difficulty: 1,
-    clubs: ["Manchester United", "Juventus", "Manchester United", "Juventus"]
+    "player": "Raheem Sterling",
+    "difficulty": 1,
+    "clubs": ["Liverpool", "Manchester City", "Chelsea", "Arsenal"],
+    "years": "2012-Present"
   },
   {
-    player: "N'Golo Kanté",
-    difficulty: 1,
-    clubs: ["Boulogne", "Caen", "Leicester City", "Chelsea", "Al-Ittihad"]
+    "player": "Paul Pogba",
+    "difficulty": 1,
+    "clubs": ["Manchester United", "Juventus", "Manchester United", "Juventus"],
+    "years": "2011-Present"
   },
   {
-    player: "Marco Reus",
-    difficulty: 1,
-    clubs: ["Rot Weiss Ahlen", "Borussia Monchengladbach", "Borussia Dortmund", "LA Galaxy"]
+    "player": "N'Golo Kanté",
+    "difficulty": 1,
+    "clubs": ["Boulogne", "Caen", "Leicester City", "Chelsea", "Al-Ittihad"],
+    "years": "2012-Present"
   },
   {
-    player: "Marcelo",
-    difficulty: 1,
-    clubs: ["Fluminense", "Real Madrid", "Olympiacos", "Fluminense"]
+    "player": "Marco Reus",
+    "difficulty": 1,
+    "clubs": ["Rot Weiss Ahlen", "Borussia Monchengladbach", "Borussia Dortmund", "LA Galaxy"],
+    "years": "2009-Present"
   },
   {
-    player: "Bruno Fernandes",
-    difficulty: 1,
-    clubs: ["Novara", "Udinese", "Sampdoria", "Sporting CP", "Manchester United"]
+    "player": "Marcelo",
+    "difficulty": 1,
+    "clubs": ["Fluminense", "Real Madrid", "Olympiacos", "Fluminense"],
+    "years": "2005-Present"
   },
   {
-    player: "Paulo Dybala",
-    difficulty: 1,
-    clubs: ["Instituto", "Palermo", "Juventus", "Roma"]
+    "player": "Bruno Fernandes",
+    "difficulty": 1,
+    "clubs": ["Novara", "Udinese", "Sampdoria", "Sporting CP", "Manchester United"],
+    "years": "2012-Present"
   },
   {
-    player: "Leroy Sané",
-    difficulty: 1,
-    clubs: ["Schalke 04", "Manchester City", "Bayern Munich"]
+    "player": "Paulo Dybala",
+    "difficulty": 1,
+    "clubs": ["Instituto", "Palermo", "Juventus", "Roma"],
+    "years": "2011-Present"
   },
   {
-    player: "Bernardo Silva",
-    difficulty: 1,
-    clubs: ["Benfica", "Monaco", "Manchester City"]
+    "player": "Leroy Sané",
+    "difficulty": 1,
+    "clubs": ["Schalke 04", "Manchester City", "Bayern Munich"],
+    "years": "2014-Present"
   },
   {
-    player: "Rodri",
-    difficulty: 1,
-    clubs: ["Villarreal", "Atletico Madrid", "Manchester City"]
+    "player": "Bernardo Silva",
+    "difficulty": 1,
+    "clubs": ["Benfica", "Monaco", "Manchester City"],
+    "years": "2013-Present"
   },
   {
-    player: "Frenkie de Jong",
-    difficulty: 1,
-    clubs: ["Willem II", "Ajax", "Barcelona"]
+    "player": "Rodri",
+    "difficulty": 1,
+    "clubs": ["Villarreal", "Atletico Madrid", "Manchester City"],
+    "years": "2015-Present"
   },
   {
-    player: "Matthijs de Ligt",
-    difficulty: 1,
-    clubs: ["Ajax", "Juventus", "Bayern Munich", "Manchester United"]
+    "player": "Frenkie de Jong",
+    "difficulty": 1,
+    "clubs": ["Willem II", "Ajax", "Barcelona"],
+    "years": "2015-Present"
   },
   {
-    player: "Ederson",
-    difficulty: 1,
-    clubs: ["Rio Ave", "Benfica", "Manchester City"]
+    "player": "Matthijs de Ligt",
+    "difficulty": 1,
+    "clubs": ["Ajax", "Juventus", "Bayern Munich", "Manchester United"],
+    "years": "2016-Present"
   },
   {
-    player: "Ousmane Dembélé",
-    difficulty: 1,
-    clubs: ["Rennes", "Borussia Dortmund", "Barcelona", "Paris Saint Germain"]
+    "player": "Ederson",
+    "difficulty": 1,
+    "clubs": ["Rio Ave", "Benfica", "Manchester City"],
+    "years": "2012-Present"
   },
+  {
+    "player": "Ousmane Dembélé",
+    "difficulty": 1,
+    "clubs": ["Rennes", "Borussia Dortmund", "Barcelona", "Paris Saint Germain"],
+    "years": "2015-Present"
+  },
+  {
+    "player": "Mohamed Salah",
+    "difficulty": 1,
+    "clubs": ["Basel", "Chelsea", "Fiorentina", "Roma", "Liverpool"],
+    "years": "2010-Present"
+  },
+  {
+    "player": "Harry Kane",
+    "difficulty": 1,
+    "clubs": ["Tottenham Hotspur", "Leicester City", "Norwich City", "Bayern Munich"],
+    "years": "2011-Present"
+  },
+  {
+    "player": "Achraf Hakimi",
+    "difficulty": 1,
+    "clubs": ["Real Madrid", "Borussia Dortmund", "Inter Milan", "Paris Saint Germain"],
+    "years": "2017-Present"
+  },
+  {
+    "player": "Gianluigi Donnarumma",
+    "difficulty": 1,
+    "clubs": ["AC Milan", "Paris Saint Germain"],
+    "years": "2015-Present"
+  },
+  {
+    "player": "Jack Grealish",
+    "difficulty": 1,
+    "clubs": ["Aston Villa", "Notts County", "Manchester City"],
+    "years": "2012-Present"
+  },
+  {
+    "player": "Kevin De Bruyne",
+    "difficulty": 1,
+    "clubs": ["Genk", "Chelsea", "Werder Bremen", "Wolfsburg", "Manchester City"],
+    "years": "2008-Present"
+  },
+  {
+    "player": "Toni Kroos",
+    "difficulty": 1,
+    "clubs": ["Bayern Munich", "Bayer Leverkusen", "Bayern Munich", "Real Madrid"],
+    "years": "2007-2024"
+  },
+  {
+    "player": "Antoine Griezmann",
+    "difficulty": 1,
+    "clubs": ["Real Sociedad", "Atletico Madrid", "Barcelona", "Atletico Madrid"],
+    "years": "2009-Present"
+  },
+  {
+    "player": "Thomas Müller",
+    "difficulty": 1,
+    "clubs": ["Bayern Munich", "Vancouver Whitecaps"],
+    "years": "2008-Present"
+  },
+  {
+    "player": "Francesco Totti",
+    "difficulty": 1,
+    "clubs": ["Roma"],
+    "years": "1992-2017"
+  },
+  {
+    "player": "Philipp Lahm",
+    "difficulty": 1,
+    "clubs": ["Bayern Munich", "Stuttgart", "Bayern Munich"],
+    "years": "2002-2017"
+  },
+  {
+    "player": "Marc-André ter Stegen",
+    "difficulty": 1,
+    "clubs": ["Borussia Monchengladbach", "Barcelona"],
+    "years": "2011-Present"
+  },
+  {
+    "player": "Trent Alexander-Arnold",
+    "difficulty": 1,
+    "clubs": ["Liverpool", "Real Madrid"],
+    "years": "2016-Present"
+  },
+  {
+    "player": "David Alaba",
+    "difficulty": 1,
+    "clubs": ["Austria Wien", "Bayern Munich", "Hoffenheim", "Bayern Munich", "Real Madrid"],
+    "years": "2008-Present"
+  },
+  {
+    "player": "Raúl",
+    "difficulty": 1,
+    "clubs": ["Real Madrid", "Schalke 04", "Al Sadd", "New York Cosmos"],
+    "years": "1994-2015"
+  },
+  {
+    "player": "Oliver Kahn",
+    "difficulty": 1,
+    "clubs": ["Karlsruhe", "Bayern Munich"],
+    "years": "1987-2008"
+  },
+  {
+    "player": "Dennis Bergkamp",
+    "difficulty": 1,
+    "clubs": ["Ajax", "Inter Milan", "Arsenal"],
+    "years": "1986-2006"
+  },
+  {
+    "player": "Alessandro Del Piero",
+    "difficulty": 1,
+    "clubs": ["Padova", "Juventus", "Sydney FC", "Delhi Dynamos"],
+    "years": "1991-2014"
+  },
+  {
+    "player": "Gabriel Batistuta",
+    "difficulty": 1,
+    "clubs": ["Newell's Old Boys", "River Plate", "Boca Juniors", "Fiorentina", "Roma", "Inter Milan", "Al-Arabi"],
+    "years": "1988-2005"
+  },
+  {
+    "player": "Eric Cantona",
+    "difficulty": 1,
+    "clubs": ["Auxerre", "Marseille", "Bordeaux", "Montpellier", "Nimes", "Leeds United", "Manchester United"],
+    "years": "1983-1997"
+  },
+  {
+    "player": "Javier Zanetti",
+    "difficulty": 1,
+    "clubs": ["Talleres", "Banfield", "Inter Milan"],
+    "years": "1992-2014"
+  },
+  {
+    "player": "Lothar Matthäus",
+    "difficulty": 1,
+    "clubs": ["Borussia Monchengladbach", "Bayern Munich", "Inter Milan", "Bayern Munich", "MetroStars"],
+    "years": "1979-2000"
+  },
+  {
+    "player": "Dani Carvajal",
+    "difficulty": 1,
+    "clubs": ["Real Madrid Castilla", "Bayer Leverkusen", "Real Madrid"],
+    "years": "2010-Present"
+  },
+  {
+    "player": "Thibaut Courtois",
+    "difficulty": 1,
+    "clubs": ["Genk", "Atletico Madrid", "Chelsea", "Real Madrid"],
+    "years": "2009-Present"
+  },
+  {
+    "player": "Rodrygo",
+    "difficulty": 1,
+    "clubs": ["Santos", "Real Madrid"],
+    "years": "2017-Present"
+  },
+  {
+    "player": "Éder Militão",
+    "difficulty": 1,
+    "clubs": ["Sao Paulo", "Porto", "Real Madrid"],
+    "years": "2017-Present"
+  },
+  {
+    "player": "Martin Ødegaard",
+    "difficulty": 1,
+    "clubs": ["Strømsgodset", "Real Madrid", "Heerenveen", "Vitesse", "Real Sociedad", "Arsenal"],
+    "years": "2014-Present"
+  },
+  {
+    "player": "Declan Rice",
+    "difficulty": 1,
+    "clubs": ["West Ham United", "Arsenal"],
+    "years": "2017-Present"
+  },
+  {
+    "player": "Lautaro Martínez",
+    "difficulty": 1,
+    "clubs": ["Racing Club", "Inter Milan"],
+    "years": "2015-Present"
+  },
+  {
+    "player": "Pedri",
+    "difficulty": 1,
+    "clubs": ["Las Palmas", "Barcelona"],
+    "years": "2019-Present"
+  },
+  {
+    "player": "Theo Hernández",
+    "difficulty": 1,
+    "clubs": ["Atletico Madrid", "Alaves", "Real Sociedad", "Real Madrid", "AC Milan"],
+    "years": "2015-Present"
+  },
+  {
+    "player": "Mike Maignan",
+    "difficulty": 1,
+    "clubs": ["Paris Saint Germain", "Lille", "AC Milan"],
+    "years": "2015-Present"
+  },
+  {
+    "player": "Kolo Touré",
+    "difficulty": 1,
+    "clubs": ["ASEC Mimosas", "Arsenal", "Manchester City", "Liverpool", "Celtic"],
+    "years": "1999-2017"
+  },
+  {
+    "player": "Jens Lehmann",
+    "difficulty": 1,
+    "clubs": ["Schalke 04", "AC Milan", "Borussia Dortmund", "Arsenal", "Stuttgart"],
+    "years": "1988-2011"
+  },
+  {
+    "player": "Adriano",
+    "difficulty": 1,
+    "clubs": ["Flamengo", "Inter Milan", "Fiorentina", "Parma", "Inter Milan", "Sao Paulo", "Roma", "Corinthians"],
+    "years": "2000-2016"
+  },
+  {
+    "player": "Júlio César",
+    "difficulty": 1,
+    "clubs": ["Flamengo", "Inter Milan", "QPR", "Toronto FC", "Benfica", "Flamengo"],
+    "years": "1997-2018"
+  },
+  {
+    "player": "Esteban Cambiasso",
+    "difficulty": 1,
+    "clubs": ["Independiente", "River Plate", "Real Madrid", "Inter Milan", "Leicester City", "Olympiacos"],
+    "years": "1998-2017"
+  },
+  {
+    "player": "Dejan Stanković",
+    "difficulty": 1,
+    "clubs": ["Red Star Belgrade", "Lazio", "Inter Milan"],
+    "years": "1994-2013"
+  },
+  {
+    "player": "Walter Samuel",
+    "difficulty": 1,
+    "clubs": ["Newell's Old Boys", "Boca Juniors", "Roma", "Real Madrid", "Inter Milan", "Basel"],
+    "years": "1996-2016"
+  },
+  {
+    "player": "Cristian Chivu",
+    "difficulty": 1,
+    "clubs": ["Universitatea Craiova", "Ajax", "Roma", "Inter Milan"],
+    "years": "1996-2014"
+  },
+  {
+    "player": "Victor Valdés",
+    "difficulty": 1,
+    "clubs": ["Barcelona", "Manchester United", "Standard Liege", "Middlesbrough"],
+    "years": "2002-2017"
+  },
+  {
+    "player": "Giovane Élber",
+    "difficulty": 1,
+    "clubs": ["AC Milan", "Grasshoppers", "Stuttgart", "Bayern Munich", "Lyon", "Borussia Monchengladbach"],
+    "years": "1990-2006"
+  },
+
 
   // --- LEVEL 2: LEGENDS & STARS (Easy) ---
   {
-    player: "Ilkay Gündoğan",
-    difficulty: 2,
-    clubs: ["Nurnberg", "Borussia Dortmund", "Manchester City", "Barcelona", "Manchester City"]
+    "player": "Ilkay Gündoğan",
+    "difficulty": 2,
+    "clubs": ["Nurnberg", "Borussia Dortmund", "Manchester City", "Barcelona", "Manchester City"],
+    "years": "2008-Present"
   },
   {
-    player: "Mats Hummels",
-    difficulty: 2,
-    clubs: ["Bayern Munich", "Borussia Dortmund", "Bayern Munich", "Borussia Dortmund", "Roma"]
+    "player": "Mats Hummels",
+    "difficulty": 2,
+    "clubs": ["Bayern Munich", "Borussia Dortmund", "Bayern Munich", "Borussia Dortmund", "Roma"],
+    "years": "2006-2025"
   },
   {
-    player: "Leonardo Bonucci",
-    difficulty: 2,
-    clubs: ["Inter Milan", "Bari", "Juventus", "AC Milan", "Juventus", "Union Berlin", "Fenerbahce"]
+    "player": "Leonardo Bonucci",
+    "difficulty": 2,
+    "clubs": ["Inter Milan", "Bari", "Juventus", "AC Milan", "Juventus", "Union Berlin", "Fenerbahce"],
+    "years": "2005-2024"
   },
   {
-    player: "Giorgio Chiellini",
-    difficulty: 2,
-    clubs: ["Livorno", "Fiorentina", "Juventus", "LAFC"]
+    "player": "Giorgio Chiellini",
+    "difficulty": 2,
+    "clubs": ["Livorno", "Fiorentina", "Juventus", "LAFC"],
+    "years": "2000-2023"
   },
   {
-    player: "Marco Verratti",
-    difficulty: 2,
-    clubs: ["Pescara", "Paris Saint Germain", "Al-Arabi"]
+    "player": "Marco Verratti",
+    "difficulty": 2,
+    "clubs": ["Pescara", "Paris Saint Germain", "Al-Arabi"],
+    "years": "2008-Present"
   },
   {
-    player: "Riyad Mahrez",
-    difficulty: 2,
-    clubs: ["Le Havre", "Leicester City", "Manchester City", "Al-Ahli"]
+    "player": "Riyad Mahrez",
+    "difficulty": 2,
+    "clubs": ["Le Havre", "Leicester City", "Manchester City", "Al-Ahli"],
+    "years": "2009-Present"
   },
   {
-    player: "Jamie Vardy",
-    difficulty: 2,
-    clubs: ["Halifax Town", "Fleetwood Town", "Leicester City"]
+    "player": "Jamie Vardy",
+    "difficulty": 2,
+    "clubs": ["Halifax Town", "Fleetwood Town", "Leicester City", "Cremonese"],
+    "years": "2010-Present"
   },
   {
-    player: "Dries Mertens",
-    difficulty: 2,
-    clubs: ["AGOVV", "Utrecht", "PSV Eindhoven", "Napoli", "Galatasaray"]
+    "player": "Dries Mertens",
+    "difficulty": 2,
+    "clubs": ["AGOVV", "Utrecht", "PSV Eindhoven", "Napoli", "Galatasaray"],
+    "years": "2005-Present"
   },
   {
-    player: "Kalidou Koulibaly",
-    difficulty: 2,
-    clubs: ["Metz", "Genk", "Napoli", "Chelsea", "Al Hilal"]
+    "player": "Kalidou Koulibaly",
+    "difficulty": 2,
+    "clubs": ["Metz", "Genk", "Napoli", "Chelsea", "Al Hilal"],
+    "years": "2010-Present"
   },
   {
-    player: "Wojciech Szczęsny",
-    difficulty: 2,
-    clubs: ["Arsenal", "Brentford", "Roma", "Juventus", "Barcelona"]
+    "player": "Wojciech Szczęsny",
+    "difficulty": 2,
+    "clubs": ["Arsenal", "Brentford", "Roma", "Juventus", "Barcelona"],
+    "years": "2009-Present"
   },
   {
-    player: "Sergio Busquets",
-    difficulty: 2,
-    clubs: ["Barcelona", "Inter Miami"]
+    "player": "Sergio Busquets",
+    "difficulty": 2,
+    "clubs": ["Barcelona", "Inter Miami"],
+    "years": "2008-Present"
   },
   {
-    player: "Jordi Alba",
-    difficulty: 2,
-    clubs: ["Valencia", "Barcelona", "Inter Miami"]
+    "player": "Jordi Alba",
+    "difficulty": 2,
+    "clubs": ["Valencia", "Barcelona", "Inter Miami"],
+    "years": "2007-Present"
   },
   {
-    player: "Roberto Firmino",
-    difficulty: 2,
-    clubs: ["Figueirense", "Hoffenheim", "Liverpool", "Al-Ahli"]
+    "player": "Roberto Firmino",
+    "difficulty": 2,
+    "clubs": ["Figueirense", "Hoffenheim", "Liverpool", "Al-Ahli"],
+    "years": "2009-Present"
   },
   {
-    player: "Casemiro",
-    difficulty: 2,
-    clubs: ["Sao Paulo", "Real Madrid", "Porto", "Real Madrid", "Manchester United"]
+    "player": "Casemiro",
+    "difficulty": 2,
+    "clubs": ["Sao Paulo", "Real Madrid", "Porto", "Real Madrid", "Manchester United"],
+    "years": "2010-Present"
   },
   {
-    player: "Jan Oblak",
-    difficulty: 2,
-    clubs: ["Olimpija Ljubljana", "Benfica", "Rio Ave", "Atletico Madrid"]
+    "player": "Jan Oblak",
+    "difficulty": 2,
+    "clubs": ["Olimpija Ljubljana", "Benfica", "Rio Ave", "Atletico Madrid"],
+    "years": "2009-Present"
   },
   {
-    player: "Raphaël Varane",
-    difficulty: 2,
-    clubs: ["Lens", "Real Madrid", "Manchester United", "Como"]
+    "player": "Raphaël Varane",
+    "difficulty": 2,
+    "clubs": ["Lens", "Real Madrid", "Manchester United", "Como"],
+    "years": "2010-2024"
   },
   {
-    player: "Ivan Rakitić",
-    difficulty: 2,
-    clubs: ["Basel", "Schalke 04", "Sevilla", "Barcelona", "Sevilla", "Al-Shabab", "Hajduk Split"]
+    "player": "Ivan Rakitić",
+    "difficulty": 2,
+    "clubs": ["Basel", "Schalke 04", "Sevilla", "Barcelona", "Sevilla", "Al-Shabab", "Hajduk Split"],
+    "years": "2005-Present"
   },
   {
-    player: "Son Heung-min",
-    difficulty: 2,
-    clubs: ["Hamburg", "Bayer Leverkusen", "Tottenham Hotspur"]
+    "player": "Son Heung-min",
+    "difficulty": 2,
+    "clubs": ["Hamburg", "Bayer Leverkusen", "Tottenham Hotspur"],
+    "years": "2010-Present"
   },
   {
-    player: "Hugo Lloris",
-    difficulty: 2,
-    clubs: ["Nice", "Lyon", "Tottenham Hotspur", "LAFC"]
+    "player": "Hugo Lloris",
+    "difficulty": 2,
+    "clubs": ["Nice", "Lyon", "Tottenham Hotspur", "LAFC"],
+    "years": "2005-Present"
   },
   {
-    player: "Olivier Giroud",
-    difficulty: 2,
-    clubs: ["Grenoble", "Tours", "Montpellier", "Arsenal", "Chelsea", "AC Milan", "LAFC"]
+    "player": "Olivier Giroud",
+    "difficulty": 2,
+    "clubs": ["Grenoble", "Tours", "Montpellier", "Arsenal", "Chelsea", "AC Milan", "LAFC"],
+    "years": "2005-Present"
   },
   {
-    player: "Patrick Vieira",
-    difficulty: 2,
-    clubs: ["Cannes", "AC Milan", "Arsenal", "Juventus", "Inter Milan", "Manchester City"]
+    "player": "Patrick Vieira",
+    "difficulty": 2,
+    "clubs": ["Cannes", "AC Milan", "Arsenal", "Juventus", "Inter Milan", "Manchester City"],
+    "years": "1993-2011"
   },
   {
-    player: "Petr Čech",
-    difficulty: 2,
-    clubs: ["Rennes", "Chelsea", "Arsenal"]
+    "player": "Petr Čech",
+    "difficulty": 2,
+    "clubs": ["Rennes", "Chelsea", "Arsenal"],
+    "years": "1999-2019"
   },
   {
-    player: "Rio Ferdinand",
-    difficulty: 2,
-    clubs: ["West Ham United", "Leeds United", "Manchester United", "Queens Park Rangers"]
+    "player": "Rio Ferdinand",
+    "difficulty": 2,
+    "clubs": ["West Ham United", "Leeds United", "Manchester United", "Queens Park Rangers"],
+    "years": "1995-2015"
   },
   {
-    player: "Iker Casillas",
-    difficulty: 2,
-    clubs: ["Real Madrid", "Porto"]
+    "player": "Iker Casillas",
+    "difficulty": 2,
+    "clubs": ["Real Madrid", "Porto"],
+    "years": "1998-2020"
   },
   {
-    player: "Dani Alves",
-    difficulty: 2,
-    clubs: ["Sevilla", "Barcelona", "Juventus", "Paris Saint Germain", "Sao Paulo", "Pumas UNAM"]
+    "player": "Dani Alves",
+    "difficulty": 2,
+    "clubs": ["Sevilla", "Barcelona", "Juventus", "Paris Saint Germain", "Sao Paulo", "Pumas UNAM"],
+    "years": "2001-2023"
   },
   {
-    player: "Ruud van Nistelrooy",
-    difficulty: 2,
-    clubs: ["PSV Eindhoven", "Manchester United", "Real Madrid", "Hamburg", "Malaga"]
+    "player": "Ruud van Nistelrooy",
+    "difficulty": 2,
+    "clubs": ["PSV Eindhoven", "Manchester United", "Real Madrid", "Hamburg", "Malaga"],
+    "years": "1993-2012"
   },
   {
-    player: "Fabio Cannavaro",
-    difficulty: 2,
-    clubs: ["Parma", "Inter Milan", "Juventus", "Real Madrid", "Juventus", "Al Ahli"]
+    "player": "Fabio Cannavaro",
+    "difficulty": 2,
+    "clubs": ["Parma", "Inter Milan", "Juventus", "Real Madrid", "Juventus", "Al Ahli"],
+    "years": "1992-2011"
   },
   {
-    player: "Roberto Carlos",
-    difficulty: 2,
-    clubs: ["Inter Milan", "Real Madrid", "Fenerbahce", "Corinthians", "Anzhi Makhachkala"]
+    "player": "Roberto Carlos",
+    "difficulty": 2,
+    "clubs": ["Inter Milan", "Real Madrid", "Fenerbahce", "Corinthians", "Anzhi Makhachkala"],
+    "years": "1991-2012"
   },
   {
-    player: "Rivaldo",
-    difficulty: 2,
-    clubs: ["Deportivo La Coruna", "Barcelona", "AC Milan", "Olympiacos", "AEK Athens"]
+    "player": "Rivaldo",
+    "difficulty": 2,
+    "clubs": ["Deportivo La Coruna", "Barcelona", "AC Milan", "Olympiacos", "AEK Athens"],
+    "years": "1991-2015"
   },
   {
-    player: "Cafu",
-    difficulty: 2,
-    clubs: ["Real Zaragoza", "Palmeiras", "Roma", "AC Milan"]
+    "player": "Cafu",
+    "difficulty": 2,
+    "clubs": ["Real Zaragoza", "Palmeiras", "Roma", "AC Milan"],
+    "years": "1989-2008"
   },
   {
-    player: "Gareth Bale",
-    difficulty: 2,
-    clubs: ["Southampton", "Tottenham Hotspur", "Real Madrid", "Tottenham Hotspur", "Los Angeles FC"]
+    "player": "Gareth Bale",
+    "difficulty": 2,
+    "clubs": ["Southampton", "Tottenham Hotspur", "Real Madrid", "Tottenham Hotspur", "Los Angeles FC"],
+    "years": "2006-2023"
   },
   {
-    player: "Luis Suárez",
-    difficulty: 2,
-    clubs: ["Nacional", "Groningen", "Ajax", "Liverpool", "Barcelona", "Atletico Madrid", "Gremio", "Inter Miami"]
+    "player": "Luis Suárez",
+    "difficulty": 2,
+    "clubs": ["Nacional", "Groningen", "Ajax", "Liverpool", "Barcelona", "Atletico Madrid", "Gremio", "Inter Miami"],
+    "years": "2005-Present"
   },
   {
-    player: "Robert Lewandowski",
-    difficulty: 2,
-    clubs: ["Lech Poznan", "Borussia Dortmund", "Bayern Munich", "Barcelona"]
+    "player": "Robert Lewandowski",
+    "difficulty": 2,
+    "clubs": ["Lech Poznan", "Borussia Dortmund", "Bayern Munich", "Barcelona"],
+    "years": "2005-Present"
   },
   {
-    player: "Eden Hazard",
-    difficulty: 2,
-    clubs: ["Lille", "Chelsea", "Real Madrid"]
+    "player": "Eden Hazard",
+    "difficulty": 2,
+    "clubs": ["Lille", "Chelsea", "Real Madrid"],
+    "years": "2007-2023"
   },
   {
-    player: "Sergio Ramos",
-    difficulty: 2,
-    clubs: ["Sevilla", "Real Madrid", "Paris Saint Germain", "Sevilla"]
+    "player": "Sergio Ramos",
+    "difficulty": 2,
+    "clubs": ["Sevilla", "Real Madrid", "Paris Saint Germain", "Sevilla", "Monterrey"],
+    "years": "2004-Present"
   },
   {
-    player: "Zinedine Zidane",
-    difficulty: 2,
-    clubs: ["Cannes", "Bordeaux", "Juventus", "Real Madrid"]
+    "player": "Zinedine Zidane",
+    "difficulty": 2,
+    "clubs": ["Cannes", "Bordeaux", "Juventus", "Real Madrid"],
+    "years": "1989-2006"
   },
   {
-    player: "Andrea Pirlo",
-    difficulty: 2,
-    clubs: ["Brescia", "Inter Milan", "AC Milan", "Juventus", "New York City FC"]
+    "player": "Andrea Pirlo",
+    "difficulty": 2,
+    "clubs": ["Brescia", "Inter Milan", "AC Milan", "Juventus", "New York City FC"],
+    "years": "1995-2017"
   },
   {
-    player: "Luís Figo",
-    difficulty: 2,
-    clubs: ["Sporting CP", "Barcelona", "Real Madrid", "Inter Milan"]
+    "player": "Luís Figo",
+    "difficulty": 2,
+    "clubs": ["Sporting CP", "Barcelona", "Real Madrid", "Inter Milan"],
+    "years": "1989-2009"
   },
   {
-    player: "Xabi Alonso",
-    difficulty: 2,
-    clubs: ["Real Sociedad", "Eibar", "Liverpool", "Real Madrid", "Bayern Munich"]
+    "player": "Xabi Alonso",
+    "difficulty": 2,
+    "clubs": ["Real Sociedad", "Eibar", "Liverpool", "Real Madrid", "Bayern Munich"],
+    "years": "1999-2017"
   },
   {
-    player: "Cesc Fàbregas",
-    difficulty: 2,
-    clubs: ["Arsenal", "Barcelona", "Chelsea", "Monaco", "Como"]
+    "player": "Cesc Fàbregas",
+    "difficulty": 2,
+    "clubs": ["Arsenal", "Barcelona", "Chelsea", "Monaco", "Como"],
+    "years": "2003-2023"
+  },
+  {
+    "player": "Romelu Lukaku",
+    "difficulty": 2,
+    "clubs": ["Anderlecht", "Chelsea", "West Brom", "Everton", "Manchester United", "Inter Milan", "Chelsea", "Inter Milan", "Roma", "Napoli"],
+    "years": "2009-Present"
+  },
+  {
+    "player": "Thiago Silva",
+    "difficulty": 2,
+    "clubs": ["Fluminense", "AC Milan", "Paris Saint Germain", "Chelsea", "Fluminense"],
+    "years": "2004-Present"
+  },
+  {
+    "player": "Franck Ribéry",
+    "difficulty": 2,
+    "clubs": ["Metz", "Galatasaray", "Marseille", "Bayern Munich", "Fiorentina", "Salernitana"],
+    "years": "2000-2022"
+  },
+  {
+    "player": "David Villa",
+    "difficulty": 2,
+    "clubs": ["Sporting Gijon", "Real Zaragoza", "Valencia", "Barcelona", "Atletico Madrid", "New York City FC", "Vissel Kobe"],
+    "years": "2000-2020"
+  },
+  {
+    "player": "Xavi Hernández",
+    "difficulty": 2,
+    "clubs": ["Barcelona", "Al Sadd"],
+    "years": "1997-2019"
+  },
+  {
+    "player": "Andrés Iniesta",
+    "difficulty": 2,
+    "clubs": ["Barcelona", "Vissel Kobe", "Emirates Club"],
+    "years": "2002-2024"
+  },
+  {
+    "player": "Edinson Cavani",
+    "difficulty": 2,
+    "clubs": ["Danubio", "Palermo", "Napoli", "Paris Saint Germain", "Manchester United", "Valencia", "Boca Juniors"],
+    "years": "2005-Present"
+  },
+  {
+    "player": "Arturo Vidal",
+    "difficulty": 2,
+    "clubs": ["Colo-Colo", "Bayer Leverkusen", "Juventus", "Bayern Munich", "Barcelona", "Inter Milan", "Flamengo", "Athletico Paranaense", "Colo-Colo"],
+    "years": "2005-Present"
+  },
+  {
+    "player": "Pedro",
+    "difficulty": 2,
+    "clubs": ["Barcelona", "Chelsea", "Roma", "Lazio"],
+    "years": "2008-Present"
+  },
+  {
+    "player": "David Luiz",
+    "difficulty": 2,
+    "clubs": ["Vitoria", "Benfica", "Chelsea", "Paris Saint Germain", "Chelsea", "Arsenal", "Flamengo"],
+    "years": "2006-Present"
+  },
+  {
+    "player": "Diego Godín",
+    "difficulty": 2,
+    "clubs": ["Cerro", "Nacional", "Villarreal", "Atletico Madrid", "Inter Milan", "Cagliari", "Atletico Mineiro", "Velez Sarsfield"],
+    "years": "2003-2023"
+  },
+  {
+    "player": "Michael Essien",
+    "difficulty": 2,
+    "clubs": ["Bastia", "Lyon", "Chelsea", "Real Madrid", "AC Milan", "Panathinaikos", "Persib Bandung", "Sabail"],
+    "years": "2000-2020"
+  },
+  {
+    "player": "Kyle Walker",
+    "difficulty": 2,
+    "clubs": ["Sheffield United", "Tottenham Hotspur", "Aston Villa", "Tottenham Hotspur", "Manchester City"],
+    "years": "2008-Present"
+  },
+  {
+    "player": "Jordan Henderson",
+    "difficulty": 2,
+    "clubs": ["Sunderland", "Coventry City", "Liverpool", "Al-Ettifaq", "Ajax"],
+    "years": "2008-Present"
+  },
+  {
+    "player": "James Milner",
+    "difficulty": 2,
+    "clubs": ["Leeds United", "Newcastle United", "Aston Villa", "Manchester City", "Liverpool", "Brighton"],
+    "years": "2002-Present"
+  },
+  {
+    "player": "Julián Álvarez",
+    "difficulty": 2,
+    "clubs": ["River Plate", "Manchester City", "Atletico Madrid"],
+    "years": "2018-Present"
+  },
+  {
+    "player": "Andriy Shevchenko",
+    "difficulty": 2,
+    "clubs": ["Dynamo Kyiv", "AC Milan", "Chelsea", "Dynamo Kyiv"],
+    "years": "1994-2012"
+  },
+  {
+    "player": "Pavel Nedvěd",
+    "difficulty": 2,
+    "clubs": ["Dukla Prague", "Sparta Prague", "Lazio", "Juventus"],
+    "years": "1991-2009"
+  },
+  {
+    "player": "Alessandro Nesta",
+    "difficulty": 2,
+    "clubs": ["Lazio", "AC Milan", "Montreal Impact", "Chennaiyin FC"],
+    "years": "1993-2014"
+  },
+  {
+    "player": "Alan Shearer",
+    "difficulty": 2,
+    "clubs": ["Southampton", "Blackburn Rovers", "Newcastle United"],
+    "years": "1988-2006"
+  },
+  {
+    "player": "Gennaro Gattuso",
+    "difficulty": 2,
+    "clubs": ["Perugia", "Rangers", "Salernitana", "AC Milan", "Sion"],
+    "years": "1995-2013"
+  },
+  {
+    "player": "Lilian Thuram",
+    "difficulty": 2,
+    "clubs": ["Monaco", "Parma", "Juventus", "Barcelona"],
+    "years": "1991-2008"
+  },
+  {
+    "player": "Marcel Desailly",
+    "difficulty": 2,
+    "clubs": ["Nantes", "Marseille", "AC Milan", "Chelsea", "Al-Gharafa", "Qatar SC"],
+    "years": "1986-2006"
+  },
+  {
+    "player": "George Weah",
+    "difficulty": 2,
+    "clubs": ["Monaco", "Paris Saint Germain", "AC Milan", "Chelsea", "Manchester City", "Marseille", "Al Jazira"],
+    "years": "1985-2003"
+  },
+  {
+    "player": "Romário",
+    "difficulty": 2,
+    "clubs": ["Vasco da Gama", "PSV Eindhoven", "Barcelona", "Flamengo", "Valencia", "Fluminense", "Al Sadd", "Miami FC", "Adelaide United"],
+    "years": "1985-2009"
+  },
+  {
+    "player": "Filippo Inzaghi",
+    "difficulty": 2,
+    "clubs": ["Piacenza", "Parma", "Atalanta", "Juventus", "AC Milan"],
+    "years": "1991-2012"
+  },
+  {
+    "player": "Mark van Bommel",
+    "difficulty": 2,
+    "clubs": ["Fortuna Sittard", "PSV Eindhoven", "Barcelona", "Bayern Munich", "AC Milan", "PSV Eindhoven"],
+    "years": "1992-2013"
+  },
+  {
+    "player": "Giovanni van Bronckhorst",
+    "difficulty": 2,
+    "clubs": ["Feyenoord", "Rangers", "Arsenal", "Barcelona", "Feyenoord"],
+    "years": "1993-2010"
+  },
+  {
+    "player": "Marc Overmars",
+    "difficulty": 2,
+    "clubs": ["Ajax", "Arsenal", "Barcelona", "Go Ahead Eagles"],
+    "years": "1990-2009"
+  },
+  {
+    "player": "Roy Makaay",
+    "difficulty": 2,
+    "clubs": ["Vitesse", "Tenerife", "Deportivo La Coruna", "Bayern Munich", "Feyenoord"],
+    "years": "1993-2010"
+  },
+  {
+    "player": "Nigel de Jong",
+    "difficulty": 2,
+    "clubs": ["Ajax", "Hamburg", "Manchester City", "AC Milan", "LA Galaxy", "Galatasaray", "Mainz 05"],
+    "years": "2002-2021"
+  },
+  {
+    "player": "Joan Capdevila",
+    "difficulty": 2,
+    "clubs": ["Espanyol", "Atletico Madrid", "Deportivo La Coruna", "Villarreal", "Benfica", "Espanyol"],
+    "years": "1998-2017"
+  },
+  {
+    "player": "Marcos Senna",
+    "difficulty": 2,
+    "clubs": ["Corinthians", "Juventude", "Sao Caetano", "Villarreal", "New York Cosmos"],
+    "years": "1997-2015"
+  },
+  {
+    "player": "Míchel Salgado",
+    "difficulty": 2,
+    "clubs": ["Celta Vigo", "Salamanca", "Real Madrid", "Blackburn Rovers"],
+    "years": "1994-2012"
+  },
+  {
+    "player": "Santiago Cañizares",
+    "difficulty": 2,
+    "clubs": ["Real Madrid", "Elche", "Merida", "Celta Vigo", "Valencia"],
+    "years": "1988-2008"
+  },
+  {
+    "player": "Rubén Baraja",
+    "difficulty": 2,
+    "clubs": ["Valladolid", "Atletico Madrid", "Valencia"],
+    "years": "1993-2010"
+  },
+  
+
+  // --- LEVEL 3: (Medium) ---
+  {
+    "player": "Daniele De Rossi",
+    "difficulty": 3,
+    "clubs": ["Roma", "Boca Juniors"],
+    "years": "2001-2020"
+  },
+  {
+    "player": "Santi Cazorla",
+    "difficulty": 3,
+    "clubs": ["Villarreal", "Recreativo", "Malaga", "Arsenal", "Villarreal", "Al Sadd", "Real Oviedo"],
+    "years": "2003-Present"
+  },
+  {
+    "player": "Joe Hart",
+    "difficulty": 3,
+    "clubs": ["Shrewsbury Town", "Manchester City", "Birmingham City", "Torino", "West Ham United", "Burnley", "Tottenham Hotspur", "Celtic"],
+    "years": "2003-2024"
+  },
+  {
+    "player": "Branislav Ivanović",
+    "difficulty": 3,
+    "clubs": ["OFK Beograd", "Lokomotiv Moscow", "Chelsea", "Zenit St Petersburg", "West Brom"],
+    "years": "2002-2021"
+  },
+  {
+    "player": "John Terry",
+    "difficulty": 3,
+    "clubs": ["Chelsea", "Nottingham Forest", "Aston Villa"],
+    "years": "1998-2018"
+  },
+  {
+    "player": "Antonio Valencia",
+    "difficulty": 3,
+    "clubs": ["Villarreal", "Recreativo", "Wigan Athletic", "Manchester United", "LDU Quito", "Queretaro"],
+    "years": "2003-2021"
+  },
+  {
+    "player": "Claudio Marchisio",
+    "difficulty": 3,
+    "clubs": ["Juventus", "Empoli", "Zenit St Petersburg"],
+    "years": "2006-2019"
+  },
+  {
+    "player": "Javier Pastore",
+    "difficulty": 3,
+    "clubs": ["Huracan", "Palermo", "Paris Saint Germain", "Roma", "Elche", "Qatar SC"],
+    "years": "2007-2024"
+  },
+  {
+    "player": "Laurent Koscielny",
+    "difficulty": 3,
+    "clubs": ["Guingamp", "Tours", "Lorient", "Arsenal", "Bordeaux"],
+    "years": "2004-2022"
+  },
+  {
+    "player": "Theo Walcott",
+    "difficulty": 3,
+    "clubs": ["Southampton", "Arsenal", "Everton", "Southampton"],
+    "years": "2005-2023"
+  },
+  {
+    "player": "Henrik Larsson",
+    "difficulty": 3,
+    "clubs": ["Feyenoord", "Celtic", "Barcelona", "Helsingborgs IF", "Manchester United"],
+    "years": "1989-2009"
+  },
+  {
+    "player": "Michael Ballack",
+    "difficulty": 3,
+    "clubs": ["Kaiserslautern", "Bayer Leverkusen", "Bayern Munich", "Chelsea", "Bayer Leverkusen"],
+    "years": "1995-2012"
+  },
+  {
+    "player": "Clarence Seedorf",
+    "difficulty": 3,
+    "clubs": ["Ajax", "Sampdoria", "Real Madrid", "Inter Milan", "AC Milan", "Botafogo"],
+    "years": "1992-2014"
+  },
+  {
+    "player": "Edwin van der Sar",
+    "difficulty": 3,
+    "clubs": ["Ajax", "Juventus", "Fulham", "Manchester United"],
+    "years": "1990-2011"
+  },
+  {
+    "player": "Patrick Kluivert",
+    "difficulty": 3,
+    "clubs": ["Ajax", "AC Milan", "Barcelona", "Newcastle United", "Valencia", "PSV Eindhoven", "Lille"],
+    "years": "1994-2008"
+  },
+  {
+    "player": "Sol Campbell",
+    "difficulty": 3,
+    "clubs": ["Tottenham Hotspur", "Arsenal", "Portsmouth", "Notts County", "Newcastle United"],
+    "years": "1992-2011"
+  },
+  {
+    "player": "Robert Pires",
+    "difficulty": 3,
+    "clubs": ["Metz", "Marseille", "Arsenal", "Villarreal", "Aston Villa", "Goa"],
+    "years": "1993-2014"
+  },
+  {
+    "player": "Vincent Kompany",
+    "difficulty": 3,
+    "clubs": ["Anderlecht", "Hamburg", "Manchester City", "Anderlecht"],
+    "years": "2003-2020"
+  },
+  {
+    "player": "David Silva",
+    "difficulty": 3,
+    "clubs": ["Valencia", "Manchester City", "Real Sociedad"],
+    "years": "2003-2023"
+  },
+  {
+    "player": "Nemanja Vidic",
+    "difficulty": 3,
+    "clubs": ["Spartak Moscow", "Manchester United", "Inter Milan"],
+    "years": "2000-2016"
+  },
+  {
+    "player": "Arjen Robben",
+    "difficulty": 3,
+    "clubs": ["Groningen", "PSV Eindhoven", "Chelsea", "Real Madrid", "Bayern Munich"],
+    "years": "2000-2021"
+  },
+  {
+    "player": "Samuel Eto'o",
+    "difficulty": 3,
+    "clubs": ["Real Madrid", "Mallorca", "Barcelona", "Inter Milan", "Anzhi Makhachkala", "Chelsea", "Everton", "Sampdoria"],
+    "years": "1997-2019"
+  },
+  {
+    "player": "Carlos Tevez",
+    "difficulty": 3,
+    "clubs": ["Boca Juniors", "Corinthians", "West Ham United", "Manchester United", "Manchester City", "Juventus", "Boca Juniors", "Shanghai Shenhua"],
+    "years": "2001-2022"
+  },
+  {
+    "player": "Fernando Torres",
+    "difficulty": 3,
+    "clubs": ["Atletico Madrid", "Liverpool", "Chelsea", "AC Milan", "Atletico Madrid", "Sagan Tosu"],
+    "years": "2001-2019"
+  },
+  {
+    "player": "Robin van Persie",
+    "difficulty": 3,
+    "clubs": ["Feyenoord", "Arsenal", "Manchester United", "Fenerbahce"],
+    "years": "2001-2019"
+  },
+  {
+    "player": "Michael Owen",
+    "difficulty": 3,
+    "clubs": ["Liverpool", "Real Madrid", "Newcastle United", "Manchester United", "Stoke City"],
+    "years": "1996-2013"
+  },
+  {
+    "player": "Bastian Schweinsteiger",
+    "difficulty": 3,
+    "clubs": ["Bayern Munich", "Manchester United", "Chicago Fire"],
+    "years": "2002-2019"
+  },
+  {
+    "player": "Didier Drogba",
+    "difficulty": 3,
+    "clubs": ["Guingamp", "Marseille", "Chelsea", "Shanghai Shenhua", "Galatasaray", "Montreal Impact"],
+    "years": "1998-2018"
+  },
+  {
+    "player": "Yaya Touré",
+    "difficulty": 3,
+    "clubs": ["Beveren", "Metalurh Donetsk", "Olympiacos", "Monaco", "Barcelona", "Manchester City"],
+    "years": "2001-2019"
+  },
+  {
+    "player": "Gerard Piqué",
+    "difficulty": 3,
+    "clubs": ["Manchester United", "Real Zaragoza", "Barcelona"],
+    "years": "2004-2022"
+  },
+  {
+    "player": "Wesley Sneijder",
+    "difficulty": 3,
+    "clubs": ["Ajax", "Real Madrid", "Inter Milan", "Galatasaray", "Nice", "Al-Gharafa"],
+    "years": "2002-2019"
+  },
+  {
+    "player": "Miroslav Klose",
+    "difficulty": 3,
+    "clubs": ["Kaiserslautern", "Werder Bremen", "Bayern Munich", "Lazio"],
+    "years": "1998-2016"
+  },
+  {
+    "player": "Claude Makélélé",
+    "difficulty": 3,
+    "clubs": ["Nantes", "Marseille", "Celta Vigo", "Real Madrid", "Chelsea", "Paris Saint Germain"],
+    "years": "1991-2011"
+  },
+  {
+    "player": "Michael Carrick",
+    "difficulty": 3,
+    "clubs": ["West Ham United", "Tottenham Hotspur", "Manchester United"],
+    "years": "1999-2018"
+  },
+  {
+    "player": "Guti",
+    "difficulty": 3,
+    "clubs": ["Real Madrid", "Besiktas"],
+    "years": "1995-2011"
+  },
+  {
+    "player": "Juninho Pernambucano",
+    "difficulty": 3,
+    "clubs": ["Vasco da Gama", "Lyon", "Al-Gharafa", "Vasco da Gama", "New York Red Bulls"],
+    "years": "1993-2013"
+  },
+  {
+    "player": "Freddie Ljungberg",
+    "difficulty": 3,
+    "clubs": ["Halmstads BK", "Arsenal", "West Ham United", "Seattle Sounders", "Chicago Fire", "Celtic", "Shimizu S-Pulse"],
+    "years": "1994-2014"
+  },
+  {
+    "player": "Javier Mascherano",
+    "difficulty": 3,
+    "clubs": ["River Plate", "Corinthians", "West Ham United", "Liverpool", "Barcelona", "Hebei China Fortune", "Estudiantes"],
+    "years": "2003-2020"
+  },
+  {
+    "player": "Dirk Kuyt",
+    "difficulty": 3,
+    "clubs": ["Utrecht", "Feyenoord", "Liverpool", "Fenerbahce", "Feyenoord"],
+    "years": "1998-2018"
+  },
+  {
+    "player": "Sylvain Wiltord",
+    "difficulty": 3,
+    "clubs": ["Bordeaux", "Arsenal", "Lyon", "Rennes", "Marseille", "Metz", "Nantes"],
+    "years": "1991-2012"
+  },
+  {
+    "player": "Gilberto Silva",
+    "difficulty": 3,
+    "clubs": ["Atletico Mineiro", "Arsenal", "Panathinaikos", "Gremio"],
+    "years": "1997-2013"
+  },
+  {
+    "player": "Roy Keane",
+    "difficulty": 3,
+    "clubs": ["Nottingham Forest", "Manchester United", "Celtic"],
+    "years": "1989-2006"
+  },
+  {
+    "player": "Jaap Stam",
+    "difficulty": 3,
+    "clubs": ["PSV Eindhoven", "Manchester United", "Lazio", "AC Milan", "Ajax"],
+    "years": "1992-2007"
+  },
+  {
+    "player": "Edin Džeko",
+    "difficulty": 3,
+    "clubs": ["Teplice", "Wolfsburg", "Manchester City", "Roma", "Inter Milan", "Fenerbahce", "Fiorentina"],
+    "years": "2003-Present"
+  },
+  {
+    "player": "Christian Eriksen",
+    "difficulty": 3,
+    "clubs": ["Ajax", "Tottenham Hotspur", "Inter Milan", "Brentford", "Manchester United", "Ajax"],
+    "years": "2010-Present"
+  },
+  {
+    "player": "Ivan Perišić",
+    "difficulty": 3,
+    "clubs": ["Club Brugge", "Borussia Dortmund", "Wolfsburg", "Inter Milan", "Bayern Munich", "Tottenham Hotspur", "Hajduk Split", "PSV Eindhoven"],
+    "years": "2006-Present"
+  },
+  {
+    "player": "Keylor Navas",
+    "difficulty": 3,
+    "clubs": ["Saprissa", "Albacete", "Levante", "Real Madrid", "Paris Saint Germain", "Nottingham Forest", "Newell's Old Boys", "Pumas UNAM"],
+    "years": "2005-Present"
+  },
+  {
+    "player": "Nani",
+    "difficulty": 3,
+    "clubs": ["Sporting CP", "Manchester United", "Fenerbahce", "Valencia", "Lazio", "Orlando City", "Venezia", "Adana Demirspor", "Estrela da Amadora"],
+    "years": "2005-Present"
+  },
+  {
+    "player": "David de Gea",
+    "difficulty": 3,
+    "clubs": ["Atletico Madrid", "Manchester United", "Fiorentina"],
+    "years": "2009-Present"
+  },
+  {
+    "player": "Xherdan Shaqiri",
+    "difficulty": 3,
+    "clubs": ["Basel", "Bayern Munich", "Inter Milan", "Stoke City", "Liverpool", "Lyon", "Chicago Fire", "Basel"],
+    "years": "2009-Present"
+  },
+  {
+    "player": "Fabinho",
+    "difficulty": 3,
+    "clubs": ["Rio Ave", "Real Madrid", "Monaco", "Liverpool", "Al-Ittihad"],
+    "years": "2012-Present"
+  },
+  {
+    "player": "Mario Mandžukić",
+    "difficulty": 3,
+    "clubs": ["Dinamo Zagreb", "Wolfsburg", "Bayern Munich", "Atletico Madrid", "Juventus", "Al-Duhail", "AC Milan"],
+    "years": "2004-2021"
+  },
+  {
+    "player": "Christian Pulisic",
+    "difficulty": 3,
+    "clubs": ["Borussia Dortmund", "Chelsea", "AC Milan"],
+    "years": "2016-Present"
+  },
+  {
+    "player": "Hakim Ziyech",
+    "difficulty": 3,
+    "clubs": ["Heerenveen", "Twente", "Ajax", "Chelsea", "Galatasaray"],
+    "years": "2012-Present"
+  },
+  {
+    "player": "Kieran Trippier",
+    "difficulty": 3,
+    "clubs": ["Manchester City", "Barnsley", "Burnley", "Tottenham Hotspur", "Atletico Madrid", "Newcastle United"],
+    "years": "2009-Present"
+  },
+  {
+    "player": "Chris Smalling",
+    "difficulty": 3,
+    "clubs": ["Fulham", "Manchester United", "Roma", "Al-Fayha"],
+    "years": "2008-Present"
+  },
+  {
+    "player": "Lucas Moura",
+    "difficulty": 3,
+    "clubs": ["Sao Paulo", "Paris Saint Germain", "Tottenham Hotspur", "Sao Paulo"],
+    "years": "2010-Present"
+  },
+  {
+    "player": "Nicolás Otamendi",
+    "difficulty": 3,
+    "clubs": ["Velez Sarsfield", "Porto", "Valencia", "Manchester City", "Benfica", "River Plate"],
+    "years": "2007-Present"
+  },
+  {
+    "player": "Nabil Fekir",
+    "difficulty": 3,
+    "clubs": ["Lyon", "Real Betis", "Al-Jazira"],
+    "years": "2011-Present"
+  },
+  {
+    "player": "Juan Sebastián Verón",
+    "difficulty": 3,
+    "clubs": ["Estudiantes", "Boca Juniors", "Sampdoria", "Parma", "Lazio", "Manchester United", "Chelsea", "Inter Milan"],
+    "years": "1994-2017"
+  },
+  {
+    "player": "Gaizka Mendieta",
+    "difficulty": 3,
+    "clubs": ["Castellon", "Valencia", "Lazio", "Barcelona", "Middlesbrough"],
+    "years": "1991-2008"
+  },
+  {
+    "player": "Nwankwo Kanu",
+    "difficulty": 3,
+    "clubs": ["Ajax", "Inter Milan", "Arsenal", "West Brom", "Portsmouth"],
+    "years": "1993-2012"
+  },
+  {
+    "player": "Jay-Jay Okocha",
+    "difficulty": 3,
+    "clubs": ["Eintracht Frankfurt", "Fenerbahce", "Paris Saint Germain", "Bolton", "Qatar SC", "Hull City"],
+    "years": "1990-2008"
+  },
+  {
+    "player": "Gianfranco Zola",
+    "difficulty": 3,
+    "clubs": ["Napoli", "Parma", "Chelsea", "Cagliari"],
+    "years": "1984-2005"
+  },
+  {
+    "player": "Jimmy Floyd Hasselbaink",
+    "difficulty": 3,
+    "clubs": ["Boavista", "Leeds United", "Atletico Madrid", "Chelsea", "Middlesbrough", "Charlton", "Cardiff City"],
+    "years": "1990-2008"
+  },
+  {
+    "player": "Dwight Yorke",
+    "difficulty": 3,
+    "clubs": ["Aston Villa", "Manchester United", "Blackburn Rovers", "Birmingham City", "Sydney FC", "Sunderland"],
+    "years": "1989-2009"
+  },
+  {
+    "player": "Ole Gunnar Solskjær",
+    "difficulty": 3,
+    "clubs": ["Clausenengen", "Molde", "Manchester United"],
+    "years": "1990-2007"
+  },
+  {
+    "player": "Teddy Sheringham",
+    "difficulty": 3,
+    "clubs": ["Millwall", "Nottingham Forest", "Tottenham Hotspur", "Manchester United", "Tottenham Hotspur", "Portsmouth", "West Ham United", "Colchester United"],
+    "years": "1983-2008"
+  },
+  {
+    "player": "Fernando Morientes",
+    "difficulty": 3,
+    "clubs": ["Albacete", "Zaragoza", "Real Madrid", "Monaco", "Liverpool", "Valencia", "Marseille"],
+    "years": "1993-2010"
+  },
+  {
+    "player": "Lisandro Martínez",
+    "difficulty": 3,
+    "clubs": ["Newell's Old Boys", "Defensa y Justicia", "Ajax", "Manchester United"],
+    "years": "2017-Present"
+  },
+  {
+    "player": "Rúben Dias",
+    "difficulty": 3,
+    "clubs": ["Benfica", "Manchester City"],
+    "years": "2015-Present"
+  },
+  {
+    "player": "Manuel Akanji",
+    "difficulty": 3,
+    "clubs": ["Basel", "Borussia Dortmund", "Manchester City"],
+    "years": "2014-Present"
+  },
+  {
+    "player": "Cristian Romero",
+    "difficulty": 3,
+    "clubs": ["Belgrano", "Genoa", "Juventus", "Atalanta", "Tottenham Hotspur"],
+    "years": "2016-Present"
+  },
+  {
+    "player": "Dejan Kulusevski",
+    "difficulty": 3,
+    "clubs": ["Atalanta", "Parma", "Juventus", "Tottenham Hotspur"],
+    "years": "2018-Present"
+  },
+  {
+    "player": "Federico Chiesa",
+    "difficulty": 3,
+    "clubs": ["Fiorentina", "Juventus", "Liverpool"],
+    "years": "2016-Present"
+  },
+  {
+    "player": "Lucas Paquetá",
+    "difficulty": 3,
+    "clubs": ["Flamengo", "AC Milan", "Lyon", "West Ham United"],
+    "years": "2016-Present"
+  },
+  {
+    "player": "Douglas Luiz",
+    "difficulty": 3,
+    "clubs": ["Vasco da Gama", "Manchester City", "Girona", "Aston Villa", "Juventus"],
+    "years": "2017-Present"
+  },
+  {
+    "player": "Serge Gnabry",
+    "difficulty": 3,
+    "clubs": ["Arsenal", "West Brom", "Werder Bremen", "Hoffenheim", "Bayern Munich"],
+    "years": "2012-Present"
+  },
+  {
+    "player": "Marcel Sabitzer",
+    "difficulty": 3,
+    "clubs": ["Admira Wacker", "Rapid Wien", "RB Leipzig", "Bayern Munich", "Manchester United", "Borussia Dortmund"],
+    "years": "2010-Present"
+  },
+  {
+    "player": "Gabriel Heinze",
+    "difficulty": 3,
+    "clubs": ["Newell's Old Boys", "Valladolid", "Paris Saint Germain", "Manchester United", "Real Madrid", "Marseille", "Roma"],
+    "years": "1996-2014"
+  },
+  {
+    "player": "Pablo Aimar",
+    "difficulty": 3,
+    "clubs": ["River Plate", "Valencia", "Real Zaragoza", "Benfica", "Johor Darul Ta'zim", "River Plate"],
+    "years": "1996-2015"
+  },
+  {
+    "player": "Juan Román Riquelme",
+    "difficulty": 3,
+    "clubs": ["Boca Juniors", "Barcelona", "Villarreal", "Boca Juniors", "Argentinos Juniors"],
+    "years": "1996-2015"
+  },
+  {
+    "player": "Maxi Rodríguez",
+    "difficulty": 3,
+    "clubs": ["Newell's Old Boys", "Espanyol", "Atletico Madrid", "Liverpool", "Newell's Old Boys", "Penarol"],
+    "years": "1999-2021"
+  },
+  {
+    "player": "Martín Demichelis",
+    "difficulty": 3,
+    "clubs": ["River Plate", "Bayern Munich", "Malaga", "Manchester City", "Espanyol", "Malaga"],
+    "years": "2000-2017"
+  },
+  {
+    "player": "José Antonio Reyes",
+    "difficulty": 3,
+    "clubs": ["Sevilla", "Arsenal", "Real Madrid", "Atletico Madrid", "Benfica", "Sevilla", "Espanyol", "Cordoba", "Xinjiang Tianshan Leopard", "Extremadura"],
+    "years": "1999-2019"
+  },
+  {
+    "player": "Luis García",
+    "difficulty": 3,
+    "clubs": ["Barcelona", "Valladolid", "Atletico Madrid", "Barcelona", "Liverpool", "Atletico Madrid", "Racing Santander", "Panathinaikos", "Puebla", "Pumas UNAM"],
+    "years": "1998-2016"
+  },
+  {
+    "player": "Mikel Arteta",
+    "difficulty": 3,
+    "clubs": ["Barcelona B", "Paris Saint Germain", "Rangers", "Real Sociedad", "Everton", "Arsenal"],
+    "years": "1999-2016"
+  },
+  {
+    "player": "Álvaro Arbeloa",
+    "difficulty": 3,
+    "clubs": ["Real Madrid Castilla", "Deportivo La Coruna", "Liverpool", "Real Madrid", "West Ham United"],
+    "years": "2002-2017"
+  },
+  {
+    "player": "Joleon Lescott",
+    "difficulty": 3,
+    "clubs": ["Wolves", "Everton", "Manchester City", "West Brom", "Aston Villa", "AEK Athens", "Sunderland"],
+    "years": "2000-2017"
   },
 
-  // --- LEVEL 3: THE 2000-2015 ICONS (Medium) ---
+  // --- LEVEL 4:  (Hard) ---
   {
-    player: "Daniele De Rossi",
-    difficulty: 3,
-    clubs: ["Roma", "Boca Juniors"]
+    "player": "Henrikh Mkhitaryan",
+    "difficulty": 4,
+    "clubs": ["Pyunik", "Metalurh Donetsk", "Shakhtar Donetsk", "Borussia Dortmund", "Manchester United", "Arsenal", "Roma", "Inter Milan"],
+    "years": "2006-Present"
   },
   {
-    player: "Santi Cazorla",
-    difficulty: 3,
-    clubs: ["Villarreal", "Recreativo", "Malaga", "Arsenal", "Villarreal", "Al Sadd", "Real Oviedo"]
+    "player": "Memphis Depay",
+    "difficulty": 4,
+    "clubs": ["PSV Eindhoven", "Manchester United", "Lyon", "Barcelona", "Atletico Madrid", "Corinthians"],
+    "years": "2011-Present"
   },
   {
-    player: "Joe Hart",
-    difficulty: 3,
-    clubs: ["Shrewsbury Town", "Manchester City", "Birmingham City", "Torino", "West Ham United", "Burnley", "Tottenham Hotspur", "Celtic"]
+    "player": "Kasper Schmeichel",
+    "difficulty": 4,
+    "clubs": ["Manchester City", "Notts County", "Leeds United", "Leicester City", "Nice", "Anderlecht", "Celtic"],
+    "years": "2005-Present"
   },
   {
-    player: "Branislav Ivanović",
-    difficulty: 3,
-    clubs: ["OFK Beograd", "Lokomotiv Moscow", "Chelsea", "Zenit St Petersburg", "West Brom"]
+    "player": "Jesse Lingard",
+    "difficulty": 4,
+    "clubs": ["Manchester United", "West Ham United", "Nottingham Forest", "FC Seoul"],
+    "years": "2011-Present"
   },
   {
-    player: "John Terry",
-    difficulty: 3,
-    clubs: ["Chelsea", "Nottingham Forest", "Aston Villa"]
+    "player": "Emre Can",
+    "difficulty": 4,
+    "clubs": ["Bayern Munich", "Bayer Leverkusen", "Liverpool", "Juventus", "Borussia Dortmund"],
+    "years": "2011-Present"
   },
   {
-    player: "Antonio Valencia",
-    difficulty: 3,
-    clubs: ["Villarreal", "Recreativo", "Wigan Athletic", "Manchester United", "LDU Quito", "Queretaro"]
+    "player": "Adrien Rabiot",
+    "difficulty": 4,
+    "clubs": ["Paris Saint Germain", "Toulouse", "Juventus", "Marseille"],
+    "years": "2012-Present"
   },
   {
-    player: "Claudio Marchisio",
-    difficulty: 3,
-    clubs: ["Juventus", "Empoli", "Zenit St Petersburg"]
+    "player": "Wilfried Zaha",
+    "difficulty": 4,
+    "clubs": ["Crystal Palace", "Manchester United", "Cardiff City", "Crystal Palace", "Galatasaray", "Lyon"],
+    "years": "2010-Present"
   },
   {
-    player: "Javier Pastore",
-    difficulty: 3,
-    clubs: ["Huracan", "Palermo", "Paris Saint Germain", "Roma", "Elche", "Qatar SC"]
+    "player": "Dele Alli",
+    "difficulty": 4,
+    "clubs": ["MK Dons", "Tottenham Hotspur", "Everton", "Besiktas"],
+    "years": "2011-Present"
   },
   {
-    player: "Laurent Koscielny",
-    difficulty: 3,
-    clubs: ["Guingamp", "Tours", "Lorient", "Arsenal", "Bordeaux"]
+    "player": "Mauro Icardi",
+    "difficulty": 4,
+    "clubs": ["Sampdoria", "Inter Milan", "Paris Saint Germain", "Galatasaray"],
+    "years": "2011-Present"
   },
   {
-    player: "Theo Walcott",
-    difficulty: 3,
-    clubs: ["Southampton", "Arsenal", "Everton", "Southampton"]
+    "player": "Georginio Wijnaldum",
+    "difficulty": 4,
+    "clubs": ["Feyenoord", "PSV Eindhoven", "Newcastle United", "Liverpool", "Paris Saint Germain", "Roma", "Al-Ettifaq"],
+    "years": "2007-Present"
   },
   {
-    player: "Henrik Larsson",
-    difficulty: 3,
-    clubs: ["Feyenoord", "Celtic", "Barcelona", "Helsingborgs IF", "Manchester United"]
+    "player": "Eidur Gudjohnsen",
+    "difficulty": 4,
+    "clubs": ["Bolton", "Chelsea", "Barcelona", "Monaco", "Tottenham Hotspur", "Stoke City", "Fulham", "AEK Athens", "Club Brugge", "Molde"],
+    "years": "1994-2016"
   },
   {
-    player: "Michael Ballack",
-    difficulty: 3,
-    clubs: ["Kaiserslautern", "Bayer Leverkusen", "Bayern Munich", "Chelsea", "Bayer Leverkusen"]
+    "player": "Jermain Defoe",
+    "difficulty": 4,
+    "clubs": ["West Ham United", "Tottenham Hotspur", "Portsmouth", "Tottenham Hotspur", "Toronto FC", "Sunderland", "Bournemouth", "Rangers"],
+    "years": "1999-2022"
   },
   {
-    player: "Clarence Seedorf",
-    difficulty: 3,
-    clubs: ["Ajax", "Sampdoria", "Real Madrid", "Inter Milan", "AC Milan", "Botafogo"]
+    "player": "Alexis Sánchez",
+    "difficulty": 4,
+    "clubs": ["Udinese", "Barcelona", "Arsenal", "Manchester United", "Inter Milan", "Marseille", "Inter Milan", "Udinese"],
+    "years": "2005-Present"
   },
   {
-    player: "Edwin van der Sar",
-    difficulty: 3,
-    clubs: ["Ajax", "Juventus", "Fulham", "Manchester United"]
+    "player": "Mesut Özil",
+    "difficulty": 4,
+    "clubs": ["Schalke 04", "Werder Bremen", "Real Madrid", "Arsenal", "Fenerbahce", "Istanbul Basaksehir"],
+    "years": "2006-2023"
   },
   {
-    player: "Patrick Kluivert",
-    difficulty: 3,
-    clubs: ["Ajax", "AC Milan", "Barcelona", "Newcastle United", "Valencia", "PSV Eindhoven", "Lille"]
+    "player": "Pierre-Emerick Aubameyang",
+    "difficulty": 4,
+    "clubs": ["AC Milan", "Saint-Etienne", "Borussia Dortmund", "Arsenal", "Barcelona", "Chelsea", "Marseille", "Al Qadsiah"],
+    "years": "2008-Present"
   },
   {
-    player: "Sol Campbell",
-    difficulty: 3,
-    clubs: ["Tottenham Hotspur", "Arsenal", "Portsmouth", "Notts County", "Newcastle United"]
+    "player": "Radamel Falcao",
+    "difficulty": 4,
+    "clubs": ["River Plate", "Porto", "Atletico Madrid", "Monaco", "Manchester United", "Chelsea", "Galatasaray", "Rayo Vallecano", "Millonarios"],
+    "years": "2005-Present"
   },
   {
-    player: "Robert Pires",
-    difficulty: 3,
-    clubs: ["Metz", "Marseille", "Arsenal", "Villarreal", "Aston Villa", "Goa"]
+    "player": "Gonzalo Higuaín",
+    "difficulty": 4,
+    "clubs": ["River Plate", "Real Madrid", "Napoli", "Juventus", "AC Milan", "Chelsea", "Inter Miami"],
+    "years": "2005-2022"
   },
   {
-    player: "Vincent Kompany",
-    difficulty: 3,
-    clubs: ["Anderlecht", "Hamburg", "Manchester City", "Anderlecht"]
+    "player": "Philippe Coutinho",
+    "difficulty": 4,
+    "clubs": ["Inter Milan", "Espanyol", "Liverpool", "Barcelona", "Bayern Munich", "Aston Villa", "Al-Duhail", "Vasco da Gama"],
+    "years": "2009-Present"
   },
   {
-    player: "David Silva",
-    difficulty: 3,
-    clubs: ["Valencia", "Manchester City", "Real Sociedad"]
+    "player": "Antonio Cassano",
+    "difficulty": 4,
+    "clubs": ["Bari", "Roma", "Real Madrid", "Sampdoria", "AC Milan", "Inter Milan", "Parma", "Sampdoria"],
+    "years": "1999-2017"
   },
   {
-    player: "Nemanja Vidic",
-    difficulty: 3,
-    clubs: ["Spartak Moscow", "Manchester United", "Inter Milan"]
+    "player": "Robbie Fowler",
+    "difficulty": 4,
+    "clubs": ["Liverpool", "Leeds United", "Manchester City", "Liverpool", "Cardiff City", "Blackburn Rovers", "North Queensland Fury", "Perth Glory"],
+    "years": "1993-2011"
   },
   {
-    player: "Arjen Robben",
-    difficulty: 3,
-    clubs: ["Groningen", "PSV Eindhoven", "Chelsea", "Real Madrid", "Bayern Munich"]
+    "player": "Nicolas Anelka",
+    "difficulty": 4,
+    "clubs": ["Paris Saint Germain", "Arsenal", "Real Madrid", "Liverpool", "Manchester City", "Fenerbahce", "Bolton", "Chelsea", "Shanghai Shenhua", "Juventus", "West Bromwich"],
+    "years": "1996-2015"
   },
   {
-    player: "Samuel Eto'o",
-    difficulty: 3,
-    clubs: ["Real Madrid", "Mallorca", "Barcelona", "Inter Milan", "Anzhi Makhachkala", "Chelsea", "Everton", "Sampdoria"]
+    "player": "Hernán Crespo",
+    "difficulty": 4,
+    "clubs": ["River Plate", "Parma", "Lazio", "Inter Milan", "Chelsea", "AC Milan", "Genoa", "Parma"],
+    "years": "1993-2012"
   },
   {
-    player: "Carlos Tevez",
-    difficulty: 3,
-    clubs: ["Boca Juniors", "Corinthians", "West Ham United", "Manchester United", "Manchester City", "Juventus", "Boca Juniors", "Shanghai Shenhua"]
+    "player": "Edgar Davids",
+    "difficulty": 4,
+    "clubs": ["Ajax", "AC Milan", "Juventus", "Barcelona", "Inter Milan", "Tottenham Hotspur", "Crystal Palace", "Barnet"],
+    "years": "1991-2014"
   },
   {
-    player: "Fernando Torres",
-    difficulty: 3,
-    clubs: ["Atletico Madrid", "Liverpool", "Chelsea", "AC Milan", "Atletico Madrid", "Sagan Tosu"]
+    "player": "Deco",
+    "difficulty": 4,
+    "clubs": ["Corinthians", "Alverca", "Salgueiros", "Porto", "Barcelona", "Chelsea", "Fluminense"],
+    "years": "1996-2013"
   },
   {
-    player: "Robin van Persie",
-    difficulty: 3,
-    clubs: ["Feyenoord", "Arsenal", "Manchester United", "Fenerbahce"]
+    "player": "Dimitar Berbatov",
+    "difficulty": 4,
+    "clubs": ["CSKA Sofia", "Bayer Leverkusen", "Tottenham Hotspur", "Manchester United", "Fulham", "Monaco", "PAOK"],
+    "years": "1998-2018"
   },
   {
-    player: "Michael Owen",
-    difficulty: 3,
-    clubs: ["Liverpool", "Real Madrid", "Newcastle United", "Manchester United", "Stoke City"]
+    "player": "Juan Mata",
+    "difficulty": 4,
+    "clubs": ["Real Madrid Castilla", "Valencia", "Chelsea", "Manchester United", "Galatasaray", "Vissel Kobe"],
+    "years": "2006-2024"
   },
   {
-    player: "Bastian Schweinsteiger",
-    difficulty: 3,
-    clubs: ["Bayern Munich", "Manchester United", "Chicago Fire"]
+    "player": "Diego Forlán",
+    "difficulty": 4,
+    "clubs": ["Independiente", "Manchester United", "Villarreal", "Atletico Madrid", "Inter Milan", "Internacional", "Cerezo Osaka", "Penarol"],
+    "years": "1997-2019"
   },
   {
-    player: "Didier Drogba",
-    difficulty: 3,
-    clubs: ["Guingamp", "Marseille", "Chelsea", "Shanghai Shenhua", "Galatasaray", "Montreal Impact"]
+    "player": "Patrice Evra",
+    "difficulty": 4,
+    "clubs": ["Marsala", "Monza", "Nice", "Monaco", "Manchester United", "Juventus", "Marseille", "West Ham United"],
+    "years": "1998-2018"
   },
   {
-    player: "Yaya Touré",
-    difficulty: 3,
-    clubs: ["Beveren", "Metalurh Donetsk", "Olympiacos", "Monaco", "Barcelona", "Manchester City"]
+    "player": "Rafael van der Vaart",
+    "difficulty": 4,
+    "clubs": ["Ajax", "Hamburg", "Real Madrid", "Tottenham Hotspur", "Hamburg", "Real Betis", "Midtjylland"],
+    "years": "2000-2018"
   },
   {
-    player: "Gerard Piqué",
-    difficulty: 3,
-    clubs: ["Manchester United", "Real Zaragoza", "Barcelona"]
+    "player": "Javier Mascherano",
+    "difficulty": 4,
+    "clubs": ["River Plate", "Corinthians", "West Ham United", "Liverpool", "Barcelona", "Hebei China Fortune", "Estudiantes"],
+    "years": "2003-2020"
   },
   {
-    player: "Wesley Sneijder",
-    difficulty: 3,
-    clubs: ["Ajax", "Real Madrid", "Inter Milan", "Galatasaray", "Nice", "Al-Gharafa"]
+    "player": "Mario Balotelli",
+    "difficulty": 4,
+    "clubs": ["Inter Milan", "Manchester City", "AC Milan", "Liverpool", "Nice", "Marseille", "Brescia", "Monza", "Adana Demirspor", "Sion"],
+    "years": "2005-Present"
   },
   {
-    player: "Miroslav Klose",
-    difficulty: 3,
-    clubs: ["Kaiserslautern", "Werder Bremen", "Bayern Munich", "Lazio"]
+    "player": "James Rodríguez",
+    "difficulty": 4,
+    "clubs": ["Envigado", "Banfield", "Porto", "Monaco", "Real Madrid", "Bayern Munich", "Everton", "Al-Rayyan", "Olympiacos", "Sao Paulo", "Rayo Vallecano"],
+    "years": "2006-Present"
   },
   {
-    player: "Claude Makélélé",
-    difficulty: 3,
-    clubs: ["Nantes", "Marseille", "Celta Vigo", "Real Madrid", "Chelsea", "Paris Saint Germain"]
+    "player": "Ashley Cole",
+    "difficulty": 4,
+    "clubs": ["Arsenal", "Crystal Palace", "Chelsea", "Roma", "LA Galaxy", "Derby County"],
+    "years": "1999-2019"
   },
   {
-    player: "Michael Carrick",
-    difficulty: 3,
-    clubs: ["West Ham United", "Tottenham Hotspur", "Manchester United"]
+    "player": "Angel Di Maria",
+    "difficulty": 4,
+    "clubs": ["Rosario Central", "Benfica", "Real Madrid", "Manchester United", "Paris Saint Germain", "Juventus", "Benfica"],
+    "years": "2005-2025"
   },
   {
-    player: "Guti",
-    difficulty: 3,
-    clubs: ["Real Madrid", "Besiktas"]
+    "player": "Diego Costa",
+    "difficulty": 4,
+    "clubs": ["Braga", "Atletico Madrid", "Valladolid", "Atletico Madrid", "Chelsea", "Atletico Madrid", "Atletico Mineiro", "Wolves", "Botafogo", "Gremio"],
+    "years": "2006-Present"
   },
   {
-    player: "Juninho Pernambucano",
-    difficulty: 3,
-    clubs: ["Vasco da Gama", "Lyon", "Al-Gharafa", "Vasco da Gama", "New York Red Bulls"]
+    "player": "Javier Hernández (Chicharito)",
+    "difficulty": 4,
+    "clubs": ["Chivas", "Manchester United", "Real Madrid", "Manchester United", "Bayer Leverkusen", "West Ham United", "Sevilla", "LA Galaxy", "Chivas"],
+    "years": "2006-Present"
   },
   {
-    player: "Freddie Ljungberg",
-    difficulty: 3,
-    clubs: ["Halmstads BK", "Arsenal", "West Ham United", "Seattle Sounders", "Chicago Fire", "Celtic", "Shimizu S-Pulse"]
+    "player": "João Félix",
+    "difficulty": 4,
+    "clubs": ["Benfica", "Atletico Madrid", "Chelsea", "Barcelona", "Chelsea"],
+    "years": "2018-Present"
   },
   {
-    player: "Javier Mascherano",
-    difficulty: 3,
-    clubs: ["River Plate", "Corinthians", "West Ham United", "Liverpool", "Barcelona", "Hebei China Fortune", "Estudiantes"]
+    "player": "Mathieu Valbuena",
+    "difficulty": 4,
+    "clubs": ["Marseille", "Dynamo Moscow", "Lyon", "Fenerbahce", "Olympiacos", "Apollon Limassol", "Kallithea"],
+    "years": "2004-2025"
   },
   {
-    player: "Dirk Kuyt",
-    difficulty: 3,
-    clubs: ["Utrecht", "Feyenoord", "Liverpool", "Fenerbahce", "Feyenoord"]
+    "player": "Emmanuel Petit",
+    "difficulty": 4,
+    "clubs": ["Monaco", "Arsenal", "Barcelona", "Chelsea"],
+    "years": "1988-2004"
   },
   {
-    player: "Sylvain Wiltord",
-    difficulty: 3,
-    clubs: ["Bordeaux", "Arsenal", "Lyon", "Rennes", "Marseille", "Metz", "Nantes"]
+    "player": "Fernando Llorente",
+    "difficulty": 4,
+    "clubs": ["Athletic Bilbao", "Juventus", "Sevilla", "Swansea City", "Tottenham Hotspur", "Napoli", "Udinese", "Eibar"],
+    "years": "2003-2023"
   },
   {
-    player: "Gilberto Silva",
-    difficulty: 3,
-    clubs: ["Atletico Mineiro", "Arsenal", "Panathinaikos", "Gremio"]
+    "player": "Pepe",
+    "difficulty": 4,
+    "clubs": ["Maritimo", "Porto", "Real Madrid", "Besiktas", "Porto"],
+    "years": "2001-2024"
   },
   {
-    player: "Roy Keane",
-    difficulty: 3,
-    clubs: ["Nottingham Forest", "Manchester United", "Celtic"]
+    "player": "Axel Witsel",
+    "difficulty": 4,
+    "clubs": ["Standard Liege", "Benfica", "Zenit St Petersburg", "Tianjin Quanjian", "Borussia Dortmund", "Atletico Madrid"],
+    "years": "2006-Present"
   },
   {
-    player: "Jaap Stam",
-    difficulty: 3,
-    clubs: ["PSV Eindhoven", "Manchester United", "Lazio", "AC Milan", "Ajax"]
+    "player": "Yannick Carrasco",
+    "difficulty": 4,
+    "clubs": ["Monaco", "Atletico Madrid", "Dalian Yifang", "Atletico Madrid", "Al-Shabab"],
+    "years": "2010-Present"
+  },
+  {
+    "player": "Miralem Pjanić",
+    "difficulty": 4,
+    "clubs": ["Metz", "Lyon", "Roma", "Juventus", "Barcelona", "Besiktas", "Sharjah", "CSKA Moscow"],
+    "years": "2007-Present"
+  },
+  {
+    "player": "João Cancelo",
+    "difficulty": 4,
+    "clubs": ["Benfica", "Valencia", "Inter Milan", "Juventus", "Manchester City", "Bayern Munich", "Barcelona", "Al Hilal"],
+    "years": "2012-Present"
+  },
+  {
+    "player": "Mateo Kovačić",
+    "difficulty": 4,
+    "clubs": ["Dinamo Zagreb", "Inter Milan", "Real Madrid", "Chelsea", "Manchester City"],
+    "years": "2010-Present"
+  },
+  {
+    "player": "Granit Xhaka",
+    "difficulty": 4,
+    "clubs": ["Basel", "Borussia Monchengladbach", "Arsenal", "Bayer Leverkusen"],
+    "years": "2010-Present"
+  },
+  {
+    "player": "Kingsley Coman",
+    "difficulty": 4,
+    "clubs": ["Paris Saint Germain", "Juventus", "Bayern Munich"],
+    "years": "2013-Present"
+  },
+  {
+    "player": "Alexandre Lacazette",
+    "difficulty": 4,
+    "clubs": ["Lyon", "Arsenal", "Lyon"],
+    "years": "2009-Present"
+  },
+  {
+    "player": "Marek Hamšík",
+    "difficulty": 4,
+    "clubs": ["Slovan Bratislava", "Brescia", "Napoli", "Dalian Professional", "Goteborg", "Trabzonspor"],
+    "years": "2004-2023"
+  },
+  {
+    "player": "Willian",
+    "difficulty": 4,
+    "clubs": ["Corinthians", "Shakhtar Donetsk", "Anzhi Makhachkala", "Chelsea", "Arsenal", "Corinthians", "Fulham", "Olympiacos"],
+    "years": "2006-2025"
+  },
+  {
+    "player": "Renato Sanches",
+    "difficulty": 4,
+    "clubs": ["Benfica", "Bayern Munich", "Swansea City", "Lille", "Paris Saint Germain", "Roma", "Benfica"],
+    "years": "2014-Present"
+  },
+  {
+    "player": "Martin Braithwaite",
+    "difficulty": 4,
+    "clubs": ["Esbjerg", "Toulouse", "Middlesbrough", "Bordeaux", "Leganes", "Barcelona", "Espanyol", "Gremio"],
+    "years": "2009-Present"
+  },
+  {
+    "player": "Adama Traoré",
+    "difficulty": 4,
+    "clubs": ["Barcelona", "Aston Villa", "Middlesbrough", "Wolves", "Barcelona", "Wolves", "Fulham"],
+    "years": "2013-Present"
+  },
+  {
+    "player": "Aaron Ramsey",
+    "difficulty": 4,
+    "clubs": ["Cardiff City", "Arsenal", "Nottingham Forest", "Juventus", "Rangers", "Nice", "Cardiff City"],
+    "years": "2006-Present"
+  },
+  {
+    "player": "Divock Origi",
+    "difficulty": 4,
+    "clubs": ["Lille", "Liverpool", "Wolfsburg", "Liverpool", "AC Milan", "Nottingham Forest", "AC Milan"],
+    "years": "2012-Present"
+  },
+  {
+    "player": "Takumi Minamino",
+    "difficulty": 4,
+    "clubs": ["Cerezo Osaka", "Red Bull Salzburg", "Liverpool", "Southampton", "Monaco"],
+    "years": "2012-Present"
+  },
+  {
+    "player": "Naby Keïta",
+    "difficulty": 4,
+    "clubs": ["Istres", "Red Bull Salzburg", "RB Leipzig", "Liverpool", "Werder Bremen"],
+    "years": "2013-Present"
+  },
+  {
+    "player": "Alex Oxlade-Chamberlain",
+    "difficulty": 4,
+    "clubs": ["Southampton", "Arsenal", "Liverpool", "Besiktas"],
+    "years": "2010-Present"
+  },
+  {
+    "player": "Danny Ings",
+    "difficulty": 4,
+    "clubs": ["Bournemouth", "Burnley", "Liverpool", "Southampton", "Aston Villa", "West Ham United"],
+    "years": "2009-Present"
+  },
+  {
+    "player": "Mark Viduka",
+    "difficulty": 4,
+    "clubs": ["Melbourne Knights", "Dinamo Zagreb", "Celtic", "Leeds United", "Middlesbrough", "Newcastle United"],
+    "years": "1993-2009"
+  },
+  {
+    "player": "Harry Kewell",
+    "difficulty": 4,
+    "clubs": ["Leeds United", "Liverpool", "Galatasaray", "Melbourne Victory", "Al-Gharafa", "Melbourne Heart"],
+    "years": "1996-2014"
+  },
+  {
+    "player": "Milan Baroš",
+    "difficulty": 4,
+    "clubs": ["Banik Ostrava", "Liverpool", "Aston Villa", "Lyon", "Portsmouth", "Galatasaray", "Antalyaspor"],
+    "years": "1998-2020"
+  },
+  {
+    "player": "John Arne Riise",
+    "difficulty": 4,
+    "clubs": ["Aalesund", "Monaco", "Liverpool", "Roma", "Fulham", "APOEL", "Delhi Dynamos", "Chennaiyin"],
+    "years": "1996-2016"
+  },
+  {
+    "player": "Mido",
+    "difficulty": 4,
+    "clubs": ["Zamalek", "Gent", "Ajax", "Celta Vigo", "Marseille", "Roma", "Tottenham Hotspur", "Middlesbrough", "Wigan Athletic", "West Ham United", "Barnsley"],
+    "years": "1999-2013"
+  },
+  {
+    "player": "Benni McCarthy",
+    "difficulty": 4,
+    "clubs": ["Seven Stars", "Ajax", "Celta Vigo", "Porto", "Blackburn Rovers", "West Ham United", "Orlando Pirates"],
+    "years": "1995-2013"
+  },
+  {
+    "player": "Gheorghe Hagi",
+    "difficulty": 4,
+    "clubs": ["Sportul Studentesc", "Steaua Bucharest", "Real Madrid", "Brescia", "Barcelona", "Galatasaray"],
+    "years": "1982-2001"
+  },
+  {
+    "player": "Predrag Mijatović",
+    "difficulty": 4,
+    "clubs": ["Buducnost", "Partizan", "Valencia", "Real Madrid", "Fiorentina", "Levante"],
+    "years": "1987-2003"
+  },
+  {
+    "player": "Davor Šuker",
+    "difficulty": 4,
+    "clubs": ["Osijek", "Dinamo Zagreb", "Sevilla", "Real Madrid", "Arsenal", "West Ham United", "1860 Munich"],
+    "years": "1984-2003"
+  },
+  {
+    "player": "Claudio López",
+    "difficulty": 4,
+    "clubs": ["Racing Club", "Valencia", "Lazio", "Club America", "Racing Club", "Kansas City Wizards", "Colorado Rapids"],
+    "years": "1992-2010"
+  },
+  {
+    "player": "Youri Tielemans",
+    "difficulty": 4,
+    "clubs": ["Anderlecht", "Monaco", "Leicester City", "Aston Villa"],
+    "years": "2013-Present"
+  },
+  {
+    "player": "Pau Torres",
+    "difficulty": 4,
+    "clubs": ["Villarreal", "Malaga", "Aston Villa"],
+    "years": "2016-Present"
+  },
+  {
+    "player": "Marcus Thuram",
+    "difficulty": 4,
+    "clubs": ["Sochaux", "Guingamp", "Borussia Monchengladbach", "Inter Milan"],
+    "years": "2015-Present"
+  },
+  {
+    "player": "Benjamin Pavard",
+    "difficulty": 4,
+    "clubs": ["Lille", "Stuttgart", "Bayern Munich", "Inter Milan"],
+    "years": "2014-Present"
+  },
+  {
+    "player": "Niclas Füllkrug",
+    "difficulty": 4,
+    "clubs": ["Werder Bremen", "Nurnberg", "Hannover 96", "Borussia Dortmund", "West Ham United"],
+    "years": "2011-Present"
+  },
+  {
+    "player": "Serhou Guirassy",
+    "difficulty": 4,
+    "clubs": ["Lille", "Auxerre", "Koln", "Amiens", "Rennes", "Stuttgart", "Borussia Dortmund"],
+    "years": "2013-Present"
+  },
+  {
+    "player": "Denis Zakaria",
+    "difficulty": 4,
+    "clubs": ["Servette", "Young Boys", "Borussia Monchengladbach", "Juventus", "Chelsea", "Monaco"],
+    "years": "2015-Present"
+  },
+  {
+    "player": "Jerome Boateng",
+    "difficulty": 4,
+    "clubs": ["Hertha BSC", "Hamburg", "Manchester City", "Bayern Munich", "Lyon", "Salernitana", "LASK"],
+    "years": "2007-2025"
+  },
+  {
+    "player": "Blaise Matuidi",
+    "difficulty": 4,
+    "clubs": ["Troyes", "Saint-Etienne", "Paris Saint Germain", "Juventus", "Inter Miami"],
+    "years": "2004-2022"
+  },
+  {
+    "player": "Marouane Fellaini",
+    "difficulty": 4,
+    "clubs": ["Standard Liege", "Everton", "Manchester United", "Shandong Taishan"],
+    "years": "2006-2024"
+  },
+  {
+    "player": "Boudewijn Zenden",
+    "difficulty": 4,
+    "clubs": ["PSV Eindhoven", "Barcelona", "Chelsea", "Middlesbrough", "Liverpool", "Marseille", "Sunderland"],
+    "years": "1993-2011"
+  },
+  {
+    "player": "Adrian Mutu",
+    "difficulty": 4,
+    "clubs": ["Arges Pitesti", "Dinamo Bucuresti", "Inter Milan", "Verona", "Parma", "Chelsea", "Juventus", "Fiorentina", "Cesena", "Ajaccio", "Petrolul Ploiesti"],
+    "years": "1996-2016"
+  },
+  {
+    "player": "Claudio Pizarro",
+    "difficulty": 4,
+    "clubs": ["Deportivo Pesquero", "Alianza Lima", "Werder Bremen", "Bayern Munich", "Chelsea", "Werder Bremen", "Bayern Munich", "Werder Bremen", "Koln"],
+    "years": "1996-2020"
+  },
+  {
+    "player": "Shaun Wright-Phillips",
+    "difficulty": 4,
+    "clubs": ["Manchester City", "Chelsea", "Manchester City", "QPR", "New York Red Bulls", "Phoenix Rising"],
+    "years": "1999-2019"
+  },
+  {
+    "player": "Wayne Bridge",
+    "difficulty": 4,
+    "clubs": ["Southampton", "Chelsea", "Fulham", "Manchester City", "West Ham United", "Sunderland", "Brighton", "Reading"],
+    "years": "1998-2014"
+  },
+  {
+    "player": "Tomáš Rosický",
+    "difficulty": 4,
+    "clubs": ["Sparta Prague", "Borussia Dortmund", "Arsenal", "Sparta Prague"],
+    "years": "1998-2017"
+  },
+  {
+    "player": "Eduardo da Silva",
+    "difficulty": 4,
+    "clubs": ["Dinamo Zagreb", "Arsenal", "Shakhtar Donetsk", "Flamengo", "Atletico Paranaense", "Legia Warsaw"],
+    "years": "2001-2018"
+  },
+  {
+    "player": "Bacary Sagna",
+    "difficulty": 4,
+    "clubs": ["Auxerre", "Arsenal", "Manchester City", "Benevento", "Montreal Impact"],
+    "years": "2004-2019"
+  },
+  {
+    "player": "Gaël Clichy",
+    "difficulty": 4,
+    "clubs": ["Cannes", "Arsenal", "Manchester City", "Istanbul Basaksehir", "Servette"],
+    "years": "2002-2023"
+  },
+  {
+    "player": "Louis Saha",
+    "difficulty": 4,
+    "clubs": ["Metz", "Newcastle United", "Fulham", "Manchester United", "Everton", "Tottenham Hotspur", "Sunderland", "Lazio"],
+    "years": "1997-2013"
   },
 
-  // --- LEVEL 4: CULT HEROES & TRAVELERS (Hard) ---
+  // --- LEVEL 5: (Expert) ---
   {
-    player: "Henrikh Mkhitaryan",
-    difficulty: 4,
-    clubs: ["Pyunik", "Metalurh Donetsk", "Shakhtar Donetsk", "Borussia Dortmund", "Manchester United", "Arsenal", "Roma", "Inter Milan"]
+    "player": "Sebastian Giovinco",
+    "difficulty": 5,
+    "clubs": ["Juventus", "Empoli", "Parma", "Juventus", "Toronto FC", "Al Hilal", "Sampdoria"],
+    "years": "2006-2022"
   },
   {
-    player: "Memphis Depay",
-    difficulty: 4,
-    clubs: ["PSV Eindhoven", "Manchester United", "Lyon", "Barcelona", "Atletico Madrid", "Corinthians"]
+    "player": "Gervinho",
+    "difficulty": 5,
+    "clubs": ["Beveren", "Le Mans", "Lille", "Arsenal", "Roma", "Hebei China Fortune", "Parma", "Trabzonspor", "Aris Thessaloniki"],
+    "years": "2005-2024"
   },
   {
-    player: "Kasper Schmeichel",
-    difficulty: 4,
-    clubs: ["Manchester City", "Notts County", "Leeds United", "Leicester City", "Nice", "Anderlecht", "Celtic"]
+    "player": "Felipe Melo",
+    "difficulty": 5,
+    "clubs": ["Flamengo", "Cruzeiro", "Gremio", "Mallorca", "Racing Santander", "Almeria", "Fiorentina", "Juventus", "Galatasaray", "Inter Milan", "Palmeiras", "Fluminense"],
+    "years": "2001-2024"
   },
   {
-    player: "Jesse Lingard",
-    difficulty: 4,
-    clubs: ["Manchester United", "West Ham United", "Nottingham Forest", "FC Seoul"]
+    "player": "Alberto Aquilani",
+    "difficulty": 5,
+    "clubs": ["Roma", "Liverpool", "Juventus", "AC Milan", "Fiorentina", "Sporting CP", "Pescara", "Las Palmas"],
+    "years": "2002-2018"
   },
   {
-    player: "Emre Can",
-    difficulty: 4,
-    clubs: ["Bayern Munich", "Bayer Leverkusen", "Liverpool", "Juventus", "Borussia Dortmund"]
+    "player": "Islam Slimani",
+    "difficulty": 5,
+    "clubs": ["Sporting CP", "Leicester City", "Newcastle United", "Fenerbahce", "Monaco", "Lyon", "Sporting CP", "Brest", "Anderlecht", "Coritiba", "Mechelen", "CR Belouizdad"],
+    "years": "2008-2025"
   },
   {
-    player: "Adrien Rabiot",
-    difficulty: 4,
-    clubs: ["Paris Saint Germain", "Toulouse", "Juventus", "Marseille"]
+    "player": "Fabio Borini",
+    "difficulty": 5,
+    "clubs": ["Chelsea", "Swansea City", "Parma", "Roma", "Liverpool", "Sunderland", "AC Milan", "Verona", "Fatih Karagumruk", "Sampdoria"],
+    "years": "2009-Present"
   },
   {
-    player: "Wilfried Zaha",
-    difficulty: 4,
-    clubs: ["Crystal Palace", "Manchester United", "Cardiff City", "Crystal Palace", "Galatasaray", "Lyon"]
+    "player": "Lucas Pérez",
+    "difficulty": 5,
+    "clubs": ["Rayo Vallecano", "Karpaty Lviv", "PAOK", "Deportivo La Coruna", "Arsenal", "West Ham United", "Alaves", "Elche", "Cadiz", "Deportivo La Coruna"],
+    "years": "2008-Present"
   },
   {
-    player: "Dele Alli",
-    difficulty: 4,
-    clubs: ["MK Dons", "Tottenham Hotspur", "Everton", "Besiktas"]
+    "player": "Seydou Doumbia",
+    "difficulty": 5,
+    "clubs": ["Kashiwa Reysol", "Young Boys", "CSKA Moscow", "Roma", "Newcastle United", "Basel", "Sporting CP", "Girona", "Sion", "Hamrun Spartans"],
+    "years": "2006-2024"
   },
   {
-    player: "Mauro Icardi",
-    difficulty: 4,
-    clubs: ["Sampdoria", "Inter Milan", "Paris Saint Germain", "Galatasaray"]
+    "player": "Andrey Arshavin",
+    "difficulty": 5,
+    "clubs": ["Zenit St Petersburg", "Arsenal", "Zenit St Petersburg", "Kairat"],
+    "years": "1999-2018"
   },
   {
-    player: "Georginio Wijnaldum",
-    difficulty: 4,
-    clubs: ["Feyenoord", "PSV Eindhoven", "Newcastle United", "Liverpool", "Paris Saint Germain", "Roma", "Al-Ettifaq"]
+    "player": "Shinji Kagawa",
+    "difficulty": 5,
+    "clubs": ["Cerezo Osaka", "Borussia Dortmund", "Manchester United", "Borussia Dortmund", "Besiktas", "Real Zaragoza", "PAOK", "Sint-Truiden", "Cerezo Osaka"],
+    "years": "2006-Present"
   },
   {
-    player: "Eidur Gudjohnsen",
-    difficulty: 4,
-    clubs: ["Bolton", "Chelsea", "Barcelona", "Monaco", "Tottenham Hotspur", "Stoke City", "Fulham", "AEK Athens", "Club Brugge", "Molde"]
+    "player": "Javier Saviola",
+    "difficulty": 5,
+    "clubs": ["River Plate", "Barcelona", "Monaco", "Sevilla", "Real Madrid", "Benfica", "Malaga", "Olympiacos", "Verona", "River Plate"],
+    "years": "1998-2016"
   },
   {
-    player: "Jermain Defoe",
-    difficulty: 4,
-    clubs: ["West Ham United", "Tottenham Hotspur", "Portsmouth", "Tottenham Hotspur", "Toronto FC", "Sunderland", "Bournemouth", "Rangers"]
+    "player": "William Gallas",
+    "difficulty": 5,
+    "clubs": ["Caen", "Marseille", "Chelsea", "Arsenal", "Tottenham Hotspur", "Perth Glory"],
+    "years": "1995-2014"
   },
   {
-    player: "Alexis Sánchez",
-    difficulty: 4,
-    clubs: ["Udinese", "Barcelona", "Arsenal", "Manchester United", "Inter Milan", "Marseille", "Inter Milan", "Udinese"]
+    "player": "John Carew",
+    "difficulty": 5,
+    "clubs": ["Valerenga", "Rosenborg", "Valencia", "Roma", "Besiktas", "Lyon", "Aston Villa", "Stoke City", "West Ham United"],
+    "years": "1997-2012"
   },
   {
-    player: "Mesut Özil",
-    difficulty: 4,
-    clubs: ["Schalke 04", "Werder Bremen", "Real Madrid", "Arsenal", "Fenerbahce", "Istanbul Basaksehir"]
+    "player": "Obafemi Martins",
+    "difficulty": 5,
+    "clubs": ["Inter Milan", "Newcastle United", "Wolfsburg", "Rubin Kazan", "Birmingham City", "Levante", "Seattle Sounders", "Shanghai Shenhua"],
+    "years": "2000-2021"
   },
   {
-    player: "Pierre-Emerick Aubameyang",
-    difficulty: 4,
-    clubs: ["AC Milan", "Saint-Etienne", "Borussia Dortmund", "Arsenal", "Barcelona", "Chelsea", "Marseille", "Al Qadsiah"]
+    "player": "Maicon",
+    "difficulty": 5,
+    "clubs": ["Cruzeiro", "Monaco", "Inter Milan", "Manchester City", "Roma", "Avai", "Criciuma"],
+    "years": "2001-2023"
   },
   {
-    player: "Radamel Falcao",
-    difficulty: 4,
-    clubs: ["River Plate", "Porto", "Atletico Madrid", "Monaco", "Manchester United", "Chelsea", "Galatasaray", "Rayo Vallecano", "Millonarios"]
+    "player": "Lúcio",
+    "difficulty": 5,
+    "clubs": ["Internacional", "Bayer Leverkusen", "Bayern Munich", "Inter Milan", "Juventus", "Sao Paulo", "Palmeiras"],
+    "years": "1997-2020"
   },
   {
-    player: "Gonzalo Higuaín",
-    difficulty: 4,
-    clubs: ["River Plate", "Real Madrid", "Napoli", "Juventus", "AC Milan", "Chelsea", "Inter Miami"]
+    "player": "Diego Ribas",
+    "difficulty": 5,
+    "clubs": ["Santos", "Porto", "Werder Bremen", "Juventus", "Wolfsburg", "Atletico Madrid", "Fenerbahce", "Flamengo"],
+    "years": "2002-2022"
   },
   {
-    player: "Philippe Coutinho",
-    difficulty: 4,
-    clubs: ["Inter Milan", "Espanyol", "Liverpool", "Barcelona", "Bayern Munich", "Aston Villa", "Al-Duhail", "Vasco da Gama"]
+    "player": "Simão Sabrosa",
+    "difficulty": 5,
+    "clubs": ["Sporting CP", "Barcelona", "Benfica", "Atletico Madrid", "Besiktas", "Espanyol"],
+    "years": "1997-2014"
   },
   {
-    player: "Antonio Cassano",
-    difficulty: 4,
-    clubs: ["Bari", "Roma", "Real Madrid", "Sampdoria", "AC Milan", "Inter Milan", "Parma", "Sampdoria"]
+    "player": "Rafael Márquez",
+    "difficulty": 5,
+    "clubs": ["Atlas", "Monaco", "Barcelona", "New York Red Bulls", "Leon", "Verona", "Atlas"],
+    "years": "1996-2018"
   },
   {
-    player: "Robbie Fowler",
-    difficulty: 4,
-    clubs: ["Liverpool", "Leeds United", "Manchester City", "Liverpool", "Cardiff City", "Blackburn Rovers", "North Queensland Fury", "Perth Glory"]
+    "player": "Alexander Hleb",
+    "difficulty": 5,
+    "clubs": ["Stuttgart", "Arsenal", "Barcelona", "Birmingham City", "Wolfsburg", "Krylia Sovetov", "BATE Borisov", "Konyaspor", "Genclerbirligi"],
+    "years": "1998-2019"
   },
   {
-    player: "Nicolas Anelka",
-    difficulty: 4,
-    clubs: ["Paris Saint Germain", "Arsenal", "Real Madrid", "Liverpool", "Manchester City", "Fenerbahce", "Bolton", "Chelsea", "Shanghai Shenhua", "Juventus", "West Bromwich"]
+    "player": "Kevin-Prince Boateng",
+    "difficulty": 5,
+    "clubs": ["Hertha BSC", "Tottenham Hotspur", "Dortmund", "Portsmouth", "AC Milan", "Schalke 04", "Las Palmas", "Eintracht Frankfurt", "Sassuolo", "Barcelona", "Fiorentina", "Besiktas", "Monza"],
+    "years": "2005-2023"
   },
   {
-    player: "Hernán Crespo",
-    difficulty: 4,
-    clubs: ["River Plate", "Parma", "Lazio", "Inter Milan", "Chelsea", "AC Milan", "Genoa", "Parma"]
+    "player": "Robbie Keane",
+    "difficulty": 5,
+    "clubs": ["Wolves", "Coventry City", "Inter Milan", "Leeds United", "Tottenham Hotspur", "Liverpool", "Celtic", "West Ham United", "LA Galaxy", "Aston Villa"],
+    "years": "1997-2018"
   },
   {
-    player: "Edgar Davids",
-    difficulty: 4,
-    clubs: ["Ajax", "AC Milan", "Juventus", "Barcelona", "Inter Milan", "Tottenham Hotspur", "Crystal Palace", "Barnet"]
+    "player": "Christian Vieri",
+    "difficulty": 5,
+    "clubs": ["Torino", "Pisa", "Ravenna", "Venezia", "Atalanta", "Juventus", "Atletico Madrid", "Lazio", "Inter Milan", "AC Milan", "Monaco", "Fiorentina"],
+    "years": "1991-2009"
   },
   {
-    player: "Deco",
-    difficulty: 4,
-    clubs: ["Corinthians", "Alverca", "Salgueiros", "Porto", "Barcelona", "Chelsea", "Fluminense"]
+    "player": "Luca Toni",
+    "difficulty": 5,
+    "clubs": ["Modena", "Empoli", "Fiorentzuola", "Treviso", "Vicenza", "Brescia", "Palermo", "Fiorentina", "Bayern Munich", "Roma", "Genoa", "Juventus", "Al Nasr", "Verona"],
+    "years": "1994-2016"
   },
   {
-    player: "Dimitar Berbatov",
-    difficulty: 4,
-    clubs: ["CSKA Sofia", "Bayer Leverkusen", "Tottenham Hotspur", "Manchester United", "Fulham", "Monaco", "PAOK"]
+    "player": "Emmanuel Adebayor",
+    "difficulty": 5,
+    "clubs": ["Metz", "Monaco", "Arsenal", "Manchester City", "Real Madrid", "Tottenham Hotspur", "Crystal Palace", "Istanbul Basaksehir", "Olimpia"],
+    "years": "2001-2020"
   },
   {
-    player: "Juan Mata",
-    difficulty: 4,
-    clubs: ["Real Madrid Castilla", "Valencia", "Chelsea", "Manchester United", "Galatasaray", "Vissel Kobe"]
+    "player": "Craig Bellamy",
+    "difficulty": 5,
+    "clubs": ["Norwich City", "Coventry City", "Newcastle United", "Celtic", "Blackburn Rovers", "Liverpool", "West Ham United", "Manchester City", "Cardiff City"],
+    "years": "1996-2014"
   },
   {
-    player: "Diego Forlán",
-    difficulty: 4,
-    clubs: ["Independiente", "Manchester United", "Villarreal", "Atletico Madrid", "Inter Milan", "Internacional", "Cerezo Osaka", "Penarol"]
+    "player": "Peter Crouch",
+    "difficulty": 5,
+    "clubs": ["Tottenham Hotspur", "QPR", "Portsmouth", "Aston Villa", "Norwich City", "Southampton", "Liverpool", "Stoke City", "Burnley"],
+    "years": "1998-2019"
   },
   {
-    player: "Patrice Evra",
-    difficulty: 4,
-    clubs: ["Marsala", "Monza", "Nice", "Monaco", "Manchester United", "Juventus", "Marseille", "West Ham United"]
+    "player": "Djibril Cissé",
+    "difficulty": 5,
+    "clubs": ["Auxerre", "Liverpool", "Marseille", "Sunderland", "Panathinaikos", "Lazio", "QPR", "Al-Gharafa", "Kuban Krasnodar", "Bastia"],
+    "years": "1998-2021"
   },
   {
-    player: "Rafael van der Vaart",
-    difficulty: 4,
-    clubs: ["Ajax", "Hamburg", "Real Madrid", "Tottenham Hotspur", "Hamburg", "Real Betis", "Midtjylland"]
+    "player": "Lassana Diarra",
+    "difficulty": 5,
+    "clubs": ["Le Havre", "Chelsea", "Arsenal", "Portsmouth", "Real Madrid", "Anzhi Makhachkala", "Lokomotiv Moscow", "Marseille", "Al Jazira", "Paris Saint Germain"],
+    "years": "2004-2019"
   },
   {
-    player: "Javier Mascherano",
-    difficulty: 4,
-    clubs: ["River Plate", "Corinthians", "West Ham United", "Liverpool", "Barcelona", "Hebei China Fortune", "Estudiantes"]
+    "player": "Hatem Ben Arfa",
+    "difficulty": 5,
+    "clubs": ["Lyon", "Marseille", "Newcastle United", "Hull City", "Nice", "Paris Saint Germain", "Rennes", "Valladolid", "Bordeaux", "Lille"],
+    "years": "2004-2022"
   },
   {
-    player: "Mario Balotelli",
-    difficulty: 4,
-    clubs: ["Inter Milan", "Manchester City", "AC Milan", "Liverpool", "Nice", "Marseille", "Brescia", "Monza", "Adana Demirspor", "Sion"]
+    "player": "Pepe Reina",
+    "difficulty": 5,
+    "clubs": ["Barcelona", "Villarreal", "Liverpool", "Napoli", "Bayern Munich", "AC Milan", "Aston Villa", "Lazio", "Villarreal", "Como"],
+    "years": "1999-2025"
   },
   {
-    player: "James Rodríguez",
-    difficulty: 4,
-    clubs: ["Envigado", "Banfield", "Porto", "Monaco", "Real Madrid", "Bayern Munich", "Everton", "Al-Rayyan", "Olympiacos", "Sao Paulo", "Rayo Vallecano"]
+    "player": "Ricardo Quaresma",
+    "difficulty": 5,
+    "clubs": ["Sporting CP", "Barcelona", "Porto", "Inter Milan", "Chelsea", "Besiktas", "Al-Ahli", "Kasimpasa", "Vitoria Guimaraes"],
+    "years": "2001-2022"
   },
   {
-    player: "Ashley Cole",
-    difficulty: 4,
-    clubs: ["Arsenal", "Crystal Palace", "Chelsea", "Roma", "LA Galaxy", "Derby County"]
+    "player": "Alvaro Morata",
+    "difficulty": 5,
+    "clubs": ["Real Madrid", "Juventus", "Real Madrid", "Chelsea", "Atletico Madrid", "Juventus", "Atletico Madrid", "AC Milan"],
+    "years": "2010-Present"
   },
   {
-    player: "Angel Di Maria",
-    difficulty: 4,
-    clubs: ["Rosario Central", "Benfica", "Real Madrid", "Manchester United", "Paris Saint Germain", "Juventus", "Benfica"]
+    "player": "Ryan Babel",
+    "difficulty": 5,
+    "clubs": ["Ajax", "Liverpool", "Hoffenheim", "Ajax", "Kasimpasa", "Al Ain", "Deportivo La Coruna", "Besiktas", "Fulham", "Galatasaray", "Ajax", "Eyupspor"],
+    "years": "2004-2025"
   },
   {
-    player: "Diego Costa",
-    difficulty: 4,
-    clubs: ["Braga", "Atletico Madrid", "Valladolid", "Atletico Madrid", "Chelsea", "Atletico Madrid", "Atletico Mineiro", "Wolves", "Botafogo", "Gremio"]
+    "player": "Kevin Mirallas",
+    "difficulty": 5,
+    "clubs": ["Lille", "Saint-Etienne", "Olympiacos", "Everton", "Fiorentina", "Antwerp", "Gaziantep", "AEL Limassol"],
+    "years": "2004-2023"
   },
   {
-    player: "Javier Hernández (Chicharito)",
-    difficulty: 4,
-    clubs: ["Chivas", "Manchester United", "Real Madrid", "Manchester United", "Bayer Leverkusen", "West Ham United", "Sevilla", "LA Galaxy", "Chivas"]
+    "player": "Alex Song",
+    "difficulty": 5,
+  "clubs": ["Bastia", "Arsenal", "Barcelona", "West Ham United", "Rubin Kazan", "Sion", "Arta/Solar7"],
+    "years": "2004-2023"
   },
   {
-    player: "João Félix",
-    difficulty: 4,
-    clubs: ["Benfica", "Atletico Madrid", "Chelsea", "Barcelona", "Chelsea"]
+    "player": "Maxi López",
+    "difficulty": 5,
+    "clubs": ["River Plate", "Barcelona", "Mallorca", "FC Moscow", "Gremio", "Catania", "AC Milan", "Sampdoria", "Torino", "Udinese", "Vasco da Gama"],
+    "years": "2001-2021"
   },
   {
-    player: "Mathieu Valbuena",
-    difficulty: 4,
-    clubs: ["Marseille", "Dynamo Moscow", "Lyon", "Fenerbahce", "Olympiacos", "Apollon Limassol", "Kallithea"]
+    "player": "Giampaolo Pazzini",
+    "difficulty": 5,
+    "clubs": ["Atalanta", "Fiorentina", "Sampdoria", "Inter Milan", "AC Milan", "Verona", "Levante"],
+    "years": "2003-2020"
   },
   {
-    player: "Emmanuel Petit",
-    difficulty: 4,
-    clubs: ["Monaco", "Arsenal", "Barcelona", "Chelsea"]
+    "player": "Seydou Keita",
+    "difficulty": 5,
+    "clubs": ["Marseille", "Lens", "Sevilla", "Barcelona", "Dalian Aerbin", "Valencia", "Roma", "El Jaish"],
+    "years": "1999-2017"
   },
   {
-    player: "Fernando Llorente",
-    difficulty: 4,
-    clubs: ["Athletic Bilbao", "Juventus", "Sevilla", "Swansea City", "Tottenham Hotspur", "Napoli", "Udinese", "Eibar"]
+    "player": "Martín Cáceres",
+    "difficulty": 5,
+    "clubs": ["Villarreal", "Barcelona", "Juventus", "Sevilla", "Juventus", "Southampton", "Verona", "Lazio", "Juventus", "Fiorentina", "Cagliari", "LA Galaxy"],
+    "years": "2006-2025"
   },
   {
-    player: "Pepe",
-    difficulty: 4,
-    clubs: ["Maritimo", "Porto", "Real Madrid", "Besiktas", "Porto"]
+    "player": "Stevan Jovetić",
+    "difficulty": 5,
+    "clubs": ["Partizan", "Fiorentina", "Manchester City", "Inter Milan", "Sevilla", "Monaco", "Hertha Berlin", "Olympiacos", "Omonia"],
+    "years": "2006-Present"
   },
   {
-    player: "Axel Witsel",
-    difficulty: 4,
-    clubs: ["Standard Liege", "Benfica", "Zenit St Petersburg", "Tianjin Quanjian", "Borussia Dortmund", "Atletico Madrid"]
+    "player": "Lucas Pratto",
+    "difficulty": 5,
+    "clubs": ["Boca Juniors", "Tigre", "Lyn", "Universidad Catolica", "Genoa", "Velez Sarsfield", "Atletico Mineiro", "Sao Paulo", "River Plate", "Feyenoord", "Olimpia"],
+    "years": "2007-Present"
   },
   {
-    player: "Yannick Carrasco",
-    difficulty: 4,
-    clubs: ["Monaco", "Atletico Madrid", "Dalian Yifang", "Atletico Madrid", "Al-Shabab"]
+    "player": "Steven Caulker",
+    "difficulty": 5,
+    "clubs": ["Tottenham Hotspur", "Cardiff City", "QPR", "Liverpool", "Dundee", "Alanyaspor", "Fenerbahce", "Gaziantep", "Wigan Athletic", "Malaga"],
+    "years": "2009-Present"
   },
   {
-    player: "Miralem Pjanić",
-    difficulty: 4,
-    clubs: ["Metz", "Lyon", "Roma", "Juventus", "Barcelona", "Besiktas", "Sharjah", "CSKA Moscow"]
+    "player": "Eric Maxim Choupo-Moting",
+    "difficulty": 5,
+    "clubs": ["Hamburg", "Nurnberg", "Mainz 05", "Schalke 04", "Stoke City", "Paris Saint Germain", "Bayern Munich"],
+    "years": "2007-Present"
   },
-
-  // --- LEVEL 5: THE JOURNEYMEN & TRICKY ONES (Expert) ---
   {
-    player: "Sebastian Giovinco",
-    difficulty: 5,
-    clubs: ["Juventus", "Empoli", "Parma", "Juventus", "Toronto FC", "Al Hilal", "Sampdoria"]
+    "player": "Michy Batshuayi",
+    "difficulty": 5,
+    "clubs": ["Standard Liege", "Marseille", "Chelsea", "Borussia Dortmund", "Valencia", "Crystal Palace", "Besiktas", "Fenerbahce", "Galatasaray"],
+    "years": "2011-Present"
   },
   {
-    player: "Gervinho",
-    difficulty: 5,
-    clubs: ["Beveren", "Le Mans", "Lille", "Arsenal", "Roma", "Hebei China Fortune", "Parma", "Trabzonspor", "Aris Thessaloniki"]
+    "player": "Victor Moses",
+    "difficulty": 5,
+    "clubs": ["Crystal Palace", "Wigan Athletic", "Chelsea", "Liverpool", "Stoke City", "West Ham United", "Fenerbahce", "Inter Milan", "Spartak Moscow", "Luton Town"],
+    "years": "2007-Present"
   },
   {
-    player: "Felipe Melo",
-    difficulty: 5,
-    clubs: ["Flamengo", "Cruzeiro", "Gremio", "Mallorca", "Racing Santander", "Almeria", "Fiorentina", "Juventus", "Galatasaray", "Inter Milan", "Palmeiras", "Fluminense"]
+    "player": "Salomón Rondón",
+    "difficulty": 5,
+    "clubs": ["Las Palmas", "Malaga", "Rubin Kazan", "Zenit St Petersburg", "West Brom", "Newcastle United", "Dalian Pro", "CSKA Moscow", "Everton", "River Plate", "Pachuca"],
+    "years": "2006-Present"
   },
   {
-    player: "Alberto Aquilani",
-    difficulty: 5,
-    clubs: ["Roma", "Liverpool", "Juventus", "AC Milan", "Fiorentina", "Sporting CP", "Pescara", "Las Palmas"]
+    "player": "Marko Arnautović",
+    "difficulty": 5,
+    "clubs": ["Twente", "Inter Milan", "Werder Bremen", "Stoke City", "West Ham United", "Shanghai SIPG", "Bologna", "Inter Milan"],
+    "years": "2006-2025"
   },
   {
-    player: "Islam Slimani",
-    difficulty: 5,
-    clubs: ["Sporting CP", "Leicester City", "Newcastle United", "Fenerbahce", "Monaco", "Lyon", "Sporting CP", "Brest", "Anderlecht", "Coritiba", "Mechelen", "CR Belouizdad"]
+    "player": "Luuk de Jong",
+    "difficulty": 5,
+    "clubs": ["De Graafschap", "Twente", "Borussia Monchengladbach", "Newcastle United", "PSV Eindhoven", "Sevilla", "Barcelona", "PSV Eindhoven"],
+    "years": "2008-Present"
   },
   {
-    player: "Fabio Borini",
-    difficulty: 5,
-    clubs: ["Chelsea", "Swansea City", "Parma", "Roma", "Liverpool", "Sunderland", "AC Milan", "Verona", "Fatih Karagumruk", "Sampdoria"]
+    "player": "Ravel Morrison",
+    "difficulty": 5,
+    "clubs": ["Manchester United", "West Ham United", "Birmingham City", "QPR", "Cardiff City", "Lazio", "Atlas", "Ostersund", "Sheffield United", "Middlesbrough", "ADO Den Haag", "Derby County", "DC United", "Precision"],
+    "years": "2010-Present"
   },
   {
-    player: "Lucas Pérez",
-    difficulty: 5,
-    clubs: ["Rayo Vallecano", "Karpaty Lviv", "PAOK", "Deportivo La Coruna", "Arsenal", "West Ham United", "Alaves", "Elche", "Cadiz", "Deportivo La Coruna"]
+    "player": "Bojan Krkić",
+    "difficulty": 5,
+    "clubs": ["Barcelona", "Roma", "AC Milan", "Ajax", "Stoke City", "Mainz 05", "Alaves", "Montreal Impact", "Vissel Kobe"],
+    "years": "2007-2023"
   },
   {
-    player: "Seydou Doumbia",
-    difficulty: 5,
-    clubs: ["Kashiwa Reysol", "Young Boys", "CSKA Moscow", "Roma", "Newcastle United", "Basel", "Sporting CP", "Girona", "Sion", "Hamrun Spartans"]
+    "player": "Adel Taarabt",
+    "difficulty": 5,
+    "clubs": ["Lens", "Tottenham Hotspur", "QPR", "Fulham", "AC Milan", "Benfica", "Genoa", "Al-Nasr"],
+    "years": "2006-Present"
   },
   {
-    player: "Andrey Arshavin",
-    difficulty: 5,
-    clubs: ["Zenit St Petersburg", "Arsenal", "Zenit St Petersburg", "Kairat"]
+    "player": "Nicklas Bendtner",
+    "difficulty": 5,
+    "clubs": ["Arsenal", "Birmingham City", "Sunderland", "Juventus", "Wolfsburg", "Nottingham Forest", "Rosenborg", "Copenhagen"],
+    "years": "2005-2019"
   },
   {
-    player: "Shinji Kagawa",
-    difficulty: 5,
-    clubs: ["Cerezo Osaka", "Borussia Dortmund", "Manchester United", "Borussia Dortmund", "Besiktas", "Real Zaragoza", "PAOK", "Sint-Truiden", "Cerezo Osaka"]
+    "player": "Royston Drenthe",
+    "difficulty": 5,
+    "clubs": ["Feyenoord", "Real Madrid", "Hercules", "Everton", "Alania Vladikavkaz", "Reading", "Sheffield Wednesday", "Kayseri Erciyesspor", "Baniyas", "Sparta Rotterdam", "Kozakken Boys", "Racing Murcia"],
+    "years": "2005-2022"
   },
   {
-    player: "Javier Saviola",
-    difficulty: 5,
-    clubs: ["River Plate", "Barcelona", "Monaco", "Sevilla", "Real Madrid", "Benfica", "Malaga", "Olympiacos", "Verona", "River Plate"]
+    "player": "Gaël Kakuta",
+    "difficulty": 5,
+    "clubs": ["Chelsea", "Fulham", "Bolton", "Dijon", "Vitesse", "Lazio", "Rayo Vallecano", "Sevilla", "Hebei China Fortune", "Amiens", "Lens", "Esteghlal"],
+    "years": "2007-Present"
   },
   {
-    player: "William Gallas",
-    difficulty: 5,
-    clubs: ["Caen", "Marseille", "Chelsea", "Arsenal", "Tottenham Hotspur", "Perth Glory"]
+    "player": "Hulk",
+    "difficulty": 5,
+    "clubs": ["Vitoria", "Kawasaki Frontale", "Consadole Sapporo", "Tokyo Verdy", "Porto", "Zenit St Petersburg", "Shanghai SIPG", "Atletico Mineiro"],
+    "years": "2004-Present"
   },
   {
-    player: "John Carew",
-    difficulty: 5,
-    clubs: ["Valerenga", "Rosenborg", "Valencia", "Roma", "Besiktas", "Lyon", "Aston Villa", "Stoke City", "West Ham United"]
+    "player": "Andros Townsend",
+    "difficulty": 5,
+    "clubs": ["Tottenham Hotspur", "Ipswich Town", "Watford", "Leeds United", "QPR", "Newcastle United", "Crystal Palace", "Everton", "Luton Town", "Antalyaspor"],
+    "years": "2009-Present"
   },
   {
-    player: "Obafemi Martins",
-    difficulty: 5,
-    clubs: ["Inter Milan", "Newcastle United", "Wolfsburg", "Rubin Kazan", "Birmingham City", "Levante", "Seattle Sounders", "Shanghai Shenhua"]
+    "player": "Steven Nzonzi",
+    "difficulty": 5,
+    "clubs": ["Amiens", "Blackburn Rovers", "Stoke City", "Sevilla", "Roma", "Galatasaray", "Rennes", "Al-Rayyan", "Konyaspor", "Sepahan"],
+    "years": "2007-Present"
   },
   {
-    player: "Maicon",
-    difficulty: 5,
-    clubs: ["Cruzeiro", "Monaco", "Inter Milan", "Manchester City", "Roma", "Avai", "Criciuma"]
+    "player": "Mauro Zárate",
+    "difficulty": 5,
+    "clubs": ["Velez Sarsfield", "Al-Sadd", "Birmingham City", "Lazio", "Inter Milan", "West Ham United", "QPR", "Fiorentina", "Watford", "Boca Juniors", "America Mineiro", "Danubio"],
+    "years": "2004-Present"
   },
   {
-    player: "Lúcio",
-    difficulty: 5,
-    clubs: ["Internacional", "Bayer Leverkusen", "Bayern Munich", "Inter Milan", "Juventus", "Sao Paulo", "Palmeiras"]
+    "player": "Landon Donovan",
+    "difficulty": 5,
+    "clubs": ["San Jose Earthquakes", "Bayer Leverkusen", "LA Galaxy", "Bayern Munich", "Everton", "Leon", "San Diego Sockers"],
+    "years": "1999-2018"
   },
   {
-    player: "Diego Ribas",
-    difficulty: 5,
-    clubs: ["Santos", "Porto", "Werder Bremen", "Juventus", "Wolfsburg", "Atletico Madrid", "Fenerbahce", "Flamengo"]
+    "player": "Tim Cahill",
+    "difficulty": 5,
+    "clubs": ["Millwall", "Everton", "New York Red Bulls", "Shanghai Shenhua", "Hangzhou Greentown", "Melbourne City", "Jamshedpur"],
+    "years": "1998-2019"
   },
   {
-    player: "Simão Sabrosa",
-    difficulty: 5,
-    clubs: ["Sporting CP", "Barcelona", "Benfica", "Atletico Madrid", "Besiktas", "Espanyol"]
+    "player": "Roque Santa Cruz",
+    "difficulty": 5,
+    "clubs": ["Olimpia", "Bayern Munich", "Blackburn Rovers", "Manchester City", "Real Betis", "Malaga", "Cruz Azul", "Olimpia", "Libertad"],
+    "years": "1997-2025"
   },
   {
-    player: "Rafael Márquez",
-    difficulty: 5,
-    clubs: ["Atlas", "Monaco", "Barcelona", "New York Red Bulls", "Leon", "Verona", "Atlas"]
+    "player": "Yakubu Aiyegbeni",
+    "difficulty": 5,
+    "clubs": ["Maccabi Haifa", "Portsmouth", "Middlesbrough", "Everton", "Leicester City", "Blackburn Rovers", "Guangzhou R&F", "Reading", "Coventry City"],
+    "years": "1997-2017"
   },
   {
-    player: "Alexander Hleb",
-    difficulty: 5,
-    clubs: ["Stuttgart", "Arsenal", "Barcelona", "Birmingham City", "Wolfsburg", "Krylia Sovetov", "BATE Borisov", "Konyaspor", "Genclerbirligi"]
+    "player": "Kevin Phillips",
+    "difficulty": 5,
+    "clubs": ["Watford", "Sunderland", "Southampton", "Aston Villa", "West Brom", "Birmingham City", "Blackpool", "Crystal Palace", "Leicester City"],
+    "years": "1994-2014"
   },
   {
-    player: "Kevin-Prince Boateng",
-    difficulty: 5,
-    clubs: ["Hertha BSC", "Tottenham Hotspur", "Dortmund", "Portsmouth", "AC Milan", "Schalke 04", "Las Palmas", "Eintracht Frankfurt", "Sassuolo", "Barcelona", "Fiorentina", "Besiktas", "Monza"]
+    "player": "Shunsuke Nakamura",
+    "difficulty": 5,
+    "clubs": ["Yokohama F. Marinos", "Reggina", "Celtic", "Espanyol", "Yokohama F. Marinos", "Jubilo Iwata", "Yokohama FC"],
+    "years": "1997-2022"
   },
   {
-    player: "Robbie Keane",
-    difficulty: 5,
-    clubs: ["Wolves", "Coventry City", "Inter Milan", "Leeds United", "Tottenham Hotspur", "Liverpool", "Celtic", "West Ham United", "LA Galaxy", "Aston Villa"]
+    "player": "Thomas Gravesen",
+    "difficulty": 5,
+    "clubs": ["Vejle", "Hamburg", "Everton", "Real Madrid", "Celtic", "Everton"],
+    "years": "1995-2008"
   },
   {
-    player: "Christian Vieri",
-    difficulty: 5,
-    clubs: ["Torino", "Pisa", "Ravenna", "Venezia", "Atalanta", "Juventus", "Atletico Madrid", "Lazio", "Inter Milan", "AC Milan", "Monaco", "Fiorentina"]
+    "player": "Diego Tristán",
+    "difficulty": 5,
+    "clubs": ["Real Betis B", "Mallorca", "Deportivo La Coruna", "Mallorca", "Livorno", "West Ham United", "Cadiz"],
+    "years": "1995-2010"
   },
   {
-    player: "Luca Toni",
-    difficulty: 5,
-    clubs: ["Modena", "Empoli", "Fiorentzuola", "Treviso", "Vicenza", "Brescia", "Palermo", "Fiorentina", "Bayern Munich", "Roma", "Genoa", "Juventus", "Al Nasr", "Verona"]
+    "player": "Massimo Maccarone",
+    "difficulty": 5,
+    "clubs": ["AC Milan", "Empoli", "Middlesbrough", "Parma", "Siena", "Palermo", "Sampdoria", "Empoli", "Brisbane Roar", "Carrarese"],
+    "years": "1998-2020"
   },
   {
-    player: "Emmanuel Adebayor",
-    difficulty: 5,
-    clubs: ["Metz", "Monaco", "Arsenal", "Manchester City", "Real Madrid", "Tottenham Hotspur", "Crystal Palace", "Istanbul Basaksehir", "Olimpia"]
+    "player": "Stephen Ireland",
+    "difficulty": 5,
+    "clubs": ["Manchester City", "Aston Villa", "Newcastle United", "Stoke City", "Bolton"],
+    "years": "2005-2018"
   },
   {
-    player: "Craig Bellamy",
-    difficulty: 5,
-    clubs: ["Norwich City", "Coventry City", "Newcastle United", "Celtic", "Blackburn Rovers", "Liverpool", "West Ham United", "Manchester City", "Cardiff City"]
+    "player": "Lucas Ocampos",
+    "difficulty": 5,
+    "clubs": ["River Plate", "Monaco", "Marseille", "Genoa", "AC Milan", "Sevilla", "Ajax", "Monterrey"],
+    "years": "2011-Present"
   },
   {
-    player: "Peter Crouch",
-    difficulty: 5,
-    clubs: ["Tottenham Hotspur", "QPR", "Portsmouth", "Aston Villa", "Norwich City", "Southampton", "Liverpool", "Stoke City", "Burnley"]
+    "player": "Erik Lamela",
+    "difficulty": 5,
+    "clubs": ["River Plate", "Roma", "Tottenham Hotspur", "Sevilla", "AEK Athens"],
+    "years": "2009-Present"
   },
   {
-    player: "Djibril Cissé",
-    difficulty: 5,
-    clubs: ["Auxerre", "Liverpool", "Marseille", "Sunderland", "Panathinaikos", "Lazio", "QPR", "Al-Gharafa", "Kuban Krasnodar", "Bastia"]
+    "player": "Tanguy Ndombele",
+    "difficulty": 5,
+    "clubs": ["Amiens", "Lyon", "Tottenham Hotspur", "Napoli", "Galatasaray", "Nice"],
+    "years": "2016-Present"
   },
   {
-    player: "Lassana Diarra",
-    difficulty: 5,
-    clubs: ["Le Havre", "Chelsea", "Arsenal", "Portsmouth", "Real Madrid", "Anzhi Makhachkala", "Lokomotiv Moscow", "Marseille", "Al Jazira", "Paris Saint Germain"]
+    "player": "Tiémoué Bakayoko",
+    "difficulty": 5,
+    "clubs": ["Rennes", "Monaco", "Chelsea", "AC Milan", "Napoli", "Lorient", "PAOK"],
+    "years": "2012-Present"
   },
   {
-    player: "Hatem Ben Arfa",
-    difficulty: 5,
-    clubs: ["Lyon", "Marseille", "Newcastle United", "Hull City", "Nice", "Paris Saint Germain", "Rennes", "Valladolid", "Bordeaux", "Lille"]
+    "player": "André Gomes",
+    "difficulty": 5,
+    "clubs": ["Benfica", "Valencia", "Barcelona", "Everton", "Lille"],
+    "years": "2012-Present"
   },
   {
-    player: "Pepe Reina",
-    difficulty: 5,
-    clubs: ["Barcelona", "Villarreal", "Liverpool", "Napoli", "Bayern Munich", "AC Milan", "Aston Villa", "Lazio", "Villarreal", "Como"]
+    "player": "Clément Lenglet",
+    "difficulty": 5,
+    "clubs": ["Nancy", "Sevilla", "Barcelona", "Tottenham Hotspur", "Aston Villa", "Atletico Madrid"],
+    "years": "2013-Present"
   },
   {
-    player: "Ricardo Quaresma",
-    difficulty: 5,
-    clubs: ["Sporting CP", "Barcelona", "Porto", "Inter Milan", "Chelsea", "Besiktas", "Al-Ahli", "Kasimpasa", "Vitoria Guimaraes"]
+    "player": "Samuel Umtiti",
+    "difficulty": 5,
+    "clubs": ["Lyon", "Barcelona", "Lecce", "Lille"],
+    "years": "2011-Present"
   },
   {
-    player: "Alvaro Morata",
-    difficulty: 5,
-    clubs: ["Real Madrid", "Juventus", "Real Madrid", "Chelsea", "Atletico Madrid", "Juventus", "Atletico Madrid", "AC Milan"]
-  },{
-    player: "Ryan Babel",
-    difficulty: 5,
-    clubs: ["Ajax", "Liverpool", "Hoffenheim", "Ajax", "Kasimpasa", "Al Ain", "Deportivo La Coruna", "Besiktas", "Fulham", "Galatasaray", "Ajax", "Eyupspor"]
+    "player": "Stephan El Shaarawy",
+    "difficulty": 5,
+    "clubs": ["Genoa", "Padova", "AC Milan", "Monaco", "Roma", "Shanghai Shenhua", "Roma"],
+    "years": "2008-Present"
   },
   {
-    player: "Kevin Mirallas",
-    difficulty: 5,
-    clubs: ["Lille", "Saint-Etienne", "Olympiacos", "Everton", "Fiorentina", "Antwerp", "Gaziantep", "AEL Limassol"]
+    "player": "Loïc Rémy",
+    "difficulty": 5,
+    "clubs": ["Lyon", "Lens", "Nice", "Marseille", "QPR", "Newcastle United", "Chelsea", "Crystal Palace", "Las Palmas", "Getafe", "Lille", "Rizespor", "Adana Demirspor"],
+    "years": "2006-2023"
   },
   {
-    player: "Alex Song",
-    difficulty: 5,
-    clubs: ["Bastia", "Arsenal", "Barcelona", "West Ham United", "Rubin Kazan", "Sion", "Arta/Solar7"]
+    "player": "El Hadji Diouf",
+    "difficulty": 5,
+    "clubs": ["Sochaux", "Rennes", "Lens", "Liverpool", "Bolton", "Sunderland", "Blackburn Rovers", "Rangers", "Leeds United", "Sabah"],
+    "years": "1998-2015"
   },
   {
-    player: "Maxi López",
-    difficulty: 5,
-    clubs: ["River Plate", "Barcelona", "Mallorca", "FC Moscow", "Gremio", "Catania", "AC Milan", "Sampdoria", "Torino", "Udinese", "Vasco da Gama"]
+    "player": "Emile Heskey",
+    "difficulty": 5,
+    "clubs": ["Leicester City", "Liverpool", "Birmingham City", "Wigan Athletic", "Aston Villa", "Newcastle Jets", "Bolton"],
+    "years": "1994-2016"
   },
   {
-    player: "Giampaolo Pazzini",
-    difficulty: 5,
-    clubs: ["Atalanta", "Fiorentina", "Sampdoria", "Inter Milan", "AC Milan", "Verona", "Levante"]
+    "player": "Steed Malbranque",
+    "difficulty": 5,
+    "clubs": ["Lyon", "Fulham", "Tottenham Hotspur", "Sunderland", "Saint-Etienne", "Lyon", "Caen"],
+    "years": "1997-2012"
   },
   {
-    player: "Seydou Keita",
-    difficulty: 5,
-    clubs: ["Marseille", "Lens", "Sevilla", "Barcelona", "Dalian Aerbin", "Valencia", "Roma", "El Jaish"]
+    "player": "Pascal Chimbonda",
+    "difficulty": 5,
+    "clubs": ["Le Havre", "Bastia", "Wigan Athletic", "Tottenham Hotspur", "Sunderland", "Blackburn Rovers", "QPR", "Doncaster Rovers"],
+    "years": "1999-2019"
   },
   {
-    player: "Martín Cáceres",
-    difficulty: 5,
-    clubs: ["Villarreal", "Barcelona", "Juventus", "Sevilla", "Juventus", "Southampton", "Verona", "Lazio", "Juventus", "Fiorentina", "Cagliari", "LA Galaxy"]
+    "player": "Julien Faubert",
+    "difficulty": 5,
+    "clubs": ["Cannes", "Bordeaux", "West Ham United", "Real Madrid", "West Ham United", "Elazigspor", "Bordeaux", "Kilmarnock", "Inter Turku"],
+    "years": "2002-2018"
   },
   {
-    player: "Stevan Jovetić",
-    difficulty: 5,
-    clubs: ["Partizan", "Fiorentina", "Manchester City", "Inter Milan", "Sevilla", "Monaco", "Hertha Berlin", "Olympiacos", "Omonia"]
+    "player": "Morten Gamst Pedersen",
+    "difficulty": 5,
+    "clubs": ["Tromso", "Blackburn Rovers", "Karabukspor", "Rosenborg", "Tromso", "Alta", "Ranheim"],
+    "years": "2000-2025"
   },
   {
-    player: "Lucas Pratto",
-    difficulty: 5,
-    clubs: ["Boca Juniors", "Tigre", "Lyn", "Universidad Catolica", "Genoa", "Velez Sarsfield", "Atletico Mineiro", "Sao Paulo", "River Plate", "Feyenoord", "Olimpia"]
+    "player": "Sulley Muntari",
+    "difficulty": 5,
+    "clubs": ["Udinese", "Portsmouth", "Inter Milan", "Sunderland", "AC Milan", "Al-Ittihad", "Pescara", "Deportivo La Coruna", "Albacete", "Hearts of Oak"],
+    "years": "2002-2022"
   },
   {
-    player: "Steven Caulker",
-    difficulty: 5,
-    clubs: ["Tottenham Hotspur", "Cardiff City", "QPR", "Liverpool", "Dundee", "Alanyaspor", "Fenerbahce", "Gaziantep", "Wigan Athletic", "Malaga"]
+    "player": "Steven Pienaar",
+    "difficulty": 5,
+    "clubs": ["Ajax Cape Town", "Ajax", "Borussia Dortmund", "Everton", "Tottenham Hotspur", "Everton", "Sunderland", "Bidvest Wits"],
+    "years": "1999-2018"
+  },
+  {
+    "player": "Christopher Samba",
+    "difficulty": 5,
+    "clubs": ["Sedan", "Hertha BSC", "Blackburn Rovers", "Anzhi Makhachkala", "QPR", "Anzhi Makhachkala", "Dynamo Moscow", "Panathinaikos", "Aston Villa"],
+    "years": "2002-2018"
+  },
+  {
+    "player": "Brede Hangeland",
+    "difficulty": 5,
+    "clubs": ["Viking", "Copenhagen", "Fulham", "Crystal Palace"],
+    "years": "2000-2016"
   }
 ];
