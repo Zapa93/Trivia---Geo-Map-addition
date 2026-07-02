@@ -1,12 +1,19 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+A WebOS trivia app with text, visual and audio questions with no customization needed. Up to 4 players. The LG Magic Remote is optional but highly recommended to experience the interactive world map category.
 
-# Run and deploy your AI Studio app
 
-This contains everything you need to run your app locally.
+## Features
 
-View your app in AI Studio: https://ai.studio/apps/drive/1h7wEkJz9Cw0pvxb7Fk-4v_q84EVc_SDm
+**Audio questions**
+
+Guess the song from snippets of the best eras and genre of music or soundtrack from the most famous movies and series.
+
+**Visual questions**
+
+Everything from guess the flag or capital to guess the movie from cast or year the movie was released from its poster. A world map with interactive pointer to locate the country selected with fully handmade list of difficulties. Two additional maps of US states and regions of Sweden.
+
+**Text questions**
+
+Everything from the classic categories to newly added ones like Guess the Football Player where a player's career team progression is shown.
 
 ## Run Locally
 
@@ -15,6 +22,10 @@ View your app in AI Studio: https://ai.studio/apps/drive/1h7wEkJz9Cw0pvxb7Fk-4v_
 
 1. Install dependencies:
    `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
+2. Run the app:
    `npm run dev`
+
+## Build App
+
+
+`ares-package dist` to build the app .ipk file then proceed to install through [WebOS Dev Manager.](https://github.com/webosbrew/dev-manager-desktop)
